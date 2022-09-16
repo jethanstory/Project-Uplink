@@ -1,2 +1,2 @@
-# Project-Clippy
-A Unity 3D game about a 1990s Internet tutorial that devolves into horror
+# Project-Uplink
+A Unity 3D point-and-click game about A 1990s PC tutorial mascot that becomes self-aware. 
