@@ -26,7 +26,7 @@ public class GameOEvents : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene("SampleScene"); //Level_1
+        SceneManager.LoadScene("Intro_Tutorial"); //Level_1
     }
     public void nextLevel()
     {
