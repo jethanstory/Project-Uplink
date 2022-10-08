@@ -9,6 +9,8 @@ public class GameOEvents : MonoBehaviour
 
     public GameObject defaultMascot;
     public GameObject mascotMenu;
+    public GameObject mascotDialogue;
+    public GameObject mascotQuestion;
     // public int counter = 0;
 
     // void awake() 
@@ -49,6 +51,17 @@ public class GameOEvents : MonoBehaviour
         //{
             defaultMascot.SetActive(true);
             mascotMenu.SetActive(false);
+        //}
+        
+        //mascotCanvas.SetActive(true);
+    }
+    public void pickYes()
+    {
+        //if (mascotMenu.activeSelf) 
+        //{
+            
+            mascotDialogue.SetActive(true);
+            mascotQuestion.SetActive(false);
         //}
         
         //mascotCanvas.SetActive(true);
