@@ -17,13 +17,11 @@ public class GameOEvents : MonoBehaviour
     // {
     //     counter += 1;
     // }
-    // Start is called before the first frame update
     public void MenuGame()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Update is called once per frame
     public void QuitGame()
     {
         Application.Quit();
