@@ -256,6 +256,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11259237}
   m_CullTransparentMesh: 1
+--- !u!1 &199226784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199226786}
+  - component: {fileID: 199226789}
+  m_Layer: 0
+  m_Name: Mouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199226786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199226784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199226789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199226784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ab54552ee500b4a82a1af240aea392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControl: 1
+  myMousePosition: {x: 0, y: 0, z: 0}
+  myMouse: {fileID: 2800000, guid: 52733b80621df584fa000534ae17a779, type: 3}
+  badMouse: {fileID: 9002301411648405237, guid: 04af9041db3bfff419046e470caf67ca, type: 3}
+  badMouseExists: 0
 --- !u!1 &341464521
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324617e739140584384c00d94741396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMascot: {fileID: 0}
+  mascotMenu: {fileID: 0}
+  mascotDialogue: {fileID: 0}
+  mascotQuestion: {fileID: 0}
 --- !u!1 &581726792
 GameObject:
   m_ObjectHideFlags: 0
