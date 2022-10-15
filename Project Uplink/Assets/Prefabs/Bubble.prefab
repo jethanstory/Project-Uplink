@@ -178,7 +178,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: place text here
+  m_Text: 
 --- !u!1 &8575050597657640063
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,3 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 5001335097711032723}
   bc: {fileID: 1094244511575402242}
+  sr: {fileID: 2281353853154556208}
+  startAnimation: 0
+  textSpeed: 60

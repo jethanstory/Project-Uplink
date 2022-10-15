@@ -27,8 +27,12 @@ public class InfosqueakScr : MonoBehaviour
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
 
-                    //sets the text of the bubble
-                    currSpeechBubble.GetComponent<BubbleScr>().CreateBubble("Hello! My name is Infosqueak, your Personal Computer's Personal Assistant! \r\n[Press Space to Continue]");
+                    //the text
+                    string myString = "Hello! My name is Infosqueak, your Personal Computer's Personal Assistant! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+
 
                     //allows player to skip/continue cutscene
                     canSkip = true; 
