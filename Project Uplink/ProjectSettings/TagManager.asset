@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Infosqueak
+=======
+  - Canvas
+>>>>>>> 316ecb036e5d8906e4a3f6cdbcdbf1ab668b42fd
   layers:
   - Default
   - TransparentFX

@@ -42,12 +42,14 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //adjusts text to the resolution size
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     string myString = "Hello! My name is Infosqueak, your Personal Computer's Personal Assistant! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
+                    
 
 
                     //allows player to skip/continue cutscene
@@ -63,6 +65,9 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //adjusts text to the resolution size
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    
 
                     //the text
                     myString = "Before we get started, let's calibrate your mouse and keyboard! \r\n[Press Space to Continue]";
@@ -82,6 +87,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //adjusts text to the resolution size
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Let's start with the mouse (the best one, obviously)! \r\n[Press Space to Continue]";
@@ -101,6 +108,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //adjusts text to the resolution size
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Click on all the squares that appear on screen! \r\n[Press Space to Continue]";
@@ -296,6 +305,7 @@ public class InfosqueakScr : MonoBehaviour
         {
             //destroys the newly created speech bubble
             Object.Destroy(currSpeechBubble);
+            //currSpeechBubble.transform.SetParent (null);
 
             //player is moving to the next cutscene
             cutsceneNum += 1;
