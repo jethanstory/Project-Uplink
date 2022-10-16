@@ -2862,6 +2862,11 @@ MonoBehaviour:
   speechBubble: {fileID: 8575050597657640063, guid: 1bc8e89106cee5345a2360d825f6f9c2, type: 3}
   tm: {fileID: 1965823526}
   canSkip: 0
+  progressNum: 0
+  maxProgressNum: 0
+  miniGameInProgress: 0
+  square: {fileID: 8607786490719484797, guid: 56cb0bc912d4fd84380d8b8c4f523100, type: 3}
+  squarePos: {x: 0, y: 0, z: 0}
 --- !u!212 &1965823525
 SpriteRenderer:
   m_ObjectHideFlags: 0
