@@ -9,6 +9,7 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject speechBubble;
     private GameObject currSpeechBubble;
     public Transform tm;
+    public SpriteRenderer sr;
     public bool canSkip = false;
     public int progressNum = 0;
     public int maxProgressNum;
@@ -18,6 +19,11 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject square;
     private GameObject currSquare;
     public Vector3 squarePos;
+
+    //minigame 2 vars
+    public GameObject cheese;
+    private GameObject currCheese;
+    public Vector3 cheesePos;
 
     public void Update()
     {
@@ -146,7 +152,136 @@ public class InfosqueakScr : MonoBehaviour
                     }
 
                     break;
+                case 5:
+                    //congrats on completing first mini game
 
+                    //sets the position of the speech bubble
+                    bubblePos = tm.position;
+                    bubblePos.x -= 5f;
+                    bubblePos.y += 2f;
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+
+                    //the text
+                    myString = "Excellent! We are half way done with the mouse calibration! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 6:
+                    //talk about nwxt minigame
+
+                    //sets the position of the speech bubble
+                    bubblePos = tm.position;
+                    bubblePos.x -= 5f;
+                    bubblePos.y += 2f;
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+
+                    //the text
+                    myString = "Now we just need to calibrate the dragging capabilities! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 7:
+                    //talk about nwxt minigame
+
+                    //sets the position of the speech bubble
+                    bubblePos = tm.position;
+                    bubblePos.x -= 5f;
+                    bubblePos.y += 2f;
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+
+                    //the text
+                    myString = "Click and hold on the cheese and drag it to me (pretty please)! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 4;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 8:
+                    //cheese dragging minigame
+                    miniGameInProgress = true;
+
+                    if (currCheese == null)
+                    {
+                        //set the cheese position
+                        cheesePos = new Vector3(0, 0, 0);
+                        if (progressNum == 0)
+                        {
+                            //move infosqueak bot right
+                            tm.position = new Vector3(tm.position.x, tm.position.y, tm.position.z);
+
+                            //create the cheese
+                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                        }
+                        else if (progressNum == 1)
+                        {
+                            //move infosqueak top right
+                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+
+                            //create the cheese
+                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                        }
+                        else if (progressNum == 2)
+                        {
+                            //move infosqueak top left
+
+                            //flip
+                            sr.flipX = true;
+
+                            tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+
+                            //create the cheese
+                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                        }
+                        else if (progressNum == 3)
+                        {
+                            //move infosqueak bot left
+                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+
+                            //create the cheese
+                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                        }
+                    }
+
+                    break;
+                case 9:
+                    //completed the mouse calibration
+
+                    //reset infosqueak
+                    sr.flipX = false;
+                    tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+
+                    //sets the position of the speech bubble
+                    bubblePos = tm.position;
+                    bubblePos.x -= 5f;
+                    bubblePos.y += 2f;
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+
+                    //the text
+                    myString = "Eureka! We have finished the mouse calibration! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
             }
 
             if (!miniGameInProgress)

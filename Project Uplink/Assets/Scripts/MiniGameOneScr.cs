@@ -16,7 +16,7 @@ public class MiniGameOneScr : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             sr.color = Color.green;
-            Invoke("DestroySquare", 2f);
+            Invoke("DestroySquare", 1f);
         }
     }
 
