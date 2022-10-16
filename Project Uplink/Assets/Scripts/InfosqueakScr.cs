@@ -133,30 +133,41 @@ public class InfosqueakScr : MonoBehaviour
                             //center square
                             squarePos = new Vector3(0, 0, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //res fix
+                            currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
                         }
                         else if (progressNum == 1)
                         {
                             //top left
                             squarePos = new Vector3(-5, 3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //res fix
+                            currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 2)
                         {
                             //top right
                             squarePos = new Vector3(5, 3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //res fix
+                            currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 3)
                         {
                             //bot right
                             squarePos = new Vector3(5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //res fix
+                            currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 4)
                         {
                             //bot left
                             squarePos = new Vector3(-5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //res fix
+                            currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                     }
 
@@ -171,6 +182,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Excellent! We are half way done with the mouse calibration! \r\n[Press Space to Continue]";
@@ -190,6 +203,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Now we just need to calibrate the dragging capabilities! \r\n[Press Space to Continue]";
@@ -209,6 +224,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Click and hold on the cheese and drag it to me (pretty please)! \r\n[Press Space to Continue]";
@@ -236,6 +253,8 @@ public class InfosqueakScr : MonoBehaviour
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                            //res fix
+                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 1)
                         {
@@ -244,6 +263,8 @@ public class InfosqueakScr : MonoBehaviour
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                            //res fix
+                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 2)
                         {
@@ -256,6 +277,8 @@ public class InfosqueakScr : MonoBehaviour
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                            //res fix
+                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                         else if (progressNum == 3)
                         {
@@ -264,6 +287,8 @@ public class InfosqueakScr : MonoBehaviour
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                            //res fix
+                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                     }
 
@@ -282,6 +307,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "Eureka! We have finished the mouse calibration! \r\n[Press Space to Continue]";
