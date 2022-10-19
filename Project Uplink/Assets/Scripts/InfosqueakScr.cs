@@ -36,9 +36,8 @@ public class InfosqueakScr : MonoBehaviour
                     //introduction
 
                     //sets the position of the speech bubble
-                    Vector3 bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    Vector3 currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    Vector3 bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -59,9 +58,8 @@ public class InfosqueakScr : MonoBehaviour
                     //let's start calibration
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -81,9 +79,8 @@ public class InfosqueakScr : MonoBehaviour
                     //start with the mouse calibration
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -102,9 +99,8 @@ public class InfosqueakScr : MonoBehaviour
                     //begin first mouse calibration
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -176,9 +172,8 @@ public class InfosqueakScr : MonoBehaviour
                     //congrats on completing first mini game
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -197,9 +192,8 @@ public class InfosqueakScr : MonoBehaviour
                     //talk about nwxt minigame
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -218,9 +212,8 @@ public class InfosqueakScr : MonoBehaviour
                     //talk about nwxt minigame
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -301,9 +294,8 @@ public class InfosqueakScr : MonoBehaviour
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
 
                     //sets the position of the speech bubble
-                    bubblePos = tm.position;
-                    bubblePos.x -= 5f;
-                    bubblePos.y += 2f;
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);

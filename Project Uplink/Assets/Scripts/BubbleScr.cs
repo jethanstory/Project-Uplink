@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class BubbleScr : MonoBehaviour
 {
     public Transform tm;
-    public BoxCollider2D bc;
-    public SpriteRenderer sr;
     private string textString;
     public float timer = 0;
     public bool startAnimation = false;
@@ -54,14 +52,11 @@ public class BubbleScr : MonoBehaviour
     {
         //updates the bubble with the current char
 
-        //gets the canvas
-        Transform myCanvas = tm.GetChild(0);
-
         //gets the text
-        Transform myCanvasText = myCanvas.GetChild(0);
+        Transform bubbleText = tm.GetChild(0);
 
         //sets the text
-        Text myText = myCanvasText.GetComponent<Text>();
+        Text myText = bubbleText.GetComponent<Text>();
 
         //adds the char to the text
         myText.text += myChar.ToString();

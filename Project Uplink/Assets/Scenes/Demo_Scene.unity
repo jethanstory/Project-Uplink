@@ -2172,7 +2172,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2861,7 +2861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneNum: 0
   cutsceneInProgress: 0
-  speechBubble: {fileID: 8575050597657640063, guid: 1bc8e89106cee5345a2360d825f6f9c2, type: 3}
+  speechBubble: {fileID: 413866548137326298, guid: a7a4632d91f2f774c89856283307b0be, type: 3}
   tm: {fileID: 1965823526}
   sr: {fileID: 1965823525}
   canSkip: 0
