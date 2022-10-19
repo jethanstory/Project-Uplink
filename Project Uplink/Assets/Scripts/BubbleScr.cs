@@ -9,20 +9,20 @@ public class BubbleScr : MonoBehaviour
     public BoxCollider2D bc;
     public SpriteRenderer sr;
     private string textString;
-    private int timer = 0;
+    public float timer = 0;
     public bool startAnimation = false;
     private int currCharNum = 0;
-    public int textSpeed;
+    public float textSpeed;
 
     public void Update()
     {
         //checks if the script has stated the animation
         if (startAnimation)
         {
-            timer++; //adds one to the timer
+            timer += Time.deltaTime; //timer increases
 
             //checks if the timer is over the limit and if there are still characters in the string
-            if (timer > textSpeed && currCharNum < textString.Length)
+            if (timer > (textSpeed * Time.deltaTime) && currCharNum < textString.Length)
             {
                 //adds the letter to the text
                 UpdateBubble(textString[currCharNum]);
