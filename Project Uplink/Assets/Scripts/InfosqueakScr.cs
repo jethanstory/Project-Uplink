@@ -162,7 +162,8 @@ public class InfosqueakScr : MonoBehaviour
                             //bot left
                             squarePos = new Vector3(-5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);; //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -278,6 +279,7 @@ public class InfosqueakScr : MonoBehaviour
                         {
                             //move infosqueak bot left
                             tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+                            tm.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
@@ -291,7 +293,7 @@ public class InfosqueakScr : MonoBehaviour
 
                 case 9:
                     //talk about advanced mouse minigame
-
+                    tm.GetComponent<Rigidbody2D>().velocity = RandomVector(0f, 0f);
                     //reset infosqueak
                     sr.flipX = false;
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
