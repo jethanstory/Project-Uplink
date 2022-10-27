@@ -162,6 +162,7 @@ public class InfosqueakScr : MonoBehaviour
                             //bot left
                             squarePos = new Vector3(-5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);; //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -433,6 +434,13 @@ public class InfosqueakScr : MonoBehaviour
             miniGameInProgress = false;
         }
     }
+
+    private Vector3 RandomVector(float min, float max) {
+         var x = Random.Range(min, max);
+         var y = Random.Range(min, max);
+         var z = Random.Range(min, max);
+         return new Vector3(x, y, z);
+     }
 
 
 }
