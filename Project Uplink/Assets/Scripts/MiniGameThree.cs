@@ -15,7 +15,7 @@ public class MiniGameThree : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Infosqueak")
+        if (collision.collider.tag == "DemoWall")
         {
             Object.Destroy(this.gameObject);
             FindObjectOfType<InfosqueakScr>().progressNum++;

@@ -360,7 +360,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 
                 case 12:
-                    //talk about nwxt minigame
+                    //talk about typing calibration
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
