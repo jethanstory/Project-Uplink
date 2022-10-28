@@ -166,6 +166,9 @@ public class InfosqueakScr : MonoBehaviour
                             currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            // currSqure.OnBecomeInvisble() {
+                            //     progressNum = 3;
+                            // }
                         }
                     }
 
