@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2372417572243416069}
   - component: {fileID: 8652646671212124132}
   - component: {fileID: 4171949168882243442}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: MiniGame1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
