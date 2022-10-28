@@ -6,5 +6,5 @@ public class OnBecomeInvisible : MonoBehaviour
 {
     void OnBecameInvisible() {
         Destroy(gameObject);
-     }
+    }
 }

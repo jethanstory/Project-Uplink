@@ -146,6 +146,8 @@ public class InfosqueakScr : MonoBehaviour
                             //top right
                             squarePos = new Vector3(5, 3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -154,6 +156,8 @@ public class InfosqueakScr : MonoBehaviour
                             //bot right
                             squarePos = new Vector3(5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -166,9 +170,6 @@ public class InfosqueakScr : MonoBehaviour
                             currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                            // currSqure.OnBecomeInvisble() {
-                            //     progressNum = 3;
-                            // }
                         }
                     }
 
@@ -282,7 +283,7 @@ public class InfosqueakScr : MonoBehaviour
                         {
                             //move infosqueak bot left
                             tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
-                            tm.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
+                            //tm.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
 
                             //create the cheese
                             currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
@@ -378,7 +379,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "You're doing fantastic! Now we will begin the typing calibration! \r\n[Press Space to Continue]";
+                    myString = "You're doing Squeaktastic! Now we will begin the typing calibration! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
