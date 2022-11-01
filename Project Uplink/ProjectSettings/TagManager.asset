@@ -8,6 +8,8 @@ TagManager:
   - Infosqueak
   - MouseCol
   - MiniGame1
+  - AdvMiniGame1
+  - Barrier
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - MouseCol
+  - Infosqueak
   - MiniGame1
-  - 
-  - 
+  - AdvMiniGame1
+  - Barrier
   - 
   - 
   - 
