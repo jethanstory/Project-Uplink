@@ -9,6 +9,7 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public Transform tm;
+    public bool isCaught = false;
 
     public void Start()
     {
@@ -22,26 +23,48 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
 
         if (CheckMouse())
         {
-            if (calcMousePos.x - tm.position.x > 0)
-            {
-                direction.x = -1;
-            }
-            else
-            {
-                direction.x = 1;
-            }
+            float squareTop = tm.position.y + 0.5f;
+            float squareBot = tm.position.y - 0.5f;
 
-            if (calcMousePos.y - tm.position.y > 0)
+            if ((calcMousePos.x - tm.position.x > 0)
+                && (calcMousePos.y < squareTop && calcMousePos.y > squareBot))
             {
-                direction.y = -1;
+                //go left
+                direction.x = -1; 
+                direction.y = 0;
             }
-            else
+            else if ((calcMousePos.x - tm.position.x < 0)
+                && (calcMousePos.y < squareTop && calcMousePos.y > squareBot))
             {
-                direction.y = 1;
+                //go right
+                direction.x = 1;
+                direction.y = 0;
+            }
+            else 
+            {
+                if (calcMousePos.y - tm.position.y < 0)
+                {
+                    //go down
+                    direction.x = 0;
+                    direction.y = 1;
+                }
+                else
+                {
+                    //go up
+                    direction.x = 0;
+                    direction.y = -1;
+                }
             }
         }
 
-        rb.velocity = direction * speed * Time.deltaTime;
+        if (isCaught)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.velocity = direction * speed * Time.deltaTime;
+        }
     }
 
     public void OnMouseOver()
@@ -49,6 +72,7 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             sr.color = Color.green;
+            isCaught = true;
             Invoke("DestroySquare", 1f);
         }
     }
@@ -66,7 +90,18 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
 
         calcMousePos -= tm.position;
 
-        if ((calcMousePos.x > -1 && calcMousePos.x < 1) || (calcMousePos.y > -1 && calcMousePos.y < 1))
+        if (calcMousePos.x < 0)
+        {
+            calcMousePos.x *= -1;
+        }
+
+        if (calcMousePos.y < 0)
+        {
+            calcMousePos.y *= -1;
+        }
+
+        //check if mouse is in range
+        if (calcMousePos.x < 3 && calcMousePos.y < 3)
         {
             return true;
         }

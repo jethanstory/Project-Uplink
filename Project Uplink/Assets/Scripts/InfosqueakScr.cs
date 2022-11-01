@@ -18,12 +18,18 @@ public class InfosqueakScr : MonoBehaviour
     //minigame 1 vars
     public GameObject square;
     private GameObject currSquare;
-    public Vector3 squarePos;
+    private Vector3 squarePos;
+
+    //advanced minigame 1 vars
+    public GameObject movingSquare;
+    private GameObject currMovingSquare;
+    private Vector3 movingSquarePos;
+    //public GameObject badSquare;
 
     //minigame 2 vars
     public GameObject cheese;
     private GameObject currCheese;
-    public Vector3 cheesePos;
+    private Vector3 cheesePos;
 
     public void Update()
     {
@@ -146,6 +152,8 @@ public class InfosqueakScr : MonoBehaviour
                             //top right
                             squarePos = new Vector3(5, 3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -154,6 +162,8 @@ public class InfosqueakScr : MonoBehaviour
                             //bot right
                             squarePos = new Vector3(5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -162,6 +172,8 @@ public class InfosqueakScr : MonoBehaviour
                             //bot left
                             squarePos = new Vector3(-5, -3, 0);
                             currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                            //movement of square
+                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                             //res fix
                             currSquare.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
@@ -189,7 +201,7 @@ public class InfosqueakScr : MonoBehaviour
                     canSkip = true;
                     break;
                 case 6:
-                    //talk about nwxt minigame
+                    //discuss why they are doing the advanced first mini game
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
@@ -198,10 +210,10 @@ public class InfosqueakScr : MonoBehaviour
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
-                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Now we just need to calibrate the dragging capabilities! \r\n[Press Space to Continue]";
+                    myString = "We here at Uplink want you to be the absolute best before surfing the interwebs! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -209,7 +221,54 @@ public class InfosqueakScr : MonoBehaviour
                     canSkip = true;
                     break;
                 case 7:
-                    //talk about nwxt minigame
+                    //instructions for advanced first mini game
+
+                    //sets the position of the speech bubble
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "For this next calibration test, try and click on the square as it moves away from your cursor to up your mouse moving capabilities! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress for next minigame
+                    maxProgressNum = 1;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 8:
+                    //advanced first mini game part one
+
+                    //player is in a minigame
+                    miniGameInProgress = true;
+
+                    //check if a moving square does not exist
+                    if (currMovingSquare == null)
+                    {
+                        if (progressNum == 0)
+                        {
+                            //center
+                            movingSquarePos = new Vector3(0, 0, 0);
+
+                            //create moving square
+                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        }
+                    }
+                    break;
+                case 9:
+                    //talk about advanced mouse minigame
+                    tm.GetComponent<Rigidbody2D>().velocity = RandomVector(0f, 0f);
+                    //reset infosqueak
+                    sr.flipX = false;
+                    tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
@@ -221,77 +280,41 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Click and hold on the cheese and drag it to me (pretty please)! \r\n[Press Space to Continue]";
+                    myString = "Fantastic! You're doing great! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //set max progress
-                    maxProgressNum = 4;
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                case 8:
-                    //cheese dragging minigame
-                    miniGameInProgress = true;
+                    
+                case 10:
+                    //talk about advanced mouse minigame
 
-                    if (currCheese == null)
-                    {
-                        //set the cheese position
-                        cheesePos = new Vector3(0, 0, 0);
-                        if (progressNum == 0)
-                        {
-                            //move infosqueak bot right
-                            tm.position = new Vector3(tm.position.x, tm.position.y, tm.position.z);
+                    //sets the position of the speech bubble
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 1)
-                        {
-                            //move infosqueak top right
-                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 2)
-                        {
-                            //move infosqueak top left
+                    //the text
+                    myString = "Now we will begin a small minigame to test your skills on the mouse! \r\n[Press Space to Continue]";
 
-                            //flip
-                            sr.flipX = true;
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
-                            tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
-
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 3)
-                        {
-                            //move infosqueak bot left
-                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
-
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                    }
-
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
                     break;
-                case 9:
+
+                case 11:
                     //completed the mouse calibration
 
-                    //reset infosqueak
-                    sr.flipX = false;
-                    tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+                    // //reset infosqueak
+                    // sr.flipX = false;
+                    // tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
@@ -310,6 +333,48 @@ public class InfosqueakScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
+                
+                case 12:
+                    //talk about typing calibration
+
+                    //sets the position of the speech bubble
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "You're doing Squeaktastic! Now we will begin the typing calibration! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+
+                case 13:
+                    //talk about nwxt minigame
+
+                    //sets the position of the speech bubble
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Please copy the sentence as it appears on the screen! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;        
             }
 
             if (!miniGameInProgress)
@@ -343,6 +408,13 @@ public class InfosqueakScr : MonoBehaviour
             miniGameInProgress = false;
         }
     }
+
+    private Vector3 RandomVector(float min, float max) {
+         var x = Random.Range(min, max);
+         var y = Random.Range(min, max);
+         var z = Random.Range(min, max);
+         return new Vector3(x, y, z);
+     }
 
 
 }
