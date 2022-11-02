@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Canvas
   - Infosqueak
+  - AdvMiniGame1
+  - MiniGame1
+  - Barrier
+  - BadSquare
+  - BadSquareManager
   layers:
   - Default
   - TransparentFX
@@ -14,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Assistant
-  - 
-  - 
+  - BadSquare
+  - Barrier
   - 
   - 
   - 
