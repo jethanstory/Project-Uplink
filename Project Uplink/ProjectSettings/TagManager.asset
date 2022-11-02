@@ -6,21 +6,17 @@ TagManager:
   tags:
   - Canvas
   - Infosqueak
-  - MouseCol
-  - MiniGame1
-  - AdvMiniGame1
-  - Barrier
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Square
   - Water
   - UI
-  - Infosqueak
-  - MiniGame1
-  - AdvMiniGame1
-  - Barrier
+  - Assistant
+  - 
+  - 
+  - 
   - 
   - 
   - 
