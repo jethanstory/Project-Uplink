@@ -258,7 +258,7 @@ public class InfosqueakScr : MonoBehaviour
                     }
                     break;
                 case 9:
-                    //congrats beating advanced minigame
+                    //congrats beating the first part of the advanced minigame
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
@@ -270,7 +270,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Ay lmao (placeholder phrase)! \r\n[Press Space to Continue]";
+                    myString = "Excellent! Now try touching it without it touching the %@^8%$$( \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
