@@ -24,12 +24,15 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject movingSquare;
     private GameObject currMovingSquare;
     private Vector3 movingSquarePos;
-    //public GameObject badSquare;
+    public GameObject badSquare;
+    private GameObject currBadSquare;
+    private Vector3 badSquarePos;
 
     //minigame 2 vars
     public GameObject cheese;
     private GameObject currCheese;
     private Vector3 cheesePos;
+
 
     public void Update()
     {
@@ -276,14 +279,121 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Excellent! Now try touching it without it touching the %@^8%$$( \r\n[Press Space to Continue]";
+                    myString = "Excellent! Now try clicking on the square without the square touching the %@^8%$$( \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 4;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 10:
+                    //advanced minigame one
+
+                    //player is in a minigame
+                    miniGameInProgress = true;
+
+                    //check if there is a moving square
+                    if (currMovingSquare == null)
+                    {
+                        if (progressNum == 0)
+                        {
+                            //create bad squares
+                            badSquarePos = new Vector3(0, 4.45f, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+
+                            //create moving square
+                            movingSquarePos = new Vector3(0, 0, 0);
+                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        }
+                        else if (progressNum == 1)
+                        {
+                            //create bad squares
+                            badSquarePos = new Vector3(0, 4.45f, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+
+                            badSquarePos = new Vector3(-10.25f, 0, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+
+                            //create moving square
+                            movingSquarePos = new Vector3(0, 0, 0);
+                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        }
+                        else if (progressNum == 2)
+                        {
+                            //create bad squares
+                            badSquarePos = new Vector3(10.25f, 0, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+
+                            badSquarePos = new Vector3(-10.25f, 0, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+
+                            //create moving square
+                            movingSquarePos = new Vector3(0, 0, 0);
+                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        }
+                        else if (progressNum == 3)
+                        {
+                            //create bad squares
+                            badSquarePos = new Vector3(0, 4.45f, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+
+                            badSquarePos = new Vector3(10.25f, 0, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+
+                            badSquarePos = new Vector3(-10.25f, 0, 0);
+                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+
+                            //create moving square
+                            movingSquarePos = new Vector3(0, 0, 0);
+                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        }
+                    }
+
+                    break;
+                case 11:
+                    //congrats on completing advanced first mini game
+
+                    //sets the position of the speech bubble
+                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Squeaktastic! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                case 10:
+                case 12:
                     //talk about next minigame
 
                     //sets the position of the speech bubble
@@ -303,7 +413,7 @@ public class InfosqueakScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                case 11:
+                case 13:
                     //talk about next minigame
 
                     //sets the position of the speech bubble
@@ -326,7 +436,7 @@ public class InfosqueakScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                case 12:
+                case 14:
                     //cheese dragging minigame
                     miniGameInProgress = true;
 
@@ -380,16 +490,13 @@ public class InfosqueakScr : MonoBehaviour
                             currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                         }
                     }
-
                     break;
+                case 15:
+                    //congrats on completing the drag mini game
 
-
-                case 9:
-                    //talk about advanced mouse minigame
-                    tm.GetComponent<Rigidbody2D>().velocity = RandomVector(0f, 0f);
-                    //reset infosqueak
-                    sr.flipX = false;
+                    //reset infosqueak position
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+                    sr.flipX = false;
 
                     //sets the position of the speech bubble
                     currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
@@ -401,101 +508,20 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Fantastic! You're doing great! \r\n[Press Space to Continue]";
+                    myString = "Amazing! Now we need to improve your dragging capabilites! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 4;
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                    
-                case 10:
-                    //talk about advanced mouse minigame
+                case 16:
+                    //tutorial for advanced mini game 2
 
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //res fix
-                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                    //the text
-                    myString = "Now we will begin a small minigame to test your skills on the mouse! \r\n[Press Space to Continue]";
-
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //allows player to skip/continue cutscene
-                    canSkip = true;
                     break;
-
-                case 11:
-                    //completed the mouse calibration
-
-                    // //reset infosqueak
-                    // sr.flipX = false;
-                    // tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //res fix
-                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                    //the text
-                    myString = "Eureka! We have finished the mouse calibration! \r\n[Press Space to Continue]";
-
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //allows player to skip/continue cutscene
-                    canSkip = true;
-                    break;
-                
-                case 12:
-                    //talk about typing calibration
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //res fix
-                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                    //the text
-                    myString = "You're doing Squeaktastic! Now we will begin the typing calibration! \r\n[Press Space to Continue]";
-
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //allows player to skip/continue cutscene
-                    canSkip = true;
-                    break;
-
-                case 13:
-                    //talk about nwxt minigame
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //res fix
-                    currSpeechBubble.transform.SetParent (GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                    //the text
-                    myString = "Please copy the sentence as it appears on the screen! \r\n[Press Space to Continue]";
-
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //allows player to skip/continue cutscene
-                    canSkip = true;
-                    break;        
             }
 
             if (!miniGameInProgress)

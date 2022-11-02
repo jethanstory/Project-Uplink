@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1500846406151409013}
   - component: {fileID: 1500846406151409012}
   - component: {fileID: 1500846406151409015}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: MovingSquare
   m_TagString: AdvMiniGame1
   m_Icon: {fileID: 0}

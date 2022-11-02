@@ -10,10 +10,12 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
     public Rigidbody2D rb;
     public Transform tm;
     public bool isCaught = false;
+    private Vector3 initialPos;
 
     public void Start()
     {
         sr.color = Color.red;
+        initialPos = tm.position;
     }
 
     public void Update()
@@ -77,10 +79,20 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "BadSquare")
+        {
+            //move the square back its original position
+            tm.position = initialPos;
+        }
+    }
+
     public void DestroySquare()
     {
         Object.Destroy(this.gameObject);
         FindObjectOfType<InfosqueakScr>().progressNum++;
+        FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
     }
 
     public bool CheckMouse()
