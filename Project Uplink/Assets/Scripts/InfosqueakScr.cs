@@ -14,6 +14,8 @@ public class InfosqueakScr : MonoBehaviour
     public int progressNum = 0;
     public int maxProgressNum;
     public bool miniGameInProgress = false;
+    private Vector3 currPos;
+    private Vector3 bubblePos;
 
     //minigame 1 vars
     public GameObject square;
@@ -45,8 +47,7 @@ public class InfosqueakScr : MonoBehaviour
                     //introduction
 
                     //sets the position of the speech bubble
-                    Vector3 currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    Vector3 bubblePos = Camera.main.WorldToScreenPoint(currPos);
+                    ChangedPosition();
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -66,15 +67,11 @@ public class InfosqueakScr : MonoBehaviour
                 case 1:
                     //let's start calibration
 
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
 
                     //the text
                     myString = "Before we get started, let's calibrate your mouse and keyboard! \r\n[Press Space to Continue]";
@@ -86,10 +83,6 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 2:
                     //start with the mouse calibration
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -106,10 +99,6 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 3:
                     //begin first mouse calibration
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -133,62 +122,55 @@ public class InfosqueakScr : MonoBehaviour
 
                     if (currSquare == null)
                     {
-                        if (progressNum == 0)
+                        switch(progressNum)
                         {
-                            //center square
-                            squarePos = new Vector3(0, 0, 0);
-                            currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            //res fix
-                            currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                        }
-                        else if (progressNum == 1)
-                        {
-                            //top left
-                            squarePos = new Vector3(-5, 3, 0);
-                            currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            //res fix
-                            currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 2)
-                        {
-                            //top right
-                            squarePos = new Vector3(5, 3, 0);
-                            currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            //movement of square
-                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
-                            //res fix
-                            currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 3)
-                        {
-                            //bot right
-                            squarePos = new Vector3(5, -3, 0);
-                            currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            //movement of square
-                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
-                            //res fix
-                            currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 4)
-                        {
-                            //bot left
-                            squarePos = new Vector3(-5, -3, 0);
-                            currSquare = Instantiate(square, squarePos, Quaternion.identity);
-                            //movement of square
-                            currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
-                            //res fix
-                            currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            case 0:
+                                //center square
+                                squarePos = new Vector3(0, 0, 0);
+                                currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                                //res fix
+                                currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 1:
+                                //top left
+                                squarePos = new Vector3(-5, 3, 0);
+                                currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                                //res fix
+                                currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 2:
+                                //top right
+                                squarePos = new Vector3(5, 3, 0);
+                                currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                                //movement of square
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
+                                //res fix
+                                currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 3:
+                                //bot right
+                                squarePos = new Vector3(5, -3, 0);
+                                currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                                //movement of square
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
+                                //res fix
+                                currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 4:
+                                //bot left
+                                squarePos = new Vector3(-5, -3, 0);
+                                currSquare = Instantiate(square, squarePos, Quaternion.identity);
+                                //movement of square
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
+                                                                                                         //res fix
+                                currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
                         }
                     }
 
                     break;
                 case 5:
                     //congrats on completing first mini game
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -225,10 +207,6 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 7:
                     //instructions for advanced first mini game
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -269,17 +247,13 @@ public class InfosqueakScr : MonoBehaviour
                 case 9:
                     //congrats beating the first part of the advanced minigame
 
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Excellent! Now try clicking on the square without the square touching the %@^8%$$( \r\n[Press Space to Continue]";
+                    myString = "Excellent! Now try clicking on the square without the square touching the black squares! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -298,87 +272,82 @@ public class InfosqueakScr : MonoBehaviour
                     //check if there is a moving square
                     if (currMovingSquare == null)
                     {
-                        if (progressNum == 0)
+                        switch (progressNum)
                         {
-                            //create bad squares
-                            badSquarePos = new Vector3(0, 4.45f, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                            case 0:
+                                //create bad squares
+                                badSquarePos = new Vector3(0, 4.45f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(25, 1, 1);
 
-                            //create moving square
-                            movingSquarePos = new Vector3(0, 0, 0);
-                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
-                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 1)
-                        {
-                            //create bad squares
-                            badSquarePos = new Vector3(0, 4.45f, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                                //create moving square
+                                movingSquarePos = new Vector3(0, 0, 0);
+                                currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                                currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 1:
+                                //create bad squares
+                                badSquarePos = new Vector3(0, 4.45f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(25, 1, 1);
 
-                            badSquarePos = new Vector3(-10.25f, 0, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                            //create moving square
-                            movingSquarePos = new Vector3(0, 0, 0);
-                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
-                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 2)
-                        {
-                            //create bad squares
-                            badSquarePos = new Vector3(10.25f, 0, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                //create moving square
+                                movingSquarePos = new Vector3(0, 0, 0);
+                                currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                                currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 2:
+                                //create bad squares
+                                badSquarePos = new Vector3(10.25f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                            badSquarePos = new Vector3(-10.25f, 0, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                            //create moving square
-                            movingSquarePos = new Vector3(0, 0, 0);
-                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
-                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 3)
-                        {
-                            //create bad squares
-                            badSquarePos = new Vector3(0, 4.45f, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                                //create moving square
+                                movingSquarePos = new Vector3(0, 0, 0);
+                                currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                                currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 3:
+                                //create bad squares
+                                badSquarePos = new Vector3(0, 4.45f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(25, 1, 1);
 
-                            badSquarePos = new Vector3(10.25f, 0, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                badSquarePos = new Vector3(10.25f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                            badSquarePos = new Vector3(-10.25f, 0, 0);
-                            currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                            currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                            currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                            //create moving square
-                            movingSquarePos = new Vector3(0, 0, 0);
-                            currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
-                            currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                //create moving square
+                                movingSquarePos = new Vector3(0, 0, 0);
+                                currMovingSquare = Instantiate(movingSquare, movingSquarePos, Quaternion.identity);
+                                currMovingSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
                         }
                     }
 
                     break;
                 case 11:
                     //congrats on completing advanced first mini game
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -396,10 +365,6 @@ public class InfosqueakScr : MonoBehaviour
                 case 12:
                     //talk about next minigame
 
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -415,10 +380,6 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 13:
                     //talk about next minigame
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -444,50 +405,46 @@ public class InfosqueakScr : MonoBehaviour
                     {
                         //set the cheese position
                         cheesePos = new Vector3(0, 0, 0);
-                        if (progressNum == 0)
+
+                        switch(progressNum)
                         {
-                            //move infosqueak bot right
-                            tm.position = new Vector3(tm.position.x, tm.position.y, tm.position.z);
+                            case 0:
+                                //create the cheese
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                //res fix
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 1:
+                                //move infosqueak top right
+                                tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
 
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 1)
-                        {
-                            //move infosqueak top right
-                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+                                //create the cheese
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                //res fix
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 2:
+                                //flip
+                                sr.flipX = true;
 
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 2)
-                        {
-                            //move infosqueak top left
+                                //move infosqueak top left
+                                tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
 
-                            //flip
-                            sr.flipX = true;
+                                //create the cheese
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                //res fix
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 3:
+                                //move infosqueak bot left
+                                tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+                                //tm.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
 
-                            tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
-
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        }
-                        else if (progressNum == 3)
-                        {
-                            //move infosqueak bot left
-                            tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
-                            //tm.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
-
-                            //create the cheese
-                            currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                            //res fix
-                            currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                //create the cheese
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                //res fix
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
                         }
                     }
                     break;
@@ -497,10 +454,6 @@ public class InfosqueakScr : MonoBehaviour
                     //reset infosqueak position
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
                     sr.flipX = false;
-
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -512,14 +465,276 @@ public class InfosqueakScr : MonoBehaviour
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 16:
+                    //tutorial for advanced mini game 2
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Drag the cheese to me but don't touch let the cheese touch the black squares! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
                     //set max progress
                     maxProgressNum = 4;
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
-                case 16:
-                    //tutorial for advanced mini game 2
+                case 17:
+                    //advanced minigame 2
+
+                    //minigame is in progress
+                    miniGameInProgress = true;
+
+                    //check if cheese exists
+                    if (currCheese == null)
+                    {
+                        switch(progressNum)
+                        {
+                            case 0:
+                                //create bad squares
+                                badSquarePos = new Vector3(-2, -5, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(8, 24, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 69);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                
+
+                                badSquarePos = new Vector3(2, 5.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(8, 24, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 69);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                
+
+                                //create cheese
+                                cheesePos = new Vector3(-9, 4, 0);
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 1:
+                                //move Infosqueak top right
+                                tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+
+                                //create bad squares
+                                badSquarePos = new Vector3(-2, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(19, 8, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+
+                                badSquarePos = new Vector3(0, -4.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(10.7f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 10, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                //create cheese
+                                cheesePos = new Vector3(-9, -3.5f, 0);
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 2:
+                                //move Infosqueak top left
+                                tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+                                sr.flipX = true;
+
+                                //create bad squares
+                                badSquarePos = new Vector3(0, -4.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(23, 2, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-10.7f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 10, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(10.7f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 10, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(0, 5, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(23, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(1, -1.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(19, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-1, 1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(19, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(4, 3.7f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(1, 2.3f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-2, 3.7f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-5, 2.3f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                //create cheese
+                                cheesePos = new Vector3(9.5f, -3, 0);
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                            case 3:
+                                //move Infosqueak bot left
+                                tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
+
+                                //create bad squares
+                                badSquarePos = new Vector3(0, 5, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-10.5f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 11, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(0, -5, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(10.5f, 0, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(1, 11, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(1, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-1, -1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                //slanted
+                                badSquarePos = new Vector3(7, 5.6f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(4, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(1, 5.6f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-2, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-5, 5.6f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-7.5f, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-5, -1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(1, -1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(7, -1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(4, -4.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-2, -4.5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                //create cheese
+                                cheesePos = new Vector3(9, 3.5f, 0);
+                                currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
+                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                break;
+                        }
+                    }
+                    break;
+                case 18:
+                    //player beat advanced minigame 2
+
+                    //set Infosqueaks position
+                    tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
+                    sr.flipX = false;
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Superb work! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
 
                     break;
             }
@@ -556,12 +771,18 @@ public class InfosqueakScr : MonoBehaviour
         }
     }
 
-    private Vector3 RandomVector(float min, float max) {
+    private Vector3 RandomVector(float min, float max) 
+    {
          var x = Random.Range(min, max);
          var y = Random.Range(min, max);
          var z = Random.Range(min, max);
          return new Vector3(x, y, z);
      }
 
-
+    //run when you need Infosqueak to talk and he is at a different position
+    private void ChangedPosition()
+    {
+        currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+    }
 }
