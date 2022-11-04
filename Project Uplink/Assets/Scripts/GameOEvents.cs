@@ -34,6 +34,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
+    public void creditsLevel()
+    {
+        
+        SceneManager.LoadScene("Credits_Scene");
+        
+    }
     //basic mascot menu trigger for the mascot button
     public void mascotMenuTrigger()
     {
