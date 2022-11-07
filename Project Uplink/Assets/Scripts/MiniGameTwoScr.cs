@@ -19,11 +19,6 @@ public class MiniGameTwoScr : MonoBehaviour
         overCheese = true;
     }
 
-    public void OnMouseExit()
-    {
-        overCheese = false;
-    }
-
     public void OnMouseDrag()
     {
         if (!hitBlackSquare && overCheese)
@@ -52,6 +47,7 @@ public class MiniGameTwoScr : MonoBehaviour
     private void AdjustPosition()
     {
         tm.position = initialPos;
+        overCheese = false;
         hitBlackSquare = false;
     }
 }
