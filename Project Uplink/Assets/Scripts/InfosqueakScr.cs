@@ -18,7 +18,8 @@ public class InfosqueakScr : MonoBehaviour
     private Vector3 bubblePos;
 
     public float delayTimer; //= 3;
-    public int idleNum = 0;
+    public float delayTimerEnd;
+    public int idleNum = 1;
 
     //minigame 1 vars
     public GameObject square;
@@ -747,10 +748,12 @@ public class InfosqueakScr : MonoBehaviour
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
-            else if(miniGameInProgress) 
+            else if(miniGameInProgress && idleNum == 1) 
             {
-                //idleNum += 1;
+                
                 StartCoroutine(LoadAfterDelay(delayTimer));
+                idleNum += 1;
+                StartCoroutine(DelayEnd(delayTimerEnd));
                 //idleNum += 1;
                 //delayTimer = 3;
                 
@@ -800,9 +803,9 @@ public class InfosqueakScr : MonoBehaviour
     }
     IEnumerator LoadAfterDelay(float delayTimer)
     {
-        switch (idleNum)
-            {
-                case 0:
+        // switch (idleNum)
+        //     {
+        //         case 0:
                     yield return new WaitForSeconds(delayTimer);
         
                     //creates a speech bubble
@@ -811,15 +814,18 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    string myString = "You're taking a while! \r\n[Press Space to Continue]";
+                    string myString = "You're taking a while! \r\n";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //allows player to skip/continue cutscene
                     //Object.Destroy(currSpeechBubble);
-                    break;
-            }
-
-  
+    //                 break;
+    //         }
+    }
+    IEnumerator DelayEnd(float delayTimerEnd)
+    {
+        yield return new WaitForSeconds(delayTimerEnd);
+        Object.Destroy(currSpeechBubble);
     }
 }
