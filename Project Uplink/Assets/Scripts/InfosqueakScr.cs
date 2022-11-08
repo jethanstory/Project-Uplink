@@ -35,6 +35,13 @@ public class InfosqueakScr : MonoBehaviour
     private GameObject currCheese;
     private Vector3 cheesePos;
 
+    //minigame 3 vars
+    public GameObject textBox;
+    private GameObject currTextBox;
+    private Vector3 textBoxPos;
+    public GameObject paragraph;
+    private GameObject currParagraph;
+    private Vector3 paragraphPos;
 
     public void Update()
     {
@@ -733,6 +740,103 @@ public class InfosqueakScr : MonoBehaviour
                     canSkip = true;
 
                     break;
+                case 19:
+                    //player has finished mouse calibration
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "We have now finished the mouse calibration, huzzah! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 20:
+                    //begin keyboard calibration
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Now, let's begin calibrating your keyboard! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 21:
+                    //discuss mini game 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Click on the textbox and type out the paragraph! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 1;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 22:
+                    //minigame 3
+
+                    //player is in minigame
+                    miniGameInProgress = true;
+
+                    //check if textbox does not exist
+                    if (currTextBox == null)
+                    {
+                        switch (progressNum)
+                        {
+                            case 0:
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 310, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                break;
+                        }
+                    }
+
+                    break;
+                case 23:
+                    //completed minigame 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Totally tubular! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
             }
 
             if (!miniGameInProgress)
@@ -746,7 +850,7 @@ public class InfosqueakScr : MonoBehaviour
         if (canSkip && Input.GetKeyDown(KeyCode.Space))
         {
             //destroys the newly created speech bubble
-            Object.Destroy(currSpeechBubble);
+            Destroy(currSpeechBubble);
             //currSpeechBubble.transform.SetParent (null);
 
             //player is moving to the next cutscene

@@ -33,7 +33,7 @@ public class MiniGameTwoScr : MonoBehaviour
     {
         if (collision.collider.tag == "Infosqueak")
         {
-            Object.Destroy(this.gameObject);
+            Destroy(gameObject);
             FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
             FindObjectOfType<InfosqueakScr>().progressNum++;
         }
