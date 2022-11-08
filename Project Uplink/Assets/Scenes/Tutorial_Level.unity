@@ -3632,6 +3632,7 @@ MonoBehaviour:
   progressNum: 0
   maxProgressNum: 0
   miniGameInProgress: 0
+  delayTimer: 3
   square: {fileID: 8607786490719484797, guid: 56cb0bc912d4fd84380d8b8c4f523100, type: 3}
   movingSquare: {fileID: 1500846406151409014, guid: b697ecc5926b48f448051298807e6ac7, type: 3}
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}

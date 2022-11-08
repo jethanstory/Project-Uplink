@@ -17,6 +17,8 @@ public class InfosqueakScr : MonoBehaviour
     private Vector3 currPos;
     private Vector3 bubblePos;
 
+    public float delayTimer; //= 3;
+
     //minigame 1 vars
     public GameObject square;
     private GameObject currSquare;
@@ -744,6 +746,13 @@ public class InfosqueakScr : MonoBehaviour
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
+            else if(miniGameInProgress) 
+            {
+                StartCoroutine(LoadAfterDelay(delayTimer));
+                //delayTimer = 3;
+                
+
+            }
         }
 
         //checks if player wants to skip a skippable cutscene
@@ -785,5 +794,22 @@ public class InfosqueakScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
+    }
+    IEnumerator LoadAfterDelay(float delayTimer)
+    {
+        yield return new WaitForSeconds(delayTimer);
+        
+        //creates a speech bubble
+        currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+        //res fix
+        currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+        //the text
+        string myString = "You're taking a while! \r\n[Press Space to Continue]";
+
+        currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+        //allows player to skip/continue cutscene
+  
     }
 }
