@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_News.unity
     guid: 7c1387e655015174d8eb1d67bf70256b
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Sports.unity
+    guid: cfc39f46414ae7441a8e42ee82148750
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Business.unity
+    guid: c1f6ca457f3bb624d8294f0feb88f9ee
   m_configObjects: {}

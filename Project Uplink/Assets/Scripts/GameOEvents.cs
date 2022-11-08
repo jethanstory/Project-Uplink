@@ -62,6 +62,18 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_News");
         
     }
+    public void sportsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Sports");
+        
+    }
+    public void businessLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Business");
+        
+    }
     //basic mascot menu trigger for the mascot button
     public void mascotMenuTrigger()
     {
