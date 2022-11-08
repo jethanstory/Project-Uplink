@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &176127913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fbd24af6ea773408303fabcd5c6c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTimer: 3
-  delayTimerRam: 2
+  delayTimerScene: 5
+  delayTimerRam: 3
   levelLoad: Intro_Welcome
   defaultRam: {fileID: 1113423209}
 --- !u!114 &176127915
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fbd24af6ea773408303fabcd5c6c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTimer: 2
+  delayTimerScene: 100
   delayTimerRam: 1
   levelLoad: Intro_Welcome
   defaultRam: {fileID: 1113423209}
