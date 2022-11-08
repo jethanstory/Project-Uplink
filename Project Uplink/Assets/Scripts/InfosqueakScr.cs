@@ -22,6 +22,9 @@ public class InfosqueakScr : MonoBehaviour
     public int idleNum = 1;
     Vector3 lastMouseCoordinate = Vector3.zero;
     //Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+    float idleTime;
+    float idleNumTime;
+    float timeBeforePause = 5f;
 
     //minigame 1 vars
     public GameObject square;
@@ -934,12 +937,16 @@ public class InfosqueakScr : MonoBehaviour
         Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
         Debug.Log("MouseDelta");
         Debug.Log(mouseDelta);
+        idleTime += Time.deltaTime;
         // Debug.Log("Mouse Position");
         // Debug.Log(Input.mousePosition);
         // Debug.Log("LastCoordinate");
         // Debug.Log(lastMouseCoordinate);
         if (mouseDelta.x == 0 && idleNum == 1) 
         {
+            if (idleTime >= timeBeforePause)
+            {
+            idleNumTime = 0;
             // StartCoroutine(LoadAfterDelay(delayTimer));
             // idleNum += 1;
             // StartCoroutine(DelayEnd(delayTimerEnd));
@@ -956,19 +963,27 @@ public class InfosqueakScr : MonoBehaviour
             currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
             
             idleNum += 1;
+            }
 
         }
         else if (mouseDelta.x != 0)
         {
+            idleTime = 0;
             Object.Destroy(currSpeechBubble);
+            idleNumTime += Time.deltaTime;
+
+            if (idleNumTime >= timeBeforePause)
+            {
+                idleNum = 1;
+            }
             //StartCoroutine(DelayEnd(delayTimerEnd));
         } 
         
-        // else {
+        else {
         //     lastMouseCoordinate = Input.mousePosition;
             
         //     //Object.Destroy(currSpeechBubble);
-        // }
+        }
         lastMouseCoordinate = Input.mousePosition;
         //StartCoroutine(DelayEnd(delayTimerEnd));
     }
