@@ -18,6 +18,7 @@ public class InfosqueakScr : MonoBehaviour
     private Vector3 bubblePos;
 
     public float delayTimer; //= 3;
+    public int idleNum = 0;
 
     //minigame 1 vars
     public GameObject square;
@@ -748,7 +749,9 @@ public class InfosqueakScr : MonoBehaviour
             }
             else if(miniGameInProgress) 
             {
+                //idleNum += 1;
                 StartCoroutine(LoadAfterDelay(delayTimer));
+                //idleNum += 1;
                 //delayTimer = 3;
                 
 
@@ -797,19 +800,26 @@ public class InfosqueakScr : MonoBehaviour
     }
     IEnumerator LoadAfterDelay(float delayTimer)
     {
-        yield return new WaitForSeconds(delayTimer);
+        switch (idleNum)
+            {
+                case 0:
+                    yield return new WaitForSeconds(delayTimer);
         
-        //creates a speech bubble
-        currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-        //res fix
-        currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-        //the text
-        string myString = "You're taking a while! \r\n[Press Space to Continue]";
+                    //the text
+                    string myString = "You're taking a while! \r\n[Press Space to Continue]";
 
-        currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
-        //allows player to skip/continue cutscene
+                    //allows player to skip/continue cutscene
+                    //Object.Destroy(currSpeechBubble);
+                    break;
+            }
+
   
     }
 }
