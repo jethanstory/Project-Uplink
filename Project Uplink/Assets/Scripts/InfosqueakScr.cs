@@ -778,6 +778,7 @@ public class InfosqueakScr : MonoBehaviour
     //run when you need Infosqueak to talk and he is at a different position
     private void ChangedPosition()
     {
+        //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
     }
