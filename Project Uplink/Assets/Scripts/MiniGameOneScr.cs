@@ -22,7 +22,7 @@ public class MiniGameOneScr : MonoBehaviour
 
     public void DestroySquare()
     {
-        Object.Destroy(this.gameObject);
+        Destroy(gameObject);
         FindObjectOfType<InfosqueakScr>().progressNum++;
     }
 }

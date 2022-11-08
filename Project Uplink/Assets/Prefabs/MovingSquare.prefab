@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 1500846406151409018}
-  speed: 9000
+  speed: 900
   rb: {fileID: 1500846406151409012}
   tm: {fileID: 1500846406151409019}
   isCaught: 0
