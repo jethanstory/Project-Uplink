@@ -26,10 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial_Level.unity
     guid: 34c346e3da4001249af914b90906cbd2
-  - enabled: 0
-    path: Assets/Scenes/HTML_LevelMain.unity
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Main.unity
     guid: 38154a3c12b3eb04981820b581afdf9d
   - enabled: 1
     path: Assets/Scenes/Credits_Scene.unity
     guid: d5eb94ba1cdc20748b95e2b2d9b09e04
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Entertainment.unity
+    guid: 7b355b91c39d6e843b2ff81fb977aa24
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_News.unity
+    guid: 7c1387e655015174d8eb1d67bf70256b
   m_configObjects: {}
