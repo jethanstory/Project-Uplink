@@ -20,6 +20,7 @@ public class InfosqueakScr : MonoBehaviour
     public float delayTimer; //= 3;
     public float delayTimerEnd;
     public int idleNum = 1;
+    Vector3 lastMouseCoordinate = Vector3.zero;
 
     //minigame 1 vars
     public GameObject square;
@@ -843,12 +844,13 @@ public class InfosqueakScr : MonoBehaviour
                     break;
             }
 
+            Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
             if (!miniGameInProgress)
             {
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
-            else if(miniGameInProgress && idleNum == 1) 
+            else if(miniGameInProgress && idleNum == 1 && mouseDelta.x == 0) 
             {
                 
                 StartCoroutine(LoadAfterDelay(delayTimer));
@@ -856,9 +858,8 @@ public class InfosqueakScr : MonoBehaviour
                 StartCoroutine(DelayEnd(delayTimerEnd));
                 //idleNum += 1;
                 //delayTimer = 3;
-                
-
             }
+            lastMouseCoordinate = Input.mousePosition;
         }
 
         //checks if player wants to skip a skippable cutscene
