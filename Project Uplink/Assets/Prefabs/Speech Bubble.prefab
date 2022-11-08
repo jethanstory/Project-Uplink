@@ -92,7 +92,7 @@ MonoBehaviour:
   tm: {fileID: 413866548137326297}
   timer: 0
   startAnimation: 0
-  textSpeed: 60
+  textSpeed: 1
 --- !u!1 &1571431229969762434
 GameObject:
   m_ObjectHideFlags: 0
