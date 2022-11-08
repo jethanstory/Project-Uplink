@@ -25,6 +25,7 @@ public class InfosqueakScr : MonoBehaviour
     float idleTime;
     float idleNumTime;
     float timeBeforePause = 5f;
+    float timeBeforeIdleReset = 0.1f;
 
     //minigame 1 vars
     public GameObject square;
@@ -972,7 +973,7 @@ public class InfosqueakScr : MonoBehaviour
             Object.Destroy(currSpeechBubble);
             idleNumTime += Time.deltaTime;
 
-            if (idleNumTime >= timeBeforePause)
+            if (idleNumTime >= timeBeforeIdleReset)
             {
                 idleNum = 1;
             }
