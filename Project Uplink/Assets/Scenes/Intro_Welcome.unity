@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 363664782}
   - component: {fileID: 363664781}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1018,8 +1018,8 @@ MonoBehaviour:
 
     With
     Uplink 97, connecting to the ''Information Superhighway'' is quick and easy!
-    Our personal computing assisant (name goes here) will help you make the most
-    of your time on the world wide web!'
+    Our personal computing assisant InfoSqueak will help you make the most of your
+    time on the world wide web!'
 --- !u!222 &1074279394
 CanvasRenderer:
   m_ObjectHideFlags: 0

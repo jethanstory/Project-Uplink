@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fbd24af6ea773408303fabcd5c6c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTimerScene: 5
+  delayTimerScene: 3.5
   delayTimerRam: 3
   levelLoad: Intro_Welcome
   defaultRam: {fileID: 1113423209}
