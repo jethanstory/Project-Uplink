@@ -21,6 +21,7 @@ public class InfosqueakScr : MonoBehaviour
     public float delayTimerEnd;
     public int idleNum = 1;
     Vector3 lastMouseCoordinate = Vector3.zero;
+    //Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
 
     //minigame 1 vars
     public GameObject square;
@@ -844,22 +845,17 @@ public class InfosqueakScr : MonoBehaviour
                     break;
             }
 
-            Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+            
             if (!miniGameInProgress)
             {
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
-            else if(miniGameInProgress && idleNum == 1 && mouseDelta.x == 0) 
+            else if(miniGameInProgress) 
             {
-                
-                StartCoroutine(LoadAfterDelay(delayTimer));
-                idleNum += 1;
-                StartCoroutine(DelayEnd(delayTimerEnd));
-                //idleNum += 1;
-                //delayTimer = 3;
+                IdleCheck();
             }
-            lastMouseCoordinate = Input.mousePosition;
+            
         }
 
         //checks if player wants to skip a skippable cutscene
@@ -927,6 +923,53 @@ public class InfosqueakScr : MonoBehaviour
     IEnumerator DelayEnd(float delayTimerEnd)
     {
         yield return new WaitForSeconds(delayTimerEnd);
-        Object.Destroy(currSpeechBubble);
+        //Object.Destroy(currSpeechBubble);
+        if (idleNum == 2)
+        {
+            idleNum -= 1;
+        }
+    }
+    private void IdleCheck()
+    {
+        Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+        Debug.Log("MouseDelta");
+        Debug.Log(mouseDelta);
+        // Debug.Log("Mouse Position");
+        // Debug.Log(Input.mousePosition);
+        // Debug.Log("LastCoordinate");
+        // Debug.Log(lastMouseCoordinate);
+        if (mouseDelta.x == 0 && idleNum == 1) 
+        {
+            // StartCoroutine(LoadAfterDelay(delayTimer));
+            // idleNum += 1;
+            // StartCoroutine(DelayEnd(delayTimerEnd));
+            //idleNum += 1;
+            //delayTimer = 3;
+
+            currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+            //res fix
+            currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+            //the text
+            string myString = "You're taking a while! \r\n";
+
+            currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+            
+            idleNum += 1;
+
+        }
+        else if (mouseDelta.x != 0)
+        {
+            Object.Destroy(currSpeechBubble);
+            //StartCoroutine(DelayEnd(delayTimerEnd));
+        } 
+        
+        // else {
+        //     lastMouseCoordinate = Input.mousePosition;
+            
+        //     //Object.Destroy(currSpeechBubble);
+        // }
+        lastMouseCoordinate = Input.mousePosition;
+        //StartCoroutine(DelayEnd(delayTimerEnd));
     }
 }
