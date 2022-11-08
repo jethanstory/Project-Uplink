@@ -90,7 +90,7 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
 
     public void DestroySquare()
     {
-        Object.Destroy(this.gameObject);
+        Destroy(gameObject);
         FindObjectOfType<InfosqueakScr>().progressNum++;
         FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
     }

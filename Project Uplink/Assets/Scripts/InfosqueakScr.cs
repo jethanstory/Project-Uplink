@@ -39,6 +39,13 @@ public class InfosqueakScr : MonoBehaviour
     private GameObject currCheese;
     private Vector3 cheesePos;
 
+    //minigame 3 vars
+    public GameObject textBox;
+    private GameObject currTextBox;
+    private Vector3 textBoxPos;
+    public GameObject paragraph;
+    private GameObject currParagraph;
+    private Vector3 paragraphPos;
 
     public void Update()
     {
@@ -192,10 +199,6 @@ public class InfosqueakScr : MonoBehaviour
                 case 6:
                     //discuss why they are doing the advanced first mini game
 
-                    //sets the position of the speech bubble
-                    currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-                    bubblePos = Camera.main.WorldToScreenPoint(currPos);
-
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -297,7 +300,7 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(25, 1, 1);
 
-                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
@@ -309,12 +312,12 @@ public class InfosqueakScr : MonoBehaviour
                                 break;
                             case 2:
                                 //create bad squares
-                                badSquarePos = new Vector3(10.25f, 0, 0);
+                                badSquarePos = new Vector3(8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
@@ -331,12 +334,12 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(25, 1, 1);
 
-                                badSquarePos = new Vector3(10.25f, 0, 0);
+                                badSquarePos = new Vector3(8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
 
-                                badSquarePos = new Vector3(-10.25f, 0, 0);
+                                badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
@@ -519,7 +522,7 @@ public class InfosqueakScr : MonoBehaviour
                                 
 
                                 //create cheese
-                                cheesePos = new Vector3(-9, 4, 0);
+                                cheesePos = new Vector3(-8, 4, 0);
                                 currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
                                 currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -528,24 +531,24 @@ public class InfosqueakScr : MonoBehaviour
                                 tm.position = new Vector3(tm.position.x, tm.position.y * -1, tm.position.z);
 
                                 //create bad squares
-                                badSquarePos = new Vector3(-2, 2, 0);
+                                badSquarePos = new Vector3(-1.5f, 1.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(19, 8, 1);
+                                currBadSquare.transform.localScale = new Vector3(15, 7, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
 
                                 badSquarePos = new Vector3(0, -4.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(10.7f, 0, 0);
+                                badSquarePos = new Vector3(8.5f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 //create cheese
-                                cheesePos = new Vector3(-9, -3.5f, 0);
+                                cheesePos = new Vector3(-8, -3, 0);
                                 currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
                                 currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -555,58 +558,58 @@ public class InfosqueakScr : MonoBehaviour
                                 sr.flipX = true;
 
                                 //create bad squares
-                                badSquarePos = new Vector3(0, -4.5f, 0);
+                                badSquarePos = new Vector3(0, -5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(23, 2, 1);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-10.7f, 0, 0);
+                                badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(10.7f, 0, 0);
+                                badSquarePos = new Vector3(8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 badSquarePos = new Vector3(0, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(23, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(1, -1.5f, 0);
+                                badSquarePos = new Vector3(1, -2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(19, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(14, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 badSquarePos = new Vector3(-1, 1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(19, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(14, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(4, 3.7f, 0);
+                                badSquarePos = new Vector3(5.5f, 3.8f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(1, 2.3f, 0);
+                                badSquarePos = new Vector3(2.5f, 2.2f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-2, 3.7f, 0);
+                                badSquarePos = new Vector3(-0.5f, 3.8f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 2, 1);
+                                currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-5, 2.3f, 0);
+                                badSquarePos = new Vector3(-3.5f, 2.2f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 2, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 //create cheese
-                                cheesePos = new Vector3(9.5f, -3, 0);
+                                cheesePos = new Vector3(6.5f, -3.5f, 0);
                                 currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
                                 currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -617,38 +620,38 @@ public class InfosqueakScr : MonoBehaviour
                                 //create bad squares
                                 badSquarePos = new Vector3(0, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-10.5f, 0, 0);
+                                badSquarePos = new Vector3(-9, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 11, 1);
+                                currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 badSquarePos = new Vector3(0, -5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(22, 1, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-
-                                badSquarePos = new Vector3(10.5f, 0, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 11, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-
-                                badSquarePos = new Vector3(1, 2, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-1, -1, 0);
+                                badSquarePos = new Vector3(9, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(18, 1, 1);
+                                currBadSquare.transform.localScale = new Vector3(1, 10, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(2, 2, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(16, 1, 1);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-2, -1, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(16, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 //slanted
-                                badSquarePos = new Vector3(7, 5.6f, 0);
+                                badSquarePos = new Vector3(6.5f, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
@@ -658,62 +661,62 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(1, 5.6f, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
-                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-
-                                badSquarePos = new Vector3(-2, 2, 0);
+                                badSquarePos = new Vector3(1.5f, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-5, 5.6f, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
-                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-
-                                badSquarePos = new Vector3(-7.5f, 2, 0);
+                                badSquarePos = new Vector3(-1, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-5, -1, 0);
+                                badSquarePos = new Vector3(-3.5f, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(1, -1, 0);
+                                badSquarePos = new Vector3(-6, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(7, -1, 0);
+                                badSquarePos = new Vector3(-3.5f, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(4, -4.5f, 0);
+                                badSquarePos = new Vector3(1.5f, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
-                                badSquarePos = new Vector3(-2, -4.5f, 0);
+                                badSquarePos = new Vector3(6, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(2.5f, 2.5f, 1);
+                                currBadSquare.transform.localScale = new Vector3(2, 2, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(4, -5, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(3, 3, 1);
+                                currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
+                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+
+                                badSquarePos = new Vector3(-1, -5f, 0);
+                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                currBadSquare.transform.localScale = new Vector3(3, 3, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
 
                                 //create cheese
-                                cheesePos = new Vector3(9, 3.5f, 0);
+                                cheesePos = new Vector3(8, 3.5f, 0);
                                 currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
                                 currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -734,6 +737,103 @@ public class InfosqueakScr : MonoBehaviour
 
                     //the text
                     myString = "Superb work! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 19:
+                    //player has finished mouse calibration
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "We have now finished the mouse calibration, huzzah! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 20:
+                    //begin keyboard calibration
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Now, let's begin calibrating your keyboard! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 21:
+                    //discuss mini game 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Click on the textbox and type out the paragraph! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 1;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 22:
+                    //minigame 3
+
+                    //player is in minigame
+                    miniGameInProgress = true;
+
+                    //check if textbox does not exist
+                    if (currTextBox == null)
+                    {
+                        switch (progressNum)
+                        {
+                            case 0:
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 310, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                break;
+                        }
+                    }
+
+                    break;
+                case 23:
+                    //completed minigame 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Totally tubular! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -765,7 +865,7 @@ public class InfosqueakScr : MonoBehaviour
         if (canSkip && Input.GetKeyDown(KeyCode.Space))
         {
             //destroys the newly created speech bubble
-            Object.Destroy(currSpeechBubble);
+            Destroy(currSpeechBubble);
             //currSpeechBubble.transform.SetParent (null);
 
             //player is moving to the next cutscene
