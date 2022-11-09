@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class TextBoxScr : MonoBehaviour
 {
-    public GameObject myParagraph;
-    public Text myParagraphText;
     public Text myText;
+    private Text myParagraphText;
     public char[] myChars;
     public int correctNum = 0;
     public int maxNum;
@@ -18,7 +17,7 @@ public class TextBoxScr : MonoBehaviour
     public void Start()
     {
         //get the text of the paragraph
-        myParagraphText = myParagraph.GetComponent<Text>();
+        myParagraphText = FindObjectOfType<ParagraphManagerScr>().GetComponent<Text>();
 
         //get the input field
         myInputField = GetComponent<InputField>();
@@ -58,7 +57,7 @@ public class TextBoxScr : MonoBehaviour
         if (correctNum >= maxNum)
         {
             FindObjectOfType<InfosqueakScr>().progressNum++;
-            FindObjectOfType<ParagraphScr>().DestroyParagraph();
+            FindObjectOfType<ParagraphManagerScr>().DestroyParagraph();
             Destroy(gameObject);
         }
     }

@@ -43,6 +43,11 @@ public class InfosqueakScr : MonoBehaviour
     private GameObject currParagraph;
     private Vector3 paragraphPos;
 
+    public void Start()
+    {
+        //makes it so that infodsqueak never dies! (when loading another scene)
+        DontDestroyOnLoad(gameObject);
+    }
     public void Update()
     {
         //checks if player is not in the middle of a cutscene
@@ -788,7 +793,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //set max progress
-                    maxProgressNum = 1;
+                    maxProgressNum = 3;
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
@@ -810,6 +815,31 @@ public class InfosqueakScr : MonoBehaviour
                                 paragraphPos = new Vector3(-60, 310, 0);
                                 currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
                                 currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                FindObjectOfType<ParagraphManagerScr>().SetText("The way to get started is to quit talking and begin doing.");
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                break;
+                            case 1:
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 310, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                FindObjectOfType<ParagraphManagerScr>().SetText("Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma, which is living with the results of other people's thinking.");
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                break;
+                            case 2:
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 310, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                FindObjectOfType<ParagraphManagerScr>().SetText("Wilma Rudolph, Helen Keller, Walt Disney, Joan of Arc, Nelson Mandela, and Thomas Edison, to name a few, not only climbed mountains, they exceeded limits and expanded boundaries, setting the tone for those who respect and admire them.");
 
                                 //textbox
                                 textBoxPos = new Vector3(-55, -189, 0);
