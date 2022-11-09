@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7530070740333817922}
   - component: {fileID: 7837782399349953174}
   - component: {fileID: 3819709726914255296}
-  - component: {fileID: 6441805251639215421}
+  - component: {fileID: 6088566938481817943}
   m_Layer: 5
   m_Name: Paragraph
   m_TagString: Untagged
@@ -79,11 +79,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Waltz, bad nymph, for quick jigs vex. Glib jocks quiz nymph to vex dwarf.
-    Sphinx of black quartz, judge my vow. How quickly daft jumping zebras vex! The
-    five boxing wizards jump quickly. Jackdaws love my big sphinx of quartz. Pack
-    my box with five dozen liquor jugs.
---- !u!114 &6441805251639215421
+  m_Text: 
+--- !u!114 &6088566938481817943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,6 +89,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 412730413570393873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfca7492a67665146aafb8e5b2380b24, type: 3}
+  m_Script: {fileID: 11500000, guid: f339aca5a1cb6ee4f941e442fe9b1f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
