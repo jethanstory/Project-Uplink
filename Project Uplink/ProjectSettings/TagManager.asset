@@ -11,6 +11,7 @@ TagManager:
   - Barrier
   - BadSquare
   - BadSquareManager
+  - ParagraphManager
   layers:
   - Default
   - TransparentFX
