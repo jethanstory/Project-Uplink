@@ -934,9 +934,7 @@ public class InfosqueakScr : MonoBehaviour
     }
     IEnumerator LoadAfterDelay(float delayTimer)
     {
-        // switch (idleNum)
-        //     {
-        //         case 0:
+        
                     yield return new WaitForSeconds(delayTimer);
         
                     //creates a speech bubble
@@ -951,8 +949,10 @@ public class InfosqueakScr : MonoBehaviour
 
                     //allows player to skip/continue cutscene
                     //Object.Destroy(currSpeechBubble);
-    //                 break;
-    //         }
+                    //break;
+            //}
+                //case 1:
+
     }
     IEnumerator DelayEnd(float delayTimerEnd)
     {
@@ -984,16 +984,25 @@ public class InfosqueakScr : MonoBehaviour
             //idleNum += 1;
             //delayTimer = 3;
 
+            int dialogueNum = Random.Range(0,3);
+
             currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
             //res fix
             currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
             //the text
-            string myString = "You're taking a while! \r\n";
+            string myString;
 
+            if (dialogueNum == 1) 
+                myString = "You're taking a while! \r\n";
+            else if (dialogueNum == 2)
+                myString = "Do you need any help?! \r\n";
+            else
+                myString = "Chop Chop! We've got the internet to explore!! \r\n";
             currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
             
             idleNum += 1;
+
             }
 
         }
@@ -1018,4 +1027,6 @@ public class InfosqueakScr : MonoBehaviour
         lastMouseCoordinate = Input.mousePosition;
         //StartCoroutine(DelayEnd(delayTimerEnd));
     }
+
+    
 }
