@@ -3638,6 +3638,7 @@ MonoBehaviour:
   cheese: {fileID: 4568602660048351396, guid: 94fac291ed216434ea7adeb5d53c3fea, type: 3}
   textBox: {fileID: 994008710116616345, guid: 7aff7d6e3d652cb4c9b71dfbc683935c, type: 3}
   paragraph: {fileID: 412730413570393873, guid: 84009635f23a82348b5a01675a966199, type: 3}
+  timer: {fileID: 2689012827814169684, guid: 85ff92463f20ee943a2565684f0a2c16, type: 3}
 --- !u!212 &1965823525
 SpriteRenderer:
   m_ObjectHideFlags: 0
