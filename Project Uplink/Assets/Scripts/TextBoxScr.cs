@@ -13,6 +13,7 @@ public class TextBoxScr : MonoBehaviour
     public int maxNum;
     public int posWrong = -1;
     public InputField myInputField;
+    public bool isTimed;
 
     public void Start()
     {
@@ -40,6 +41,11 @@ public class TextBoxScr : MonoBehaviour
         //check if the player has pressed a key
         if (Input.anyKey)
         {
+            if (isTimed && myText.text != "")
+            {
+                FindObjectOfType<TimerScr>().startCounting = true;
+            }
+           
             //set this text to equal the text in its current state
             myText = transform.GetChild(transform.childCount - 1).GetComponent<Text>();
 
@@ -58,6 +64,10 @@ public class TextBoxScr : MonoBehaviour
         {
             FindObjectOfType<InfosqueakScr>().progressNum++;
             FindObjectOfType<ParagraphManagerScr>().DestroyParagraph();
+            if (isTimed)
+            {
+                FindObjectOfType<TimerScr>().DestroyTimer();
+            }
             Destroy(gameObject);
         }
     }
@@ -98,5 +108,18 @@ public class TextBoxScr : MonoBehaviour
         correctNum = myText.text.Length;
         //sets the textbox to white to indicate that it is correct
         myInputField.image.color = Color.white;
+    }
+
+    public void GameOver()
+    {
+        myInputField.enabled = false;
+        myText.text = "";
+        myInputField.text = "";
+        Invoke("RestartGame", 1f);
+    }
+
+    public void RestartGame()
+    {
+        myInputField.enabled = true;
     }
 }

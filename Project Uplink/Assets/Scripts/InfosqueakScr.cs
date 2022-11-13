@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InfosqueakScr : MonoBehaviour
 {
@@ -52,6 +53,11 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject paragraph;
     private GameObject currParagraph;
     private Vector3 paragraphPos;
+
+    //advanced minigame 3 vars
+    public GameObject timer;
+    private GameObject currTimer;
+    private Vector3 timerPos;
 
     public void Start()
     {
@@ -825,14 +831,28 @@ public class InfosqueakScr : MonoBehaviour
                                 paragraphPos = new Vector3(-60, 310, 0);
                                 currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
                                 currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                FindObjectOfType<ParagraphManagerScr>().SetText("The quick brown fox jumped over the lazy dog's back.");
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                currTextBox.GetComponent<TextBoxScr>().isTimed = false;
+                                break;
+                            case 1:
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 310, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
                                 FindObjectOfType<ParagraphManagerScr>().SetText("The way to get started is to quit talking and begin doing.");
 
                                 //textbox
                                 textBoxPos = new Vector3(-55, -189, 0);
                                 currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
                                 currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                currTextBox.GetComponent<TextBoxScr>().isTimed = false;
                                 break;
-                            case 1:
+                            case 2:
                                 //paragraph
                                 paragraphPos = new Vector3(-60, 310, 0);
                                 currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
@@ -843,18 +863,7 @@ public class InfosqueakScr : MonoBehaviour
                                 textBoxPos = new Vector3(-55, -189, 0);
                                 currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
                                 currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-                                break;
-                            case 2:
-                                //paragraph
-                                paragraphPos = new Vector3(-60, 310, 0);
-                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
-                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-                                FindObjectOfType<ParagraphManagerScr>().SetText("Wilma Rudolph, Helen Keller, Walt Disney, Joan of Arc, Nelson Mandela, and Thomas Edison, to name a few, not only climbed mountains, they exceeded limits and expanded boundaries, setting the tone for those who respect and admire them.");
-
-                                //textbox
-                                textBoxPos = new Vector3(-55, -189, 0);
-                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
-                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                currTextBox.GetComponent<TextBoxScr>().isTimed = false;
                                 break;
                         }
                     }
@@ -870,6 +879,91 @@ public class InfosqueakScr : MonoBehaviour
 
                     //the text
                     myString = "Totally tubular! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 24:
+                    //discuss advanced minigame 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Alright, now we are going to improve your typing skills! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+
+                    break;
+                case 25:
+                    //discuss advanced minigame 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Type out this paragraph before the time runs out! \r\n[Press Space to Continue]";
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    //set max progress
+                    maxProgressNum = 1;
+
+                    //allows player to skip/continue cutscene
+                    canSkip = true;
+                    break;
+                case 26:
+                    //advanced minigame 3
+
+                    //player is in a minigame
+                    miniGameInProgress = true;
+
+                    //check if there is no textbox
+                    if (currTextBox == null)
+                    {
+                        switch (progressNum)
+                        {
+                            case 0:
+                                //timer
+                                timerPos = new Vector3(-55, 482, 0);
+                                currTimer = Instantiate(timer, timerPos, Quaternion.identity);
+                                currTimer.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                                //paragraph
+                                paragraphPos = new Vector3(-60, 212, 0);
+                                currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                                currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                FindObjectOfType<ParagraphManagerScr>().SetText("Wilma Rudolph, Helen Keller, Walt Disney, Joan of Arc, Nelson Mandela, and Thomas Edison, to name a few, not only climbed mountains, they exceeded limits and expanded boundaries, setting the tone for those who respect and admire them.");
+
+                                //textbox
+                                textBoxPos = new Vector3(-55, -189, 0);
+                                currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                                currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                                currTextBox.GetComponent<TextBoxScr>().isTimed = true;
+                                break;
+                        }
+                    }
+                    break;
+                case 27:
+                    //congrats beating advanced minigame 3
+
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Ok now this is epic! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
