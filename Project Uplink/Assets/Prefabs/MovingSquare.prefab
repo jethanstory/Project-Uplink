@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1500846406151409013}
   - component: {fileID: 1500846406151409012}
   - component: {fileID: 1500846406151409015}
+  - component: {fileID: -2237360687443746629}
   m_Layer: 3
   m_Name: MovingSquare
   m_TagString: AdvMiniGame1
@@ -149,3 +150,15 @@ MonoBehaviour:
   rb: {fileID: 1500846406151409012}
   tm: {fileID: 1500846406151409019}
   isCaught: 0
+--- !u!114 &-2237360687443746629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500846406151409014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1aac5b6b6efb740a6553ade665a304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1026,37 +1026,7 @@ public class InfosqueakScr : MonoBehaviour
         currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
     }
-    IEnumerator LoadAfterDelay(float delayTimer)
-    {
-        
-                    yield return new WaitForSeconds(delayTimer);
-        
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //res fix
-                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-
-                    //the text
-                    string myString = "You're taking a while! \r\n";
-
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
-
-                    //allows player to skip/continue cutscene
-                    //Object.Destroy(currSpeechBubble);
-                    //break;
-            //}
-                //case 1:
-
-    }
-    IEnumerator DelayEnd(float delayTimerEnd)
-    {
-        yield return new WaitForSeconds(delayTimerEnd);
-        //Object.Destroy(currSpeechBubble);
-        if (idleNum == 2)
-        {
-            idleNum -= 1;
-        }
-    }
+    
     private void IdleCheck()
     {
         Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
