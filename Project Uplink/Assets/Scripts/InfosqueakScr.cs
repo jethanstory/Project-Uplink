@@ -1048,6 +1048,7 @@ public class InfosqueakScr : MonoBehaviour
             //idleNum += 1;
             //delayTimer = 3;
 
+            ChangedPosition();
             int dialogueNum = Random.Range(0,3);
 
             currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
