@@ -31,6 +31,16 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject blackScreen;
     private GameObject currBlackScreen;
 
+    public float delayTimer; //= 3;
+    public float delayTimerEnd;
+    public int idleNum = 1;
+    Vector3 lastMouseCoordinate = Vector3.zero;
+    //Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+    float idleTime;
+    float idleNumTime;
+    float timeBeforePause = 5f;
+    float timeBeforeIdleReset = 0.1f;
+
     //minigame 1 vars
     public GameObject square;
     private GameObject currSquare;
@@ -183,7 +193,7 @@ public class InfosqueakScr : MonoBehaviour
                                 squarePos = new Vector3(5, -3, 0);
                                 currSquare = Instantiate(square, squarePos, Quaternion.identity);
                                 //movement of square
-                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-10f, 10f);
                                 //res fix
                                 currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -192,7 +202,7 @@ public class InfosqueakScr : MonoBehaviour
                                 squarePos = new Vector3(-5, -3, 0);
                                 currSquare = Instantiate(square, squarePos, Quaternion.identity);
                                 //movement of square
-                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-15f, 15f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                                                                                                          //res fix
                                 currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -1104,11 +1114,17 @@ public class InfosqueakScr : MonoBehaviour
                     break;
             }
 
+            
             if (!miniGameInProgress)
             {
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
+            else if(miniGameInProgress) 
+            {
+                IdleCheck();
+            }
+            
         }
 
         //checks if player wants to skip a skippable cutscene
@@ -1165,4 +1181,72 @@ public class InfosqueakScr : MonoBehaviour
         currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
     }
+    
+    private void IdleCheck()
+    {
+        Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+        Debug.Log("MouseDelta");
+        Debug.Log(mouseDelta);
+        idleTime += Time.deltaTime;
+        // Debug.Log("Mouse Position");
+        // Debug.Log(Input.mousePosition);
+        // Debug.Log("LastCoordinate");
+        // Debug.Log(lastMouseCoordinate);
+        if (mouseDelta.x == 0 && idleNum == 1) 
+        {
+            if (idleTime >= timeBeforePause)
+            {
+            idleNumTime = 0;
+            // StartCoroutine(LoadAfterDelay(delayTimer));
+            // idleNum += 1;
+            // StartCoroutine(DelayEnd(delayTimerEnd));
+            //idleNum += 1;
+            //delayTimer = 3;
+
+            ChangedPosition();
+            int dialogueNum = Random.Range(0,3);
+
+            currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+            //res fix
+            currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+            //the text
+            string myString;
+
+            if (dialogueNum == 1) 
+                myString = "You're taking a while! \r\n";
+            else if (dialogueNum == 2)
+                myString = "Do you need any help?! \r\n";
+            else
+                myString = "Chop Chop! We've got the internet to explore!! \r\n";
+            currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+            
+            idleNum += 1;
+
+            }
+
+        }
+        else if (mouseDelta.x != 0)
+        {
+            idleTime = 0;
+            Object.Destroy(currSpeechBubble);
+            idleNumTime += Time.deltaTime;
+
+            if (idleNumTime >= timeBeforeIdleReset)
+            {
+                idleNum = 1;
+            }
+            //StartCoroutine(DelayEnd(delayTimerEnd));
+        } 
+        
+        else {
+        //     lastMouseCoordinate = Input.mousePosition;
+            
+        //     //Object.Destroy(currSpeechBubble);
+        }
+        lastMouseCoordinate = Input.mousePosition;
+        //StartCoroutine(DelayEnd(delayTimerEnd));
+    }
+
+    
 }

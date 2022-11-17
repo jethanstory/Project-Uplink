@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class IntroLoader : MonoBehaviour
 {
-    public float delayTimer = 5;
-    public float delayTimerRam = 3;
-    public string levelLoad= "Intro_Welcome";
+   public float delayTimerScene; //= 5;
+   public float delayTimerRam; //= 3;
+   public string levelLoad= "Intro_Welcome";
 
-    public GameObject defaultRam;
+   public GameObject defaultRam;
 
   void Start()
  {
-    StartCoroutine(LoadRamOK(delayTimerRam)); 
-    StartCoroutine(LoadLevelAfterDelay(delayTimer));
+   StartCoroutine(LoadRamOK(delayTimerRam)); 
+   StartCoroutine(LoadLevelAfterDelay(delayTimerScene));
  }
  
- IEnumerator LoadLevelAfterDelay(float delayTimer)
+ IEnumerator LoadLevelAfterDelay(float delayTimerScene)
  {
-  yield return new WaitForSeconds(delayTimer);
+  yield return new WaitForSeconds(delayTimerScene);
   SceneManager.LoadScene(levelLoad);
   
  }
