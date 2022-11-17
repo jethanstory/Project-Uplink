@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7d97a98f4325e024dab9ac7303c1d7f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b64868351f0c7c345a1fecec057ebb90, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3200,6 +3200,7 @@ MonoBehaviour:
   cheese: {fileID: 4568602660048351396, guid: 94fac291ed216434ea7adeb5d53c3fea, type: 3}
   textBox: {fileID: 994008710116616345, guid: 7aff7d6e3d652cb4c9b71dfbc683935c, type: 3}
   paragraph: {fileID: 412730413570393873, guid: 84009635f23a82348b5a01675a966199, type: 3}
+  timer: {fileID: 0}
 --- !u!50 &1747683147
 Rigidbody2D:
   serializedVersion: 4
