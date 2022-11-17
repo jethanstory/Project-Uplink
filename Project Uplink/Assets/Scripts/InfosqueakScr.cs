@@ -180,7 +180,7 @@ public class InfosqueakScr : MonoBehaviour
                                 squarePos = new Vector3(5, -3, 0);
                                 currSquare = Instantiate(square, squarePos, Quaternion.identity);
                                 //movement of square
-                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f);
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-10f, 10f);
                                 //res fix
                                 currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
@@ -189,7 +189,7 @@ public class InfosqueakScr : MonoBehaviour
                                 squarePos = new Vector3(-5, -3, 0);
                                 currSquare = Instantiate(square, squarePos, Quaternion.identity);
                                 //movement of square
-                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-5f, 5f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
+                                currSquare.GetComponent<Rigidbody2D>().velocity = RandomVector(-15f, 15f); //.AddForce(spawnPoint.forward * range, ForceMode.Impulse);
                                                                                                          //res fix
                                 currSquare.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
