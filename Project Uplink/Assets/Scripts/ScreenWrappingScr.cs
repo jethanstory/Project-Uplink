@@ -30,9 +30,9 @@ public class ScreenWrappingScr : MonoBehaviour
             transform.position = new Vector3(rightConstraint - 0.10f, transform.position.y, transform.position.z);
         }
 
-        if(transform.position.x > rightConstraint)
+        if(transform.position.x > rightConstraint + buffer)
         {
-            transform.position = new Vector3(rightConstraint, transform.position.y, transform.position.z);
+            transform.position = new Vector3(leftConstraint, transform.position.y, transform.position.z);
         }
 
         if(transform.position.y < lowerConstraint - buffer)
