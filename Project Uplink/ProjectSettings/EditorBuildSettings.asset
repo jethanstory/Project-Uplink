@@ -44,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_Business.unity
     guid: c1f6ca457f3bb624d8294f0feb88f9ee
-  - enabled: 1
-    path: Assets/Scenes/BlackScene.unity
-    guid: cb87bc93350da2944ad87b35922508cd
   m_configObjects: {}
