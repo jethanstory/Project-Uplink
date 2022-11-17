@@ -3632,6 +3632,11 @@ MonoBehaviour:
   progressNum: 0
   maxProgressNum: 0
   miniGameInProgress: 0
+  yesButton: {fileID: 2681578489035366711, guid: c825319b8caeefb4b89ce78ee5c44d6a, type: 3}
+  noButton: {fileID: 9076092840484287362, guid: f1553341739a14d4896485a82d91816c, type: 3}
+  inLoadingScene: 0
+  loadingNum: 0
+  loadingSpeed: 10
   square: {fileID: 8607786490719484797, guid: 56cb0bc912d4fd84380d8b8c4f523100, type: 3}
   movingSquare: {fileID: 1500846406151409014, guid: b697ecc5926b48f448051298807e6ac7, type: 3}
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}
