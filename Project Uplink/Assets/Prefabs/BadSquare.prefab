@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2963959098563881457}
   - component: {fileID: 4989349411720196660}
   - component: {fileID: 4325172592134387609}
+  - component: {fileID: 2004520129068666569}
   m_Layer: 7
   m_Name: BadSquare
   m_TagString: BadSquare
@@ -131,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &2004520129068666569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6736323836598779810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15383abd249e97b4cbf100200bfcf961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badSquare: {fileID: 0}
