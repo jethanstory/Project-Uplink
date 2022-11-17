@@ -12,6 +12,7 @@ TagManager:
   - BadSquare
   - BadSquareManager
   - ParagraphManager
+  - WelcomePanel
   layers:
   - Default
   - TransparentFX
