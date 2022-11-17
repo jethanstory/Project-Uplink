@@ -8,6 +8,7 @@ public class MiniGameTwoScr : MonoBehaviour
     private Vector3 initialPos;
     private bool hitBlackSquare = false;
     private bool overCheese = false;
+    public int failedNum;
 
     public void Start()
     {
@@ -47,6 +48,13 @@ public class MiniGameTwoScr : MonoBehaviour
     private void AdjustPosition()
     {
         tm.position = initialPos;
+        failedNum++;
+
+        if (failedNum >= 3 && FindObjectOfType<InfosqueakScr>().progressNum == 4)
+        {
+            FindObjectOfType<InfosqueakScr>().progressNum++;
+        }
+
         overCheese = false;
         hitBlackSquare = false;
     }
