@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9044248597283339645}
   - component: {fileID: -8686947070268330348}
   m_Layer: 5
-  m_Name: BackgroundMouse
+  m_Name: BackgroundFlyby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 35692af71412be243bc4bcded8dd7717, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fc5029dd26c33141a291b8acd5df5f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
