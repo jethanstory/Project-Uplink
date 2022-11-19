@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_Business.unity
     guid: c1f6ca457f3bb624d8294f0feb88f9ee
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Arts.unity
+    guid: 151b772ac47634f45960e28659cc5c33
   m_configObjects: {}
