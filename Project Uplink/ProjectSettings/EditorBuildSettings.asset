@@ -47,4 +47,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_Arts.unity
     guid: 151b772ac47634f45960e28659cc5c33
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Health.unity
+    guid: 902ae85adf22a6d45970b1b13c1569b9
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_ScienceTechnology.unity
+    guid: 70f2bb3cc7a7b5f4d970b7672a735ba3
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Finance.unity
+    guid: 295aaba3c6a2d524cae1f88326669385
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_404.unity
+    guid: 81dcc9b65e502874e94c1eb785c88a3d
   m_configObjects: {}
