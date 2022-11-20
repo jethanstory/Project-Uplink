@@ -13,6 +13,12 @@ TagManager:
   - BadSquareManager
   - ParagraphManager
   - WelcomePanel
+  - ObsoleteSqueak
+  - Cheese
+  - RedSquareManager
+  - RedSquare
+  - MassAttack
+  - SafeSquare
   layers:
   - Default
   - TransparentFX
@@ -23,10 +29,10 @@ TagManager:
   - Assistant
   - BadSquare
   - Barrier
-  - 
-  - 
-  - 
-  - 
+  - ObsoleteSqueak
+  - Cheese
+  - RedSquare
+  - MassAttack
   - 
   - 
   - 
