@@ -74,6 +74,35 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_Business");
         
     }
+    public void financeLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Finance");
+        
+    }
+    public void artsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Arts");
+        
+    }
+    public void healthLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Health");
+        
+    }
+    public void sciTechLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_ScienceTechnology");
+        
+    }
+
+
+
+
+    
     //basic mascot menu trigger for the mascot button
     public void mascotMenuTrigger()
     {
