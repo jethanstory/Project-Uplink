@@ -13,12 +13,8 @@ public class CancelButtonScr : MonoBehaviour
     public bool checkSafe = false;
     public bool isHeld = false;
     public bool hasStopped = false;
+    public bool canBeDragged = true;
     public float speed;
-
-    /*public void Start()
-    {
-        tm.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-    }*/
 
     public void OnMouseEnter()
     {
@@ -27,7 +23,7 @@ public class CancelButtonScr : MonoBehaviour
 
     public void OnMouseDrag()
     {
-        if (overButton)
+        if (overButton && canBeDragged)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0f;
@@ -77,6 +73,12 @@ public class CancelButtonScr : MonoBehaviour
         else if (collision.collider.tag == "MassAttack")
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
+        }
+
+        if (collision.collider.tag == "LazerBeam")
+        {
+            FindObjectOfType<LazerBeamScr>().checkManager = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

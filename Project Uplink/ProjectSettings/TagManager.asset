@@ -20,6 +20,8 @@ TagManager:
   - MassAttack
   - SafeSquare
   - CancelButton
+  - LazerBeam
+  - LazerBeamManager
   layers:
   - Default
   - TransparentFX
@@ -36,7 +38,7 @@ TagManager:
   - MassAttack
   - SafeSpace
   - CancelButton
-  - 
+  - LazerBeam
   - 
   - 
   - 

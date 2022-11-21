@@ -14,6 +14,7 @@ public class TextBoxScr : MonoBehaviour
     public int posWrong = -1;
     public InputField myInputField;
     public bool isTimed;
+    public bool inBossBattle = false;
 
     public void Start()
     {
@@ -62,7 +63,11 @@ public class TextBoxScr : MonoBehaviour
         //checks if the paragraph is complete
         if (correctNum >= maxNum)
         {
-            FindObjectOfType<InfosqueakScr>().progressNum++;
+            if (!inBossBattle)
+            {
+                FindObjectOfType<InfosqueakScr>().progressNum++;
+            }
+            
             FindObjectOfType<ParagraphManagerScr>().DestroyParagraph();
             if (isTimed)
             {

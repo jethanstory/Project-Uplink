@@ -24,6 +24,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
     public float shootTime;
     private float shootCounter = 0;
+    public bool canShoot = true;
 
     //click squares
     public GameObject redSquare;
@@ -37,7 +38,20 @@ public class BossLevelSpawnerScr : MonoBehaviour
     private Vector3 massAttackPos;
 
     //type quick
-
+    public GameObject textBox;
+    private GameObject currTextBox;
+    private Vector3 textBoxPos;
+    public GameObject paragraph;
+    private GameObject currParagraph;
+    private Vector3 paragraphPos;
+    public float lazerBeamTime;
+    private float lazerBeamCounter = 0;
+    public GameObject lazerBeam;
+    private GameObject currLazerBeam;
+    private Vector3 direction;
+    private Vector3 lazerBeamPos;
+    public Transform cancelButtonPos;
+    //public string[] myStrings;
 
     void Update()
     {
@@ -111,15 +125,21 @@ public class BossLevelSpawnerScr : MonoBehaviour
                 {
                     FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
 
-                    attackMove = Random.Range(0, 2);
+                    attackMove = Random.Range(0, 3);
 
                     //can run again
+                    canShoot = true;
+                    shootCounter = 0;
                     canRun = true;
+                }
+                else if (currBadSquare != null && currBadSquare.transform.position.x <= 0)
+                {
+                    canShoot = false;
                 }
 
                 shootCounter += Time.deltaTime;
 
-                if (shootCounter >= (shootTime * Time.deltaTime))
+                if (shootCounter >= (shootTime * Time.deltaTime) && canShoot)
                 {
                     sr.color = Color.red;
                     Invoke("ShootCheese", 1f);
@@ -237,10 +257,54 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
                 break;
             case 2:
-                attackMove = Random.Range(0, 2);
+                //textbox attack
+
+                if (canRun)
+                {
+                    textBoxPos = new Vector3(-55, -189, 0);
+                    currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                    currTextBox.GetComponent<TextBoxScr>().inBossBattle = true;
+                    currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                    paragraphPos = new Vector3(-60, 310, 0);
+                    currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                    currParagraph.GetComponent<ParagraphManagerScr>().SetText("The quick brown fox jumped over the lazy dog.");
+                    currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                    FindObjectOfType<CancelButtonScr>().canBeDragged = false;
+                    FindObjectOfType<CancelButtonScr>().hasStopped = true;
+
+                    lazerBeamPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
+                    direction = cancelButtonPos.position;
+
+                    canRun = false;
+                }
+
+                lazerBeamCounter += Time.deltaTime;
+
+                if (lazerBeamCounter >= (lazerBeamTime * Time.deltaTime) && currLazerBeam == null)
+                {
+                    
+                    currLazerBeam = Instantiate(lazerBeam, lazerBeamPos, Quaternion.identity);
+                    currLazerBeam.GetComponent<LazerBeamScr>().pos = direction;
+                }
+
+                if (lazerBeamCounter < ((lazerBeamTime / 4) * Time.deltaTime))
+                {
+                    sr.color = Color.green;
+                }
+                else if (lazerBeamCounter < (((lazerBeamTime / 2) * Time.deltaTime)))
+                {
+                    sr.color = Color.yellow;
+                }
+                else if (lazerBeamCounter >= (((lazerBeamTime / 2) * Time.deltaTime)))
+                {
+                    sr.color = Color.red;
+                }
+
                 break;
             default:
-                attackMove = Random.Range(0, 2);
+                attackMove = Random.Range(0, 3);
                 break;
         }
     }

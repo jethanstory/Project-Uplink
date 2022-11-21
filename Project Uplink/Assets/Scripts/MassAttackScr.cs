@@ -18,7 +18,7 @@ public class MassAttackScr : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("SafeSquare"));
             FindObjectOfType<BossLevelSpawnerScr>().canRun = true;
             FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = false;
-            FindObjectOfType<BossLevelSpawnerScr>().attackMove = Random.Range(0, 2);
+            FindObjectOfType<BossLevelSpawnerScr>().attackMove = Random.Range(0, 3);
             FindObjectOfType<BossLevelSpawnerScr>().sr.color = Color.black;
             FindObjectOfType<CancelButtonScr>().checkSafe = false;
             FindObjectOfType<CancelButtonScr>().hasStopped = false;
