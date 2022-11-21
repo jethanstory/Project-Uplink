@@ -13,6 +13,15 @@ TagManager:
   - BadSquareManager
   - ParagraphManager
   - WelcomePanel
+  - ObsoleteSqueak
+  - Cheese
+  - RedSquareManager
+  - RedSquare
+  - MassAttack
+  - SafeSquare
+  - CancelButton
+  - LazerBeam
+  - LazerBeamManager
   layers:
   - Default
   - TransparentFX
@@ -23,13 +32,13 @@ TagManager:
   - Assistant
   - BadSquare
   - Barrier
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ObsoleteSqueak
+  - Cheese
+  - RedSquare
+  - MassAttack
+  - SafeSpace
+  - CancelButton
+  - LazerBeam
   - 
   - 
   - 

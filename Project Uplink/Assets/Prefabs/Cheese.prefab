@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2420033144938524276}
   - component: {fileID: 7285706328355699826}
   - component: {fileID: 2084309142370483140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cheese
-  m_TagString: Untagged
+  m_TagString: Cheese
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tm: {fileID: 8707066784272923386}
+  rb: {fileID: -2547586984335218590}
+  failedNum: 0
+  isAttacking: 0
+  shootDirection: {x: 0, y: 0}
+  speed: 3000
+  cancelButtonPos: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
 --- !u!58 &7285706328355699826
 CircleCollider2D:
   m_ObjectHideFlags: 0
