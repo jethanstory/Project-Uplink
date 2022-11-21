@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class BossLevelCollisionScr : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    public void OnMouseOver()
+    public Rigidbody2D rb;
+    public bool canMove = false;
+    public float speed;
+
+    public void Update()
     {
-        Debug.Log("OH SHIT!");
+        if (canMove)
+        {
+            rb.velocity = Vector2.left * speed * Time.deltaTime;
+        }
     }
 }

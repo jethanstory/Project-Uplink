@@ -125,6 +125,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 2372417572243416069}
+  tm: {fileID: 671432366228981331}
+  rb: {fileID: 2314758112786412042}
+  isPicked: 0
+  inBattle: 0
+  safeSquare: {fileID: 1743282773689837478, guid: 9a300f39093af8c4ea820aa036cff5f5, type: 3}
+  canMove: 0
+  speed: 500
 --- !u!50 &2314758112786412042
 Rigidbody2D:
   serializedVersion: 4
@@ -142,10 +149,10 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &5903926285162731965
 MonoBehaviour:
   m_ObjectHideFlags: 0
