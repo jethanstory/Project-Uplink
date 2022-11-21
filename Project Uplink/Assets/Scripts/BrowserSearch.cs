@@ -202,9 +202,18 @@ public class BrowserSearch : MonoBehaviour
     {
         userInput = searchBar.GetComponent<InputField>().text;
 
-        if (userInput == "News" || userInput == "news")
+        if (userInput == "Health" || userInput == "health")
             //SceneManager.LoadScene("HTML_404");
-            SceneManager.LoadScene("HTML_News");
+            SceneManager.LoadScene("HTML_Health");
+        
+        else if (userInput == "Finance" || userInput == "finance")
+            //SceneManager.LoadScene("HTML_404");
+            SceneManager.LoadScene("HTML_Finance");
+
+        else if (userInput == "Entertainment" || userInput == "entertainment")
+            //SceneManager.LoadScene("HTML_404");
+            SceneManager.LoadScene("HTML_Entertainment");
+
 
         else 
             SceneManager.LoadScene("HTML_404");
