@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230456078}
+      - m_Target: {fileID: 647781673}
         m_TargetAssemblyTypeName: BrowserSearch, Assembly-CSharp
         m_MethodName: ReadStringInput
         m_Mode: 5
@@ -800,6 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647781671}
   - component: {fileID: 647781672}
+  - component: {fileID: 647781673}
   m_Layer: 0
   m_Name: Events
   m_TagString: Untagged
@@ -837,6 +838,19 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+--- !u!114 &647781673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647781670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87051fa6334c2341a3e639fb68e38b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchBar: {fileID: 1677578785}
 --- !u!1 &648495442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1867,6 @@ GameObject:
   - component: {fileID: 1230456077}
   - component: {fileID: 1230456076}
   - component: {fileID: 1230456075}
-  - component: {fileID: 1230456078}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1926,27 +1939,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1230456078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230456074}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87051fa6334c2341a3e639fb68e38b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneNum: 0
-  cutsceneInProgress: 0
-  speechBubble: {fileID: 413866548137326298, guid: a7a4632d91f2f774c89856283307b0be, type: 3}
-  tm: {fileID: 570763729}
-  sr: {fileID: 570763728}
-  canSkip: 0
-  progressNum: 0
-  maxProgressNum: 0
-  miniGameInProgress: 0
 --- !u!1 &1280928499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,10 +2858,10 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230456078}
+      - m_Target: {fileID: 647781673}
         m_TargetAssemblyTypeName: BrowserSearch, Assembly-CSharp
-        m_MethodName: ReadStringInput
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
