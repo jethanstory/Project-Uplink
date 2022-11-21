@@ -18,7 +18,7 @@ public class MiniGameOneScr : MonoBehaviour
     {
         sr.color = Color.red;
 
-        stopPos = tm.position.x - 80f;
+        stopPos = tm.position.x - 20f;
     }
 
     public void OnMouseOver()
@@ -34,9 +34,12 @@ public class MiniGameOneScr : MonoBehaviour
     {
         Destroy(gameObject);
 
+        Vector3 currPos = tm.position;
+        currPos.z = 0;
+
         if (isPicked)
         {
-            Instantiate(safeSquare, tm.position, Quaternion.identity);
+            Instantiate(safeSquare, currPos, Quaternion.identity);
         }
         else if (!inBattle)
         {
@@ -54,6 +57,7 @@ public class MiniGameOneScr : MonoBehaviour
             {
                 canMove = false;
                 FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = true;
+                FindObjectOfType<CancelButtonScr>().hasStopped = true;
             }
         }
         else

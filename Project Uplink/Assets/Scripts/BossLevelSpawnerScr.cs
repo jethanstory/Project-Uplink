@@ -48,7 +48,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                 if (canRun)
                 {
                     badSquareAmount = Random.Range(10, 12);
-                    badSquareXPos = camPos.position.x + 80f;
+                    badSquareXPos = camPos.position.x + 20f;
                     shootCounter = 0;
 
                     for (int i = 0; i < badSquareAmount; i++)
@@ -131,7 +131,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
                 if (canRun)
                 {
-                    redSquarePos = new Vector3(camPos.position.x + 80f, 4, 0);
+                    redSquarePos = new Vector3(camPos.position.x + 20f, 4, 0);
                     for (int i = 0; i < 25; i++)
                     {
                         if (i < 4)
@@ -215,6 +215,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                         massAttackPos = new Vector3(-25, 0, 0);
                         currMassAttack = Instantiate(massiveAttack, massAttackPos, Quaternion.identity);
                         currMassAttack.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                        FindObjectOfType<CancelButtonScr>().checkSafe = true;
 
                         massAttackCounter = 0;
                         startMassiveAttack = false;
@@ -249,6 +250,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
         Vector3 shootPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
         currCheese = Instantiate(cheese, shootPos, Quaternion.identity);
         currCheese.GetComponent<MiniGameTwoScr>().isAttacking = true;
+        //currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
         sr.color = Color.black;
     }
 }

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d49e5afd47fc4580c578edff3f459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackMove: 0
+  attackMove: 1
   camPos: {fileID: 710630419}
   rb: {fileID: 20600870}
   tm: {fileID: 20600868}
@@ -3875,3 +3875,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117909174}
   m_CullTransparentMesh: 1
+--- !u!1001 &6271767654706785468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.004470825
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0206358
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150183220063046299, guid: 6e760164e664b054e9a152804375b968, type: 3}
+      propertyPath: m_Name
+      value: CancelButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e760164e664b054e9a152804375b968, type: 3}

@@ -21,8 +21,8 @@ public class MiniGameTwoScr : MonoBehaviour
     {
         initialPos = tm.position;
 
-        Vector3 currMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        shootDirection = new Vector2(currMousePos.x - tm.position.x, currMousePos.y - tm.position.y);
+        Vector3 currButtonPos = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
+        shootDirection = new Vector2(currButtonPos.x - tm.position.x, currButtonPos.y - tm.position.y);
     }
 
     public void OnMouseEnter()
