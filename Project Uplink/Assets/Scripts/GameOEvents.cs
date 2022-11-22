@@ -70,6 +70,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void sportsLevelTest()
+    {
+        
+        SceneManager.LoadScene("HTML_Sports");
+        
+    }
     public void businessLevel()
     {
         
@@ -108,8 +114,8 @@ public class GameOEvents : MonoBehaviour
     public void healthLevel()
     {
         
-        SceneManager.LoadScene("HTML_Health");
-        //SceneManager.LoadScene("HTML_404");
+        //SceneManager.LoadScene("HTML_Health");
+        SceneManager.LoadScene("HTML_404");
         
     }
     public void sciTechLevel()
@@ -120,6 +126,12 @@ public class GameOEvents : MonoBehaviour
         
     }
     public void squeakyCleanLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void decoyLevel()
     {
         
         SceneManager.LoadScene("HTML_404");
