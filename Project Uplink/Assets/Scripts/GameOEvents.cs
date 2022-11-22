@@ -63,6 +63,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void newsEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_NewsEvents");
+        
+    }
     public void sportsLevel()
     {
         
@@ -76,7 +82,7 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_SportsInfoPage");
         
     }
-    public void sportsLevelTest()
+    public void sportsLevelFixed()
     {
         
         SceneManager.LoadScene("HTML_Sports");
@@ -89,7 +95,7 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
-    public void businessLevelTest()
+    public void businessLevelFixed()
     {
         
         SceneManager.LoadScene("HTML_Business");
@@ -117,11 +123,29 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void artEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_ArtEvents");
+        
+    }
+    public void artsLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Arts");
+        
+    }
     public void healthLevel()
     {
         
         //SceneManager.LoadScene("HTML_Health");
         SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void healthLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Health");
         
     }
     public void sciTechLevel()
