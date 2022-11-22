@@ -63,11 +63,29 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void newsEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_NewsEvents");
+        
+    }
     public void sportsLevel()
     {
         
         //SceneManager.LoadScene("HTML_Sports");
         SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void sportsInfoLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_SportsInfoPage");
+        
+    }
+    public void sportsLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Sports");
         
     }
     public void businessLevel()
@@ -77,7 +95,7 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
-    public void businessLevelTest()
+    public void businessLevelFixed()
     {
         
         SceneManager.LoadScene("HTML_Business");
@@ -105,11 +123,29 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void artEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_ArtEvents");
+        
+    }
+    public void artsLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Arts");
+        
+    }
     public void healthLevel()
     {
         
+        //SceneManager.LoadScene("HTML_Health");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void healthLevelFixed()
+    {
+        
         SceneManager.LoadScene("HTML_Health");
-        //SceneManager.LoadScene("HTML_404");
         
     }
     public void sciTechLevel()
@@ -120,6 +156,12 @@ public class GameOEvents : MonoBehaviour
         
     }
     public void squeakyCleanLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void decoyLevel()
     {
         
         SceneManager.LoadScene("HTML_404");
