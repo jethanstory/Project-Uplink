@@ -70,6 +70,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void sportsInfoLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_SportsInfoPage");
+        
+    }
     public void sportsLevelTest()
     {
         

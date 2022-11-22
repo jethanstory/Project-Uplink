@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_BusinessPage2.unity
     guid: 4f7ba5199602ff54cbc084be3dfff020
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_SportsInfoPage.unity
+    guid: e1f1fe6a9d12efa45a8145e6595dc0dd
   m_configObjects: {}
