@@ -77,6 +77,20 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void businessLevelTest()
+    {
+        
+        SceneManager.LoadScene("HTML_Business");
+        //SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void businessLevel2()
+    {
+        
+        //SceneManager.LoadScene("HTML_Business");
+        SceneManager.LoadScene("HTML_BusinessPage2");
+        
+    }
     public void financeLevel()
     {
         
