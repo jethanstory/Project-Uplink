@@ -313,8 +313,6 @@ public class BossLevelSpawnerScr : MonoBehaviour
     {
         Vector3 shootPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
         currCheese = Instantiate(cheese, shootPos, Quaternion.identity);
-        currCheese.GetComponent<MiniGameTwoScr>().isAttacking = true;
-        //currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
         sr.color = Color.black;
     }
 }

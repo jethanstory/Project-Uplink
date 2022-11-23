@@ -178,7 +178,7 @@ MonoBehaviour:
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}
   badSquareAmount: 0
   randBadSquareNum: 0
-  cheese: {fileID: 4568602660048351396, guid: 94fac291ed216434ea7adeb5d53c3fea, type: 3}
+  cheese: {fileID: 2655366154086082356, guid: c0b0c413b3aa7ca40a7169c14b583cae, type: 3}
   shootTime: 3500
   canShoot: 1
   redSquare: {fileID: 1382391854335647309, guid: 71f1950b95faa3441b5f295af82a3ca5, type: 3}
@@ -1017,6 +1017,7 @@ MonoBehaviour:
   mascotMenu: {fileID: 1533475978}
   mascotDialogue: {fileID: 1253905948}
   mascotQuestion: {fileID: 1807949472}
+  userText: {fileID: 0}
 --- !u!4 &703655714
 Transform:
   m_ObjectHideFlags: 0

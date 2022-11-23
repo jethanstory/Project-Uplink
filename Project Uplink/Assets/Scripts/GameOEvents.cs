@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOEvents : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameOEvents : MonoBehaviour
     public GameObject mascotMenu;
     public GameObject mascotDialogue;
     public GameObject mascotQuestion;
+    public GameObject userText;
 
     // Load Menu
     public void MenuGame()
@@ -104,5 +106,10 @@ public class GameOEvents : MonoBehaviour
         //}
         
         //mascotCanvas.SetActive(true);
+    }
+
+    public void SendName()
+    {
+        FindObjectOfType<NameManagerScr>().SaveName(userText.GetComponent<Text>().text);
     }
 }

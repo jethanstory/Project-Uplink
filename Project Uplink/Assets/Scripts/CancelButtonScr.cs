@@ -60,7 +60,7 @@ public class CancelButtonScr : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "ObsoleteSqueak" 
-            || collision.collider.tag == "Cheese"
+            || collision.collider.tag == "BadCheese"
             || collision.collider.tag == "BadSquare")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
