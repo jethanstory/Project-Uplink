@@ -1021,6 +1021,7 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+  userText: {fileID: 0}
 --- !u!4 &1011917468
 Transform:
   m_ObjectHideFlags: 0

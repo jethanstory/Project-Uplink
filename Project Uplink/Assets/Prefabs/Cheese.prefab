@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -122,10 +122,8 @@ MonoBehaviour:
   tm: {fileID: 8707066784272923386}
   rb: {fileID: -2547586984335218590}
   failedNum: 0
-  isAttacking: 0
-  shootDirection: {x: 0, y: 0}
-  speed: 3000
-  cancelButtonPos: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
+  badMouse: {fileID: 9002301411648405237, guid: 04af9041db3bfff419046e470caf67ca, type: 3}
+  grabbed: 0
 --- !u!58 &7285706328355699826
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,18 +11,14 @@ public class MiniGameTwoScr : MonoBehaviour
     private bool hitBlackSquare = false;
     private bool overCheese = false;
     public int failedNum;
+    public GameObject badMouse;
 
-    //boss battle vars
-    public bool isAttacking = false;
-    public Vector2 shootDirection;
-    public float speed;
+    //bad mouse vars
+    public bool grabbed = false;
 
     public void Start()
     {
         initialPos = tm.position;
-
-        Vector3 currButtonPos = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
-        shootDirection = new Vector2(currButtonPos.x - tm.position.x, currButtonPos.y - tm.position.y);
     }
 
     public void OnMouseEnter()
@@ -32,7 +28,7 @@ public class MiniGameTwoScr : MonoBehaviour
 
     public void OnMouseDrag()
     {
-        if (!hitBlackSquare && overCheese && !isAttacking)
+        if (!hitBlackSquare && overCheese)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0f;
@@ -42,19 +38,17 @@ public class MiniGameTwoScr : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isAttacking)
+        if (collision.collider.tag == "Infosqueak")
         {
-            if (collision.collider.tag == "Infosqueak")
-            {
-                Destroy(gameObject);
-                FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
-                FindObjectOfType<InfosqueakScr>().progressNum++;
-            }
-            else if (collision.collider.tag == "BadSquare")
-            {
-                hitBlackSquare = true;
-                Invoke("AdjustPosition", 0.5f);
-            }
+            Destroy(gameObject);
+            FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
+            FindObjectOfType<InfosqueakScr>().progressNum++;
+        }
+        else if (collision.collider.tag == "BadSquare")
+        {
+            hitBlackSquare = true;
+            //Invoke("AdjustPosition", 0.5f);
+            AdjustPosition();
         }
     }
 
@@ -63,20 +57,23 @@ public class MiniGameTwoScr : MonoBehaviour
         tm.position = initialPos;
         failedNum++;
 
-        if (failedNum >= 3 && FindObjectOfType<InfosqueakScr>().progressNum == 4)
+        if (failedNum >= 3 && FindObjectOfType<InfosqueakScr>().cutsceneNum == 20 && FindObjectOfType<InfosqueakScr>().progressNum == 4)
         {
             FindObjectOfType<InfosqueakScr>().progressNum++;
         }
 
         overCheese = false;
         hitBlackSquare = false;
+        grabbed = false;
     }
 
     public void Update()
     {
-        if (isAttacking)
+        if (grabbed && !hitBlackSquare)
         {
-            rb.velocity = shootDirection * speed * Time.deltaTime;
+            Vector3 pos = Camera.main.ScreenToWorldPoint(badMouse.transform.position);
+            pos.z = 0f;
+            tm.position = badMouse.transform.position;
         }
     }
 }

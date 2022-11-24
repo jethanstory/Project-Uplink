@@ -49,20 +49,23 @@ public class MiniGameOneScr : MonoBehaviour
 
     public void Update()
     {
-        if (canMove)
+        if (inBattle)
         {
-            rb.velocity = Vector2.left * speed * Time.deltaTime;
-
-            if (tm.position.x <= stopPos)
+            if (canMove)
             {
-                canMove = false;
-                FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = true;
-                FindObjectOfType<CancelButtonScr>().hasStopped = true;
+                rb.velocity = Vector2.left * speed * Time.deltaTime;
+
+                if (tm.position.x <= stopPos)
+                {
+                    canMove = false;
+                    FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = true;
+                    FindObjectOfType<CancelButtonScr>().hasStopped = true;
+                }
             }
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 }

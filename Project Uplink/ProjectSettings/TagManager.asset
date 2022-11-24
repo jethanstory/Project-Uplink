@@ -22,6 +22,8 @@ TagManager:
   - CancelButton
   - LazerBeam
   - LazerBeamManager
+  - BadCheese
+  - BadMouse
   layers:
   - Default
   - TransparentFX
@@ -39,8 +41,8 @@ TagManager:
   - SafeSpace
   - CancelButton
   - LazerBeam
-  - 
-  - 
+  - BadCheese
+  - BadMouse
   - 
   - 
   - 
