@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d49e5afd47fc4580c578edff3f459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackMove: 0
+  attackMove: 1
   camPos: {fileID: 710630419}
   rb: {fileID: 20600870}
   tm: {fileID: 20600868}

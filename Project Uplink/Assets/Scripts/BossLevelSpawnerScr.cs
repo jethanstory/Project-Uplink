@@ -284,9 +284,9 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
                 if (lazerBeamCounter >= (lazerBeamTime * Time.deltaTime) && currLazerBeam == null)
                 {
-                    
                     currLazerBeam = Instantiate(lazerBeam, lazerBeamPos, Quaternion.identity);
                     currLazerBeam.GetComponent<LazerBeamScr>().pos = direction;
+                    lazerBeamCounter = 0;
                 }
 
                 if (lazerBeamCounter < ((lazerBeamTime / 4) * Time.deltaTime))
