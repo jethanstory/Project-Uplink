@@ -61,10 +61,30 @@ public class GameOEvents : MonoBehaviour
     public void newsLevel()
     {
         
-        SceneManager.LoadScene("HTML_News");
+        //SceneManager.LoadScene("HTML_News");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void newsEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_NewsEvents");
         
     }
     public void sportsLevel()
+    {
+        
+        //SceneManager.LoadScene("HTML_Sports");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void sportsInfoLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_SportsInfoPage");
+        
+    }
+    public void sportsLevelFixed()
     {
         
         SceneManager.LoadScene("HTML_Sports");
@@ -73,9 +93,87 @@ public class GameOEvents : MonoBehaviour
     public void businessLevel()
     {
         
-        SceneManager.LoadScene("HTML_Business");
+        //SceneManager.LoadScene("HTML_Business");
+        SceneManager.LoadScene("HTML_404");
         
     }
+    public void businessLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Business");
+        //SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void businessLevel2()
+    {
+        
+        //SceneManager.LoadScene("HTML_Business");
+        SceneManager.LoadScene("HTML_BusinessPage2");
+        
+    }
+    public void financeLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Finance");
+        //SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void artsLevel()
+    {
+        
+        //SceneManager.LoadScene("HTML_Arts");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void artEventsLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_ArtEvents");
+        
+    }
+    public void artsLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Arts");
+        
+    }
+    public void healthLevel()
+    {
+        
+        //SceneManager.LoadScene("HTML_Health");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void healthLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_Health");
+        
+    }
+    public void sciTechLevel()
+    {
+        
+        //SceneManager.LoadScene("HTML_ScienceTechnology");
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void squeakyCleanLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+    public void decoyLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_404");
+        
+    }
+
+
+
+
+    
     //basic mascot menu trigger for the mascot button
     public void mascotMenuTrigger()
     {
