@@ -850,7 +850,7 @@ public class InfosqueakScr : MonoBehaviour
                                 //create the cheese
                                 cheesePos = new Vector3(-1, 3.5f, 0);
                                 currCheese = Instantiate(cheese, cheesePos, Quaternion.identity);
-                                currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                                //currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                                 break;
                         }
                     }
@@ -907,7 +907,7 @@ public class InfosqueakScr : MonoBehaviour
 
 
                     currBadMouse = Instantiate(badMouse, badMousePos, Quaternion.identity);
-                    currBadMouse.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    //currBadMouse.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
                     currBadMouse.GetComponent<BadMouseScr>().badMouseCutsceneNum = 0;
 
                     //cursor disappears and is disabled

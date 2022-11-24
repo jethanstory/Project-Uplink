@@ -47,7 +47,8 @@ public class MiniGameTwoScr : MonoBehaviour
         else if (collision.collider.tag == "BadSquare")
         {
             hitBlackSquare = true;
-            Invoke("AdjustPosition", 0.5f);
+            //Invoke("AdjustPosition", 0.5f);
+            AdjustPosition();
         }
     }
 
@@ -70,8 +71,9 @@ public class MiniGameTwoScr : MonoBehaviour
     {
         if (grabbed && !hitBlackSquare)
         {
-            Vector3 pos = badMouse.transform.position;
-            tm.position = pos;
+            Vector3 pos = Camera.main.ScreenToWorldPoint(badMouse.transform.position);
+            pos.z = 0f;
+            tm.position = badMouse.transform.position;
         }
     }
 }
