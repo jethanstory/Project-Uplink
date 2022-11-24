@@ -132,6 +132,7 @@ MonoBehaviour:
   safeSquare: {fileID: 1743282773689837478, guid: 9a300f39093af8c4ea820aa036cff5f5, type: 3}
   canMove: 0
   speed: 500
+  stopPos: 0
 --- !u!50 &2314758112786412042
 Rigidbody2D:
   serializedVersion: 4
