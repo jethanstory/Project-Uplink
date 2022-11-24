@@ -284,9 +284,9 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
                 if (lazerBeamCounter >= (lazerBeamTime * Time.deltaTime) && currLazerBeam == null)
                 {
-                    
                     currLazerBeam = Instantiate(lazerBeam, lazerBeamPos, Quaternion.identity);
                     currLazerBeam.GetComponent<LazerBeamScr>().pos = direction;
+                    lazerBeamCounter = 0;
                 }
 
                 if (lazerBeamCounter < ((lazerBeamTime / 4) * Time.deltaTime))
@@ -313,8 +313,6 @@ public class BossLevelSpawnerScr : MonoBehaviour
     {
         Vector3 shootPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
         currCheese = Instantiate(cheese, shootPos, Quaternion.identity);
-        currCheese.GetComponent<MiniGameTwoScr>().isAttacking = true;
-        //currCheese.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
         sr.color = Color.black;
     }
 }

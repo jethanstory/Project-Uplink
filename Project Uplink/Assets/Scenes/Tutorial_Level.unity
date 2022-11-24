@@ -2751,6 +2751,7 @@ MonoBehaviour:
   mascotMenu: {fileID: 842898573}
   mascotDialogue: {fileID: 382668119}
   mascotQuestion: {fileID: 1859973229}
+  userText: {fileID: 0}
 --- !u!4 &1492716827
 Transform:
   m_ObjectHideFlags: 0
@@ -3654,9 +3655,11 @@ MonoBehaviour:
   loadingNum: 0
   loadingSpeed: 1000
   blackScreen: {fileID: 5427799658053595767, guid: 943e707930abd7544ab2e53e54ecddf9, type: 3}
+  isTimed: 0
   delayTimer: 5
   delayTimerEnd: 7
   idleNum: 1
+  badMouse: {fileID: 9002301411648405237, guid: 04af9041db3bfff419046e470caf67ca, type: 3}
   square: {fileID: 8607786490719484797, guid: 56cb0bc912d4fd84380d8b8c4f523100, type: 3}
   movingSquare: {fileID: 1500846406151409014, guid: b697ecc5926b48f448051298807e6ac7, type: 3}
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}
