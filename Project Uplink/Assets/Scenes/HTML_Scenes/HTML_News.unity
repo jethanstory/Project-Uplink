@@ -716,6 +716,7 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+  userText: {fileID: 0}
 --- !u!1 &828033734
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +870,7 @@ GameObject:
   - component: {fileID: 1206732655}
   - component: {fileID: 1206732654}
   m_Layer: 5
-  m_Name: FinanceSubtext
+  m_Name: NewsSubtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,7 +928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This page contains everything that has to do with the green stuff!
+  m_Text: This page contains everything that has to do with the news stuff!
 --- !u!222 &1206732655
 CanvasRenderer:
   m_ObjectHideFlags: 0
