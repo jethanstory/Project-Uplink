@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 927211525}
   - component: {fileID: 927211524}
   m_Layer: 5
-  m_Name: GeneralSubtextError
+  m_Name: GlobalSubtextLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +1351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: -100}
+  m_AnchoredPosition: {x: 700, y: -138}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927211524
@@ -1387,7 +1387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Error 504 Gateway Timeout: Cannot refresh from source'
+  m_Text: Annual Robotic Painter Competition - See www.netsqueakscitech.com for details.
 --- !u!222 &927211525
 CanvasRenderer:
   m_ObjectHideFlags: 0

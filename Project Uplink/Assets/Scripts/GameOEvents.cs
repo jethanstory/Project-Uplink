@@ -157,6 +157,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void sciTechLevelFixed()
+    {
+        
+        SceneManager.LoadScene("HTML_ScienceTechnology");
+        
+    }
     public void squeakyCleanLevel()
     {
         

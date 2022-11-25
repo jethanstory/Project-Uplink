@@ -202,18 +202,26 @@ public class BrowserSearch : MonoBehaviour
     {
         userInput = searchBar.GetComponent<InputField>().text;
 
-        if (userInput == "Health" || userInput == "health")
-            //SceneManager.LoadScene("HTML_404");
-            SceneManager.LoadScene("HTML_Health");
         
-        else if (userInput == "Finance" || userInput == "finance")
+        if (userInput == "Finance" || userInput == "finance")
             //SceneManager.LoadScene("HTML_404");
             SceneManager.LoadScene("HTML_Finance");
 
         else if (userInput == "Entertainment" || userInput == "entertainment")
             //SceneManager.LoadScene("HTML_404");
             SceneManager.LoadScene("HTML_Entertainment");
+    
+        else if (userInput == "www.netsqueakscitech.com")
+            //SceneManager.LoadScene("HTML_404");
+            SceneManager.LoadScene("HTML_ScienceTechnology");
 
+        else if (userInput == "www.linknews.com")
+            //SceneManager.LoadScene("HTML_404");
+            SceneManager.LoadScene("HTML_News");
+        
+        else if (userInput == "www.netsqueakwelcome2000.com")
+            //SceneManager.LoadScene("HTML_404");
+            SceneManager.LoadScene("HTML_WelcomePage");
 
         else 
             SceneManager.LoadScene("HTML_404");
