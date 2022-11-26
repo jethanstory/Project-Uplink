@@ -13,6 +13,9 @@ public class GameOEvents : MonoBehaviour
     public GameObject mascotDialogue;
     public GameObject mascotQuestion;
     public GameObject userText;
+    public GameObject setup1;
+    public GameObject setup2;
+    public GameObject setup3;
 
     // Load Menu
     public void MenuGame()
@@ -34,6 +37,19 @@ public class GameOEvents : MonoBehaviour
     {
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+    }
+    public void nextSetup1()
+    {
+        setup1.SetActive(false);
+        setup2.SetActive(true);
+        //setup3.SetActive()
+        
+    }
+    public void nextSetup2()
+    {
+        setup2.SetActive(false);
+        setup3.SetActive(true);
         
     }
     //Loads Credits scene
