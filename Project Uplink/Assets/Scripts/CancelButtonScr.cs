@@ -12,8 +12,8 @@ public class CancelButtonScr : MonoBehaviour
     public bool isSafe = false;
     public bool checkSafe = false;
     public bool isHeld = false;
-    public bool hasStopped = false;
-    public bool canBeDragged = true;
+    public bool hasStopped = true;
+    public bool canBeDragged = false;
     public float speed;
 
     public void OnMouseEnter()

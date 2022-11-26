@@ -12,4 +12,6 @@ public class YesButtonScr : MonoBehaviour
         FindObjectOfType<InfosqueakScr>().cutsceneNum++;
         FindObjectOfType<InfosqueakScr>().cutsceneInProgress = false;
     }
+
+    
 }
