@@ -1,6 +1,8 @@
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BossLevelSpawnerScr : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
     public Transform tm;
     public SpriteRenderer sr;
     public bool canRun = true;
+    public bool canAttack = false;
 
     //avoid squares
     public GameObject badSquare;
@@ -51,262 +54,291 @@ public class BossLevelSpawnerScr : MonoBehaviour
     private Vector3 direction;
     private Vector3 lazerBeamPos;
     public Transform cancelButtonPos;
-    //public string[] myStrings;
+    private string[] myStrings;
+    private int randStringNum;
+    public LineRenderer lr;
+
+    public void Start()
+    {
+        //turns off the line
+        lr.enabled = false;
+
+        //create new string array for the type quick attack
+        myStrings = new string[5];
+
+        //the strings for the string array
+        myStrings[0] = "The quick brown fox jumped over the lazy dog's back.";
+        myStrings[1] = "The way to get started is to quit talking and begin doing.";
+        myStrings[2] = "The gray film of dust covering things has become their best part.";
+        myStrings[3] = "Life can only be understood backwards, but must be lived forwards.";
+        myStrings[4] = "The four stages of life are infancy, childhood, adolescence, and obsolescence.";
+    }
 
     void Update()
     {
-        switch(attackMove)
+        if (canAttack)
         {
-            case 0:
-                //bad square
-                if (canRun)
-                {
-                    badSquareAmount = Random.Range(10, 12);
-                    badSquareXPos = camPos.position.x + 20f;
-                    shootCounter = 0;
-
-                    for (int i = 0; i < badSquareAmount; i++)
+            switch (attackMove)
+            {
+                case 0:
+                    //bad square
+                    if (canRun)
                     {
-                        randBadSquareNum = Random.Range(0, 5);
+                        badSquareAmount = Random.Range(10, 12);
+                        badSquareXPos = camPos.position.x + 20f;
+                        shootCounter = 0;
 
-                        switch (randBadSquareNum)
+                        for (int i = 0; i < badSquareAmount; i++)
                         {
-                            case 0:
-                                //short bot
-                                badSquarePos = new Vector3(badSquareXPos, -3.5f, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 3, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
-                            case 1:
-                                //short mid
-                                badSquarePos = new Vector3(badSquareXPos, 0, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 3, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
-                            case 2:
-                                //short top
-                                badSquarePos = new Vector3(badSquareXPos, 3.5f, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 3, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
-                            case 3:
-                                //long bot
-                                badSquarePos = new Vector3(badSquareXPos, -1, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 8, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
-                            case 4:
-                                //long mid
-                                badSquarePos = new Vector3(badSquareXPos, 0, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 7, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
-                            case 5:
-                                //long top
-                                badSquarePos = new Vector3(badSquareXPos, 1, 0);
-                                currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
-                                currBadSquare.transform.localScale = new Vector3(1, 8, 1);
-                                currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                break;
+                            randBadSquareNum = Random.Range(0, 5);
 
+                            switch (randBadSquareNum)
+                            {
+                                case 0:
+                                    //short bot
+                                    badSquarePos = new Vector3(badSquareXPos, -3.5f, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 3, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+                                case 1:
+                                    //short mid
+                                    badSquarePos = new Vector3(badSquareXPos, 0, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 3, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+                                case 2:
+                                    //short top
+                                    badSquarePos = new Vector3(badSquareXPos, 3.5f, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 3, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+                                case 3:
+                                    //long bot
+                                    badSquarePos = new Vector3(badSquareXPos, -1, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 8, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+                                case 4:
+                                    //long mid
+                                    badSquarePos = new Vector3(badSquareXPos, 0, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 7, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+                                case 5:
+                                    //long top
+                                    badSquarePos = new Vector3(badSquareXPos, 1, 0);
+                                    currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
+                                    currBadSquare.transform.localScale = new Vector3(1, 8, 1);
+                                    currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                    break;
+
+                            }
+                            badSquareXPos += 10f;
                         }
-                        badSquareXPos += 10f;
+                        FindObjectOfType<BadSquareManagerScr>().BeginMoving();
+                        canRun = false;
                     }
-                    FindObjectOfType<BadSquareManagerScr>().BeginMoving();
-                    canRun = false;         
-                }
 
-                if (currBadSquare != null && currBadSquare.transform.position.x <= -10)
-                {
-                    FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
-
-                    attackMove = Random.Range(0, 3);
-
-                    //can run again
-                    canShoot = true;
-                    shootCounter = 0;
-                    canRun = true;
-                }
-                else if (currBadSquare != null && currBadSquare.transform.position.x <= 0)
-                {
-                    canShoot = false;
-                }
-
-                shootCounter += Time.deltaTime;
-
-                if (shootCounter >= (shootTime * Time.deltaTime) && canShoot)
-                {
-                    sr.color = Color.red;
-                    Invoke("ShootCheese", 1f);
-                    shootCounter = 0;
-                }
-                break;
-            case 1:
-                //red square
-
-                if (canRun)
-                {
-                    redSquarePos = new Vector3(camPos.position.x + 20f, 4, 0);
-                    for (int i = 0; i < 25; i++)
+                    if (currBadSquare != null && currBadSquare.transform.position.x <= -10)
                     {
-                        if (i < 4)
+                        FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
+
+                        attackMove = Random.Range(0, 3);
+
+                        //can run again
+                        canShoot = true;
+                        shootCounter = 0;
+                        canRun = true;
+                    }
+                    else if (currBadSquare != null && currBadSquare.transform.position.x <= 0)
+                    {
+                        canShoot = false;
+                    }
+
+                    shootCounter += Time.deltaTime;
+
+                    if (shootCounter >= (shootTime * Time.deltaTime) && canShoot)
+                    {
+                        sr.color = Color.red;
+                        Invoke("ShootCheese", 1f);
+                        shootCounter = 0;
+                    }
+                    break;
+                case 1:
+                    //red square
+
+                    if (canRun)
+                    {
+                        redSquarePos = new Vector3(camPos.position.x + 20f, 4, 0);
+                        for (int i = 0; i < 25; i++)
                         {
-                            currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
-                            currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
-
-                            redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y - 2, 0);
-                        }
-                        else if (i >= 4 && i < 9)
-                        {
-                            currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
-                            currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
-
-                            if (i == 4)
+                            if (i < 4)
                             {
-                                redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
-                            }
-                            else
-                            {
-                                redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y + 2, 0);
-                            }
-                        }
-                        else if (i >= 9 && i < 14)
-                        {
-                            currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
+                                currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
+                                currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
 
-                            currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
-
-                            if (i == 9)
-                            {
-                                redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
-                            }
-                            else
-                            {
                                 redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y - 2, 0);
                             }
-                        }
-                        else if (i >= 14 && i < 19)
-                        {
-                            currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
-                            currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
+                            else if (i >= 4 && i < 9)
+                            {
+                                currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
+                                currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
 
-                            if (i == 14)
-                            {
-                                redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                if (i == 4)
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                }
+                                else
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y + 2, 0);
+                                }
                             }
-                            else
+                            else if (i >= 9 && i < 14)
                             {
-                                redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y + 2, 0);
-                            }
-                        }
-                        else if (i >= 19 && i < 25)
-                        {
-                            currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
-                            currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
+                                currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
 
-                            if (i == 19)
-                            {
-                                redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
+
+                                if (i == 9)
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                }
+                                else
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y - 2, 0);
+                                }
                             }
-                            else
+                            else if (i >= 14 && i < 19)
                             {
-                                redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y - 2, 0);
+                                currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
+                                currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
+
+                                if (i == 14)
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                }
+                                else
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y + 2, 0);
+                                }
                             }
+                            else if (i >= 19 && i < 25)
+                            {
+                                currRedSquare = Instantiate(redSquare, redSquarePos, Quaternion.identity);
+                                currRedSquare.transform.SetParent(GameObject.FindGameObjectWithTag("RedSquareManager").transform, true);
+
+                                if (i == 19)
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x + 2, redSquarePos.y, 0);
+                                }
+                                else
+                                {
+                                    redSquarePos = new Vector3(redSquarePos.x, redSquarePos.y - 2, 0);
+                                }
+                            }
+
+                            currRedSquare.GetComponent<MiniGameOneScr>().inBattle = true;
                         }
 
-                        currRedSquare.GetComponent<MiniGameOneScr>().inBattle = true;
+                        FindObjectOfType<RedSquareManagerScr>().PickSquare();
+                        canRun = false;
                     }
 
-                    FindObjectOfType<RedSquareManagerScr>().PickSquare();
-                    canRun = false;
-                }
-
-                if (startMassiveAttack)
-                {
-                    massAttackCounter += Time.deltaTime;
-
-                    if (massAttackCounter >= (massAttackTime * Time.deltaTime))
+                    if (startMassiveAttack)
                     {
-                        massAttackPos = new Vector3(-25, 0, 0);
-                        currMassAttack = Instantiate(massiveAttack, massAttackPos, Quaternion.identity);
-                        currMassAttack.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
-                        FindObjectOfType<CancelButtonScr>().checkSafe = true;
+                        massAttackCounter += Time.deltaTime;
 
-                        massAttackCounter = 0;
-                        startMassiveAttack = false;
+                        if (massAttackCounter >= (massAttackTime * Time.deltaTime))
+                        {
+                            massAttackPos = new Vector3(-25, 0, 0);
+                            currMassAttack = Instantiate(massiveAttack, massAttackPos, Quaternion.identity);
+                            currMassAttack.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            FindObjectOfType<CancelButtonScr>().checkSafe = true;
+
+                            massAttackCounter = 0;
+                            startMassiveAttack = false;
+                        }
+
+                        if (massAttackCounter < ((massAttackTime / 4) * Time.deltaTime))
+                        {
+                            sr.color = Color.green;
+                        }
+                        else if (massAttackCounter < (((massAttackTime / 2) * Time.deltaTime)))
+                        {
+                            sr.color = Color.yellow;
+                        }
+                        else if (massAttackCounter >= (((massAttackTime / 2) * Time.deltaTime)))
+                        {
+                            sr.color = Color.red;
+                        }
                     }
 
-                    if (massAttackCounter < ((massAttackTime / 4) * Time.deltaTime))
+                    break;
+                case 2:
+                    //textbox attack
+
+                    if (canRun)
+                    {
+                        textBoxPos = new Vector3(-55, -189, 0);
+                        currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
+                        currTextBox.GetComponent<TextBoxScr>().inBossBattle = true;
+                        currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                        paragraphPos = new Vector3(-60, 310, 0);
+                        currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
+                        randStringNum = Random.Range(0, 4);
+                        currParagraph.GetComponent<ParagraphManagerScr>().SetText(myStrings[randStringNum]);
+                        currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                        currParagraph.GetComponent<ParagraphManagerScr>().isAttacking = true;
+
+                        FindObjectOfType<CancelButtonScr>().canBeDragged = false;
+                        FindObjectOfType<CancelButtonScr>().hasStopped = true;
+
+                        lazerBeamPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
+                        direction = cancelButtonPos.position;
+
+                        lr.enabled = true;
+                        Vector3[] positions = new Vector3[2];
+                        positions[0] = lazerBeamPos;
+                        positions[1] = cancelButtonPos.position;
+                        lr.SetPositions(positions);
+
+                        canRun = false;
+                    }
+
+                    lazerBeamCounter += Time.deltaTime;
+
+                    if (lazerBeamCounter >= (lazerBeamTime * Time.deltaTime) && currLazerBeam == null)
+                    {
+                        currLazerBeam = Instantiate(lazerBeam, lazerBeamPos, Quaternion.identity);
+                        currLazerBeam.GetComponent<LazerBeamScr>().pos = direction;
+                        lazerBeamCounter = 0;
+                        lr.enabled = false;
+                    }
+
+                    if (lazerBeamCounter < ((lazerBeamTime / 4) * Time.deltaTime))
                     {
                         sr.color = Color.green;
                     }
-                    else if (massAttackCounter < (((massAttackTime / 2) * Time.deltaTime)))
+                    else if (lazerBeamCounter < (((lazerBeamTime / 2) * Time.deltaTime)))
                     {
                         sr.color = Color.yellow;
                     }
-                    else if (massAttackCounter >= (((massAttackTime / 2) * Time.deltaTime)))
+                    else if (lazerBeamCounter >= (((lazerBeamTime / 2) * Time.deltaTime)))
                     {
                         sr.color = Color.red;
                     }
-                }
 
-                break;
-            case 2:
-                //textbox attack
-
-                if (canRun)
-                {
-                    textBoxPos = new Vector3(-55, -189, 0);
-                    currTextBox = Instantiate(textBox, textBoxPos, Quaternion.identity);
-                    currTextBox.GetComponent<TextBoxScr>().inBossBattle = true;
-                    currTextBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-
-                    paragraphPos = new Vector3(-60, 310, 0);
-                    currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
-                    currParagraph.GetComponent<ParagraphManagerScr>().SetText("The quick brown fox jumped over the lazy dog.");
-                    currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-                    currParagraph.GetComponent<ParagraphManagerScr>().isAttacking = true;
-
-                    FindObjectOfType<CancelButtonScr>().canBeDragged = false;
-                    FindObjectOfType<CancelButtonScr>().hasStopped = true;
-
-                    lazerBeamPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
-                    direction = cancelButtonPos.position;
-
-                    canRun = false;
-                }
-
-                lazerBeamCounter += Time.deltaTime;
-
-                if (lazerBeamCounter >= (lazerBeamTime * Time.deltaTime) && currLazerBeam == null)
-                {
-                    currLazerBeam = Instantiate(lazerBeam, lazerBeamPos, Quaternion.identity);
-                    currLazerBeam.GetComponent<LazerBeamScr>().pos = direction;
-                    lazerBeamCounter = 0;
-                }
-
-                if (lazerBeamCounter < ((lazerBeamTime / 4) * Time.deltaTime))
-                {
-                    sr.color = Color.green;
-                }
-                else if (lazerBeamCounter < (((lazerBeamTime / 2) * Time.deltaTime)))
-                {
-                    sr.color = Color.yellow;
-                }
-                else if (lazerBeamCounter >= (((lazerBeamTime / 2) * Time.deltaTime)))
-                {
-                    sr.color = Color.red;
-                }
-
-                break;
-            default:
-                attackMove = Random.Range(0, 3);
-                break;
+                    break;
+                default:
+                    attackMove = Random.Range(0, 3);
+                    break;
+            }
         }
     }
 
