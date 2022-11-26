@@ -270,6 +270,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                     currParagraph = Instantiate(paragraph, paragraphPos, Quaternion.identity);
                     currParagraph.GetComponent<ParagraphManagerScr>().SetText("The quick brown fox jumped over the lazy dog.");
                     currParagraph.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                    currParagraph.GetComponent<ParagraphManagerScr>().isAttacking = true;
 
                     FindObjectOfType<CancelButtonScr>().canBeDragged = false;
                     FindObjectOfType<CancelButtonScr>().hasStopped = true;
