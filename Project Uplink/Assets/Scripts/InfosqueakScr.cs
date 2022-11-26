@@ -44,6 +44,7 @@ public class InfosqueakScr : MonoBehaviour
     float idleNumTime;
     float timeBeforePause = 5f;
     float timeBeforeIdleReset = 0.1f;
+    bool disableIdle = false;
 
     //bad mouse vars
     public GameObject badMouse;
@@ -1115,6 +1116,7 @@ public class InfosqueakScr : MonoBehaviour
 
                     //player is in minigame
                     miniGameInProgress = true;
+                    disableIdle = true;
 
                     //check if textbox does not exist
                     if (currTextBox == null)
@@ -1374,7 +1376,7 @@ public class InfosqueakScr : MonoBehaviour
                 //cutscene was initiated, thus player is in cutscene
                 cutsceneInProgress = true;
             }
-            else if(miniGameInProgress) 
+            else if(miniGameInProgress && disableIdle == false) 
             {
                 IdleCheck();
             }
