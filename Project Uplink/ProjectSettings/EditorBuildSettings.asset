@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_WelcomePage.unity
     guid: 464b8237fd737ff4d9588b9f633108d2
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_TourPage.unity
+    guid: cd9fb73fc042e464a81edc7a20370d39
   m_configObjects: {}

@@ -182,7 +182,8 @@ public class GameOEvents : MonoBehaviour
     public void squeakyCleanLevel()
     {
         
-        SceneManager.LoadScene("HTML_404");
+        SceneManager.LoadScene("HTML_TourPage");
+        //SceneManager.LoadScene("HTML_404");
         
     }
     public void decoyLevel()
