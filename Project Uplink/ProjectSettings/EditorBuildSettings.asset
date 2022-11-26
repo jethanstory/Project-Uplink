@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_ArtEvents.unity
     guid: a721d4c1a412ac546ac686db56c168ac
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_WelcomePage.unity
+    guid: 464b8237fd737ff4d9588b9f633108d2
   m_configObjects: {}
