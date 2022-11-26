@@ -14,6 +14,7 @@ public class LazerBeamScr : MonoBehaviour
     public Vector3 pos;
     private Vector2 direction;
     public bool checkManager = true;
+    private bool hitCancelButton = false;
 
     public void Start()
     {
@@ -35,11 +36,22 @@ public class LazerBeamScr : MonoBehaviour
 
     public void OnBecameInvisible()
     {
-        Destroy(gameObject);
-
-        if (checkManager)
+        if (!hitCancelButton)
         {
-            FindObjectOfType<LazerBeamManagerScr>().RemoveLazerBeam();
+            Destroy(gameObject);
+
+            if (checkManager)
+            {
+                FindObjectOfType<LazerBeamManagerScr>().RemoveLazerBeam();
+            }
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "CancelButton")
+        {
+            hitCancelButton = true;
         }
     }
 }

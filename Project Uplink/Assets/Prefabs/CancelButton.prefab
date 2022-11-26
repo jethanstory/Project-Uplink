@@ -150,5 +150,6 @@ MonoBehaviour:
   isSafe: 0
   checkSafe: 0
   isHeld: 0
-  hasStopped: 0
+  hasStopped: 1
+  canBeDragged: 0
   speed: 3000
