@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 1960183292}
   - component: {fileID: 1960183291}
   m_Layer: 5
-  m_Name: SciTechSubtextUpdated
+  m_Name: TourSubtextUpdated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Webmaster NOTICE:\n\nDue to the recent URL migration, several links to
     old Netsqueak landing pages are missing or broken, it is still possible to access
-    those pages from related pages and links however. \n\n"
+    those pages from related pages and links however. Follow the topics. \n\n"
 --- !u!222 &1960183292
 CanvasRenderer:
   m_ObjectHideFlags: 0
