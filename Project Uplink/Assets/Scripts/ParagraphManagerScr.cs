@@ -15,6 +15,10 @@ public class ParagraphManagerScr : MonoBehaviour
     public void DestroyParagraph()
     {
         Destroy(gameObject);
-        FindObjectOfType<CancelButtonScr>().canBeDragged = true;
+
+        if (isAttacking)
+        {
+            FindObjectOfType<CancelButtonScr>().canBeDragged = true;
+        }
     }
 }
