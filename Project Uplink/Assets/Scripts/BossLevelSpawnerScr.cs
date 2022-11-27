@@ -14,7 +14,6 @@ public class BossLevelSpawnerScr : MonoBehaviour
     private Vector3 bubblePos;
     private string myString;
     public bool canSkip = false;
-    public Transform camPos;
     public Rigidbody2D rb;
     public Transform tm;
     public SpriteRenderer sr;
@@ -26,6 +25,8 @@ public class BossLevelSpawnerScr : MonoBehaviour
     private float loadCounter = 0;
     public GameObject blackScreen;
     private GameObject currBlackScreen;
+    public GameObject firstCheese;
+    private GameObject currFirstCheese;
 
     //avoid squares
     public GameObject badSquare;
@@ -66,7 +67,6 @@ public class BossLevelSpawnerScr : MonoBehaviour
     private GameObject currLazerBeam;
     private Vector3 direction;
     private Vector3 lazerBeamPos;
-    public Transform cancelButtonPos;
     private string[] myStrings;
     private int randStringNum;
     public LineRenderer lr;
@@ -91,13 +91,24 @@ public class BossLevelSpawnerScr : MonoBehaviour
     {
         if (!inCutscene)
         {
-            //Debug.Log("we runnin");
             switch (cutsceneNum)
             {
                 case 0:
-                    //battle
+                    //wait
 
+                    isLoading = true;
+
+                    break;
+                case 1:
+                    //shoot cheese
+
+                    ShootFirstCheese();
+                    cutsceneNum++;
                     inBattle = true;
+
+                    break;
+                case 2:
+                    //battle
 
                     if (canAttack)
                     {
@@ -108,7 +119,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                                 if (canRun)
                                 {
                                     badSquareAmount = Random.Range(10, 12);
-                                    badSquareXPos = camPos.position.x + 20f;
+                                    badSquareXPos = 20f;
                                     shootCounter = 0;
 
                                     for (int i = 0; i < badSquareAmount; i++)
@@ -164,6 +175,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                                         badSquareXPos += 10f;
                                     }
                                     FindObjectOfType<BadSquareManagerScr>().BeginMoving();
+                                    canShoot = true;
                                     canRun = false;
                                 }
 
@@ -204,7 +216,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
 
                                 if (canRun)
                                 {
-                                    redSquarePos = new Vector3(camPos.position.x + 20f, 4, 0);
+                                    redSquarePos = new Vector3(20f, 4, 0);
                                     for (int i = 0; i < 25; i++)
                                     {
                                         if (i < 4)
@@ -330,12 +342,12 @@ public class BossLevelSpawnerScr : MonoBehaviour
                                     FindObjectOfType<CancelButtonScr>().hasStopped = true;
 
                                     lazerBeamPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
-                                    direction = cancelButtonPos.position;
+                                    direction = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
 
                                     lr.enabled = true;
                                     Vector3[] positions = new Vector3[2];
                                     positions[0] = lazerBeamPos;
-                                    positions[1] = cancelButtonPos.position;
+                                    positions[1] = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
                                     lr.SetPositions(positions);
 
                                     canRun = false;
@@ -378,7 +390,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                     }
 
                     break;
-                case 1:
+                case 3:
                     //freak out
 
                     //bubble changed position
@@ -404,7 +416,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                     inBattle = false;
 
                     break;
-                case 2:
+                case 4:
                     //freak out continue
 
                     //creates a speech bubble
@@ -425,7 +437,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                     canSkip = true;
 
                     break;
-                case 3:
+                case 5:
                     //freak out continue
 
                     //creates a speech bubble
@@ -445,7 +457,7 @@ public class BossLevelSpawnerScr : MonoBehaviour
                     isLoading = true;
 
                     break;
-                case 4:
+                case 6:
                     //black screen
 
                     currBlackScreen = Instantiate(blackScreen, Vector3.zero, Quaternion.identity);
@@ -481,6 +493,8 @@ public class BossLevelSpawnerScr : MonoBehaviour
             {
                 cutsceneNum++;
                 inCutscene = false;
+                isLoading = false;
+                loadCounter = 0;
             }
         }
 
@@ -490,6 +504,13 @@ public class BossLevelSpawnerScr : MonoBehaviour
     {
         Vector3 shootPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
         currCheese = Instantiate(cheese, shootPos, Quaternion.identity);
+        sr.color = Color.black;
+    }
+
+    public void ShootFirstCheese()
+    {
+        Vector3 shootPos = new Vector3(tm.position.x, tm.position.y + 3f, tm.position.z);
+        currFirstCheese = Instantiate(firstCheese, shootPos, Quaternion.identity);
         sr.color = Color.black;
     }
 

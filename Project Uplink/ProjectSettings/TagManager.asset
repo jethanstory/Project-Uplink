@@ -26,6 +26,8 @@ TagManager:
   - BadMouse
   - FileContainer
   - Percentage
+  - UninstallScreen
+  - UninstallTarget
   layers:
   - Default
   - TransparentFX
