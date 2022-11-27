@@ -7,12 +7,14 @@ public class BadCheeseScr : MonoBehaviour
     public Rigidbody2D rb;
     public Transform tm;
     public Vector2 shootDirection;
+    private Vector3 targetPos;
     public float speed;
 
     public void Start()
     {
-        Vector3 currButtonPos = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
-        shootDirection = new Vector2(currButtonPos.x - tm.position.x, currButtonPos.y - tm.position.y);
+        targetPos = GameObject.FindGameObjectWithTag("CancelButton").transform.position;
+
+        shootDirection = new Vector2(targetPos.x - tm.position.x, targetPos.y - tm.position.y);
     }
 
     public void Update()
