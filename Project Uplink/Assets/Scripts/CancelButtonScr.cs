@@ -91,4 +91,9 @@ public class CancelButtonScr : MonoBehaviour
     {
         isSafe = false;
     }
+
+    public void DestroyButton()
+    {
+        Destroy(gameObject);
+    }
 }
