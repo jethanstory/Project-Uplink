@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CurrentDateTimeScri : MonoBehaviour
+public class CurrentDateTimeScr : MonoBehaviour
 {
     // public static DateTime theTime = DateTime.Now; //the time
     // [SerializeField] private string date = theTime.ToString("yyyy-MM-dd\\Z"); //convert time and date to string
