@@ -24,6 +24,7 @@ TagManager:
   - LazerBeamManager
   - BadCheese
   - BadMouse
+  - FileContainer
   layers:
   - Default
   - TransparentFX
