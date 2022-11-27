@@ -10,6 +10,7 @@ public class OkButtonScr : MonoBehaviour
         FindObjectOfType<BossLevelSpawnerScr>().canAttack = true;
         FindObjectOfType<CancelButtonScr>().hasStopped = false;
         FindObjectOfType<CancelButtonScr>().canBeDragged = true;
+        FindObjectOfType<PercentageScr>().startCount = true;
         Destroy(errorMessage);
     }
 }

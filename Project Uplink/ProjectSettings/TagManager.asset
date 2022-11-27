@@ -25,6 +25,7 @@ TagManager:
   - BadCheese
   - BadMouse
   - FileContainer
+  - Percentage
   layers:
   - Default
   - TransparentFX

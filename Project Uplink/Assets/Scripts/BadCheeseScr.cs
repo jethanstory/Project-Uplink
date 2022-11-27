@@ -19,4 +19,9 @@ public class BadCheeseScr : MonoBehaviour
     {
         rb.velocity = shootDirection * speed * Time.deltaTime;
     }
+
+    public void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

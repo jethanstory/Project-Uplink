@@ -12,10 +12,20 @@ public class LazerBeamManagerScr : MonoBehaviour
             Destroy(tm.GetChild(i - 1).gameObject);
         }
 
-        FindObjectOfType<BossLevelSpawnerScr>().canRun = true;
-        FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = false;
-        FindObjectOfType<BossLevelSpawnerScr>().attackMove = Random.Range(0, 3);
-        FindObjectOfType<BossLevelSpawnerScr>().sr.color = Color.black;
-        FindObjectOfType<CancelButtonScr>().hasStopped = false;
+        if (FindObjectOfType<BossLevelSpawnerScr>().gameOver == false)
+        {
+            FindObjectOfType<BossLevelSpawnerScr>().attackMove = Random.Range(0, 3);
+            FindObjectOfType<BossLevelSpawnerScr>().canRun = true;
+            FindObjectOfType<BossLevelSpawnerScr>().startMassiveAttack = false;
+            FindObjectOfType<BossLevelSpawnerScr>().sr.color = Color.black;
+            FindObjectOfType<CancelButtonScr>().hasStopped = false;
+        }
+        else
+        {
+            //game is over
+            FindObjectOfType<BossLevelSpawnerScr>().attackMove = 4;
+            FindObjectOfType<BossLevelSpawnerScr>().sr.color = Color.black;
+        }
+        
     }
 }

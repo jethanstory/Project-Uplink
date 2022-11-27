@@ -34,5 +34,9 @@ public class EndingManagerScr : MonoBehaviour
     private void RollCredits()
     {
         SceneManager.LoadScene("Credits_Scene");
+
+        //cursor can be moved and seen
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
