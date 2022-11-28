@@ -24,19 +24,19 @@ public class LandingPageManagerScr : MonoBehaviour
     private bool businessBool;
     private bool financeBool;
 
-    public int artInt = 1;
-    public int techInt = 1;
-    public int entertainmentInt = 1;
-    public int healthInt = 1;
-    public int sportsInt = 1;
-    public int techSciInt = 1;
-    public int financeInt = 1;
-    public int businessInt = 1;
+    public static int artInt = 1;
+    public static int techInt = 1;
+    public static int entertainmentInt = 1;
+    public static int healthInt = 1;
+    public static int sportsInt = 1;
+    public static int techSciInt = 1;
+    public static int financeInt = 1;
+    public static int businessInt = 1;
 
     public GameObject infoBox;
     private GameObject currInfoBox;
     private Vector3 infoBoxPos; 
-    public int pageFound;
+    public static int pageFound = 0;
     public Transform tm;
     private Vector3 currPos;
 
@@ -149,7 +149,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_Business")
+        else if (sceneName == "HTML_Business")
         {
             if (businessInt == 1) {
 
@@ -168,7 +168,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_Finance")
+        else if (sceneName == "HTML_Finance")
         {
              if (financeInt == 1) {
 
@@ -187,7 +187,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_ScienceTechnology")
+        else if (sceneName == "HTML_ScienceTechnology")
         {
             if (techInt == 1) {
 
@@ -206,7 +206,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_Health")
+        else if (sceneName == "HTML_Health")
         {
             if (healthInt == 1){
                 
@@ -225,7 +225,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_Sports")
+        else if (sceneName == "HTML_Sports")
         {
             if (sportsInt == 1){
                 
@@ -244,7 +244,7 @@ public class LandingPageManagerScr : MonoBehaviour
             }
         }
 
-        if (sceneName == "HTML_Entertainment")
+        else if (sceneName == "HTML_Entertainment")
         {
             if (entertainmentInt == 1) 
             {
