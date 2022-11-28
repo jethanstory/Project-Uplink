@@ -156,6 +156,10 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+  userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &9363540
 Transform:
   m_ObjectHideFlags: 0
@@ -2267,7 +2271,7 @@ GameObject:
   - component: {fileID: 2000215429}
   m_Layer: 5
   m_Name: SportsPanel
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

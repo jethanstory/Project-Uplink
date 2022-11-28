@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 607791886}
   m_Layer: 5
   m_Name: BusinessPanel
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,6 +1007,9 @@ MonoBehaviour:
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
   userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &1126208082
 Transform:
   m_ObjectHideFlags: 0
