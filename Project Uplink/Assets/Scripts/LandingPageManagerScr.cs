@@ -137,13 +137,14 @@ public class LandingPageManagerScr : MonoBehaviour
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 artBool = false;
                 artInt += 1;
             }
@@ -156,13 +157,14 @@ public class LandingPageManagerScr : MonoBehaviour
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 businessBool = false;
                 businessInt += 1;
             }
@@ -174,14 +176,15 @@ public class LandingPageManagerScr : MonoBehaviour
 
                 soundBoard.SetActive(true);
                 pageFound+=1;
-                ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // ChangedPosition();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 financeBool = false;
                 financeInt += 1;
             }
@@ -194,13 +197,14 @@ public class LandingPageManagerScr : MonoBehaviour
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 techBool = false;
                 techInt += 1;
             }
@@ -213,13 +217,14 @@ public class LandingPageManagerScr : MonoBehaviour
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 healthBool = false;
                 healthInt += 1;
             }
@@ -232,13 +237,14 @@ public class LandingPageManagerScr : MonoBehaviour
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound;
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 sportsBool = false;
                 sportsInt += 1;
             }
@@ -254,13 +260,15 @@ public class LandingPageManagerScr : MonoBehaviour
                 entertainmentBool = false;
                 ChangedPosition();
 
-                currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
-                //res fix
-                currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                CreateInfoBox();
 
-                //the text
-                string myString = "Total Topics Discovered: \r\n" + pageFound;
-                currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound + " of 6";
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                 //currInfoBox.GetComponent<Text>().text = "Total Topics Discovered: \r\n" + pageFound;
                 entertainmentInt += 1;
             }
@@ -275,11 +283,21 @@ public class LandingPageManagerScr : MonoBehaviour
 
     }
     
+    private void CreateInfoBox()
+    {
+        currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+        //res fix
+        currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+        //the text
+        string myString = "Total Topics Discovered: \r\n" + pageFound + " of 6";
+        currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+    }
 
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        currPos = new Vector3(tm.position.x + 6f, tm.position.y + 3.5f, 0f);
         infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
     }
 }

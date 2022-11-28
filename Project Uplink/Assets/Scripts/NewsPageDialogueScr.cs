@@ -18,6 +18,12 @@ public class NewsPageDialogueScr : MonoBehaviour
     public bool miniGameInProgress = false;
     private Vector3 currPos;
     private Vector3 bubblePos;
+
+
+    public GameObject infoBox;
+    private GameObject currInfoBox;
+    private Vector3 infoBoxPos; 
+    public static int pageFound = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -88,13 +94,21 @@ public class NewsPageDialogueScr : MonoBehaviour
                     break;
                 case 3:
                     //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    // currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
-                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    // currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    // myString = "InfoSqueak ADVANCED AI INFORMATION UPDATE COMPLETE";
+
+                    
+                    currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                    //res fix
+                    currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
                     myString = "InfoSqueak ADVANCED AI INFORMATION UPDATE COMPLETE";
-
+                    currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                     //create the buttons
                     // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
                     // currYesButton = Instantiate(yesButton, yesButtonPos, Quaternion.identity);
@@ -104,7 +118,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                     // currNoButton = Instantiate(noButton, noButtonPos, Quaternion.identity);
                     // currNoButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    // currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
                     canSkip = true;
                     break;
 
