@@ -215,7 +215,7 @@ public class BrowserSearch : MonoBehaviour
             //SceneManager.LoadScene("HTML_404");
             SceneManager.LoadScene("HTML_ScienceTechnology");
 
-        else if (userInput == "www.linknews.com")
+        else if (userInput == "www.linknews.com" || userInput == "www.linkNews.com")
             //SceneManager.LoadScene("HTML_404");
             SceneManager.LoadScene("HTML_News");
         
