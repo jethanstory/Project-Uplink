@@ -58,6 +58,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
+
                 case 1:
                     //let's start calibration
 
@@ -75,6 +76,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
+
                 case 2:
                     //let's start calibration
 
@@ -92,6 +94,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
+                    
                 case 3:
                     //creates a speech bubble
                     // currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -101,13 +104,13 @@ public class NewsPageDialogueScr : MonoBehaviour
                     //the text
                     // myString = "InfoSqueak ADVANCED AI INFORMATION UPDATE COMPLETE";
 
-                    
+                    ChangedPositionTextBox();
                     currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                     //res fix
                     currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "InfoSqueak ADVANCED AI INFORMATION UPDATE COMPLETE";
+                    myString = "InfoSqueak AI INFORMATION UPDATE COMPLETE";
                     currInfoBox.GetComponent<BubbleScr>().SetText(myString);
                     //create the buttons
                     // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
@@ -125,6 +128,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                 case 4:
                     //start with the mouse calibration
 
+                    Destroy(currInfoBox);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -163,7 +167,7 @@ public class NewsPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "The world has changed as great deal since I was created and I don't want to be left behind. \r\n[Press Space to Continue]";
+                    myString = "The world has changed as great deal since I was created and I don't want to be left behind... \r\n[Press Space to Continue]";
 
                     //create the buttons
                     // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
@@ -177,9 +181,30 @@ public class NewsPageDialogueScr : MonoBehaviour
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
                     canSkip = true;
                     break;
-                    
-
+                
                 case 7:
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Could you please upload me to the internet? \r\n[Press Space to Continue]";
+
+                    //create the buttons
+                    // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
+                    // currYesButton = Instantiate(yesButton, yesButtonPos, Quaternion.identity);
+                    // currYesButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    // noButtonPos = new Vector3(bubblePos.x + 200f, bubblePos.y - 200f, 0);
+                    // currNoButton = Instantiate(noButton, noButtonPos, Quaternion.identity);
+                    // currNoButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    canSkip = true;
+                    break;
+
+                case 8:
                     //start with the mouse calibration
 
                     //creates a speech bubble
@@ -193,13 +218,13 @@ public class NewsPageDialogueScr : MonoBehaviour
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //sets the max progress num before minigame
-                    maxProgressNum = 7;
+                    maxProgressNum = 9;
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
                 
-                case 8:
+                case 9:
 
                     SceneManager.LoadScene("Boss_Level");
 
@@ -233,5 +258,11 @@ public class NewsPageDialogueScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
+    }
+    private void ChangedPositionTextBox()
+    {
+        //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
+        currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
+        infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
     }
 }

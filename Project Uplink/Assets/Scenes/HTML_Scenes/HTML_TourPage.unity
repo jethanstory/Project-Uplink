@@ -1607,8 +1607,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Webmaster NOTICE:\n\nDue to the recent URL migration, the hyperlinks to
     several old Netsqueak landing pages are missing or broken, however I've ensured
-    that is still possible to access those pages from related links and pages. Follow
-    the topics. \n\n"
+    that is still possible to access most of those pages from related links and pages.
+    Follow the topics. \n\n"
 --- !u!222 &1960183292
 CanvasRenderer:
   m_ObjectHideFlags: 0

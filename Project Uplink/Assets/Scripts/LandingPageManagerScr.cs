@@ -290,7 +290,7 @@ public class LandingPageManagerScr : MonoBehaviour
         currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
         //the text
-        string myString = "Total Topics Discovered: \r\n" + pageFound + " of 6";
+        string myString = "Total Topics Discovered: \r\n" + pageFound + " of 8";
         currInfoBox.GetComponent<BubbleScr>().SetText(myString);
     }
 
