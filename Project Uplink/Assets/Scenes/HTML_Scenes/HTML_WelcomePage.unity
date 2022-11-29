@@ -724,7 +724,7 @@ MonoBehaviour:
     new name, Link.
 
 
-    Eacb URL will contain "link" before the topic of the page
+    Each URL will contain "link" before the topic of the page
     e.g. www.linkwelcome.com
 
 
@@ -1594,6 +1594,9 @@ MonoBehaviour:
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
   userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &1583289111
 Transform:
   m_ObjectHideFlags: 0
