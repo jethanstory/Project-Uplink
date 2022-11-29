@@ -144,6 +144,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = artText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                artText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
                 // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
@@ -164,6 +167,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = businessText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                businessText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
                 // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
@@ -184,6 +190,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = financeText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                financeText.GetComponent<Button> ().colors = colors;
                 // ChangedPosition();
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -205,6 +214,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = sciTechText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                sciTechText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
                 // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
@@ -226,6 +238,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = healthText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                healthText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
                 // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
@@ -246,6 +261,9 @@ public class LandingPageManagerScr : MonoBehaviour
                 pageFound+=1;
                 ChangedPosition();
                 CreateInfoBox();
+                var colors = sportsText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.magenta;
+                sportsText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
                 // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
