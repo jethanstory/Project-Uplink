@@ -48,7 +48,6 @@ public class LandingPageManagerScr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         DontDestroyOnLoad(this);
     }
 
@@ -57,6 +56,11 @@ public class LandingPageManagerScr : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
+        
+        // if (sceneName != "HTML_Main") 
+        // {
+            
+        // }
         
 
         //  if (sceneName == "HTML_News" || sceneName == "HTML_Sports" || sceneName == "HTML_Finance" || sceneName == "HTML_Business" || sceneName == "HTML_Health" || sceneName == "HTML_ScienceTechnology" || sceneName == "HTML_Arts" || sceneName == "HTML_Entertainment") 
@@ -176,6 +180,7 @@ public class LandingPageManagerScr : MonoBehaviour
 
                 soundBoard.SetActive(true);
                 pageFound+=1;
+                ChangedPosition();
                 CreateInfoBox();
                 // ChangedPosition();
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
@@ -214,6 +219,7 @@ public class LandingPageManagerScr : MonoBehaviour
         {
             if (healthInt == 1){
                 
+                soundBoard.SetActive(false);
                 soundBoard.SetActive(true);
                 pageFound+=1;
                 ChangedPosition();
@@ -261,6 +267,10 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
 
                 CreateInfoBox();
+                //entertainmentText.GetComponent<Button>().color = Color.red;
+                var colors = entertainmentText.GetComponent<Button> ().colors;
+                colors.normalColor = Color.red;
+                entertainmentText.GetComponent<Button> ().colors = colors;
 
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
