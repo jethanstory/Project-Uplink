@@ -313,6 +313,7 @@ MonoBehaviour:
   sciTechText: {fileID: 15096728}
   artText: {fileID: 905603875}
   healthText: {fileID: 993571133}
+  tourPageText: {fileID: 557147813}
   infoBox: {fileID: 1361627379376468623, guid: aadb3e784f96eff42b204fbf2dcb6f4e, type: 3}
   tm: {fileID: 248540110}
   currCanvas: {fileID: 1600213748}
