@@ -14,6 +14,7 @@ public class LandingPageManagerScr : MonoBehaviour
     public GameObject sciTechText;
     public GameObject artText;
     public GameObject healthText;
+    public GameObject tourPageText;
 
     private bool artBool;
     private bool techBool;
@@ -145,7 +146,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = artText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 artText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -168,7 +169,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = businessText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 businessText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -191,7 +192,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = financeText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 financeText.GetComponent<Button> ().colors = colors;
                 // ChangedPosition();
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
@@ -215,7 +216,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = sciTechText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 sciTechText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -239,7 +240,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = healthText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 healthText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -262,7 +263,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 ChangedPosition();
                 CreateInfoBox();
                 var colors = sportsText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 sportsText.GetComponent<Button> ().colors = colors;
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
                 // //res fix
@@ -289,7 +290,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 CreateInfoBox();
                 //entertainmentText.GetComponent<Button>().color = Color.red;
                 var colors = entertainmentText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.magenta;
+                colors.normalColor = new Color32(128, 0, 128, 255);
                 entertainmentText.GetComponent<Button> ().colors = colors;
 
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
@@ -305,6 +306,16 @@ public class LandingPageManagerScr : MonoBehaviour
                 
         }
 
+        else if (sceneName == "HTML_TourPage")
+        {
+            if (entertainmentInt == 1) 
+            {
+                var colors = tourPageText.GetComponent<Button> ().colors;
+                colors.normalColor = new Color32(128, 0, 128, 255);
+                tourPageText.GetComponent<Button> ().colors = colors;
+
+            }
+        }
         else if (sceneName == "HTML_News")
         {
             
