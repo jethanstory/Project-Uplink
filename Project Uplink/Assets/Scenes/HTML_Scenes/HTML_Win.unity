@@ -636,7 +636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &920619788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -653,8 +653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -65}
-  m_SizeDelta: {x: 1679.6924, y: 830}
+  m_AnchoredPosition: {x: -400, y: -65}
+  m_SizeDelta: {x: 1000, y: 830}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920619789
 MonoBehaviour:
@@ -678,7 +678,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a6f3dd2588f9a5a43b4f7a4e8de29bce, type: 3}
-    m_FontSize: 54
+    m_FontSize: 96
     m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
@@ -689,13 +689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Webmaster NOTICE:
-
-
-    Due to the recent URL migration, the main hyperlinks
-    to several old Netsqueak landing pages are missing or broken, however I''ve ensured
-    that it''s still possible to access most of those pages from related links and
-    pages. Follow the topics. '
+  m_Text: CONGLATURATIONS A WINNER IS YOU !!
 --- !u!222 &920619790
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -921,7 +915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1098062902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -938,8 +932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 1700, y: 630}
+  m_AnchoredPosition: {x: -400, y: -70}
+  m_SizeDelta: {x: 1000, y: 630}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098062903
 MonoBehaviour:
@@ -1722,7 +1716,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1312735901}
         m_TargetAssemblyTypeName: GameOEvents, Assembly-CSharp
-        m_MethodName: mainBrowserUpdateLevel
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
