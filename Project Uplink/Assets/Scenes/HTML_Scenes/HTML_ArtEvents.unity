@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: a6f3dd2588f9a5a43b4f7a4e8de29bce, type: 3}
     m_FontSize: 36
-    m_FontStyle: 2
+    m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 120
@@ -2230,6 +2230,9 @@ MonoBehaviour:
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
   userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &1508858674
 Transform:
   m_ObjectHideFlags: 0
