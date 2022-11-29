@@ -40,6 +40,8 @@ public class LandingPageManagerScr : MonoBehaviour
     public Transform tm;
     private Vector3 currPos;
 
+    public GameObject currCanvas; 
+
     public int setupInit = 1;
 
     public GameObject soundBoard;
@@ -269,7 +271,7 @@ public class LandingPageManagerScr : MonoBehaviour
                 CreateInfoBox();
                 //entertainmentText.GetComponent<Button>().color = Color.red;
                 var colors = entertainmentText.GetComponent<Button> ().colors;
-                colors.normalColor = Color.red;
+                colors.normalColor = Color.magenta;
                 entertainmentText.GetComponent<Button> ().colors = colors;
 
                 // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
@@ -282,6 +284,15 @@ public class LandingPageManagerScr : MonoBehaviour
                 //currInfoBox.GetComponent<Text>().text = "Total Topics Discovered: \r\n" + pageFound;
                 entertainmentInt += 1;
             }
+                
+        }
+
+        else if (sceneName == "HTML_News")
+        {
+            
+                
+            //Destroy(this);
+            currCanvas.SetActive(false);
                 
         }
 
