@@ -33,6 +33,7 @@ public class LandingPageManagerScr : MonoBehaviour
     public static int techSciInt = 1;
     public static int financeInt = 1;
     public static int businessInt = 1;
+    public static int newsInt = 1;
 
     public GameObject infoBox;
     private GameObject currInfoBox;
@@ -308,15 +309,43 @@ public class LandingPageManagerScr : MonoBehaviour
 
         else if (sceneName == "HTML_TourPage")
         {
-            if (entertainmentInt == 1) 
-            {
-                var colors = tourPageText.GetComponent<Button> ().colors;
-                colors.normalColor = new Color32(128, 0, 128, 255);
-                tourPageText.GetComponent<Button> ().colors = colors;
+            var colors = tourPageText.GetComponent<Button> ().colors;
+            colors.normalColor = new Color32(128, 0, 128, 255);
+            tourPageText.GetComponent<Button> ().colors = colors;
 
-            }
+            
         }
+
         else if (sceneName == "HTML_News")
+        {
+            if (newsInt == 1) 
+            {
+                
+                soundBoard.SetActive(true);
+                pageFound+=1;
+                //entertainmentBool = false;
+                ChangedPosition();
+
+                CreateInfoBox();
+                //entertainmentText.GetComponent<Button>().color = Color.red;
+                var colors =    newsText.GetComponent<Button> ().colors;
+                colors.normalColor = new Color32(128, 0, 128, 255);
+                newsText.GetComponent<Button> ().colors = colors;
+
+                // currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                // //res fix
+                // currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                // //the text
+                // string myString = "Total Topics Discovered: \r\n" + pageFound + " of 6";
+                // currInfoBox.GetComponent<BubbleScr>().SetText(myString);
+                //currInfoBox.GetComponent<Text>().text = "Total Topics Discovered: \r\n" + pageFound;
+                newsInt += 1;
+            }
+                
+        }
+
+        else if (sceneName == "HTML_Win")
         {
             
                 

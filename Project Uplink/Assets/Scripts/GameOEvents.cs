@@ -193,6 +193,13 @@ public class GameOEvents : MonoBehaviour
         //SceneManager.LoadScene("HTML_404");
         
     }
+    public void browserWinLevel()
+    {
+        
+        SceneManager.LoadScene("HTML_Win");
+        //SceneManager.LoadScene("HTML_404");
+        
+    }
     public void decoyLevel()
     {
         

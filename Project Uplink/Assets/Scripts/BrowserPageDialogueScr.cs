@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewsPageDialogueScr : MonoBehaviour
+public class BrowserPageDialogueScr : MonoBehaviour
 {
 
     public int cutsceneNum = 0;
