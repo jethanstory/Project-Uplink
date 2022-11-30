@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class CutsceneMouseScr : MonoBehaviour
 {
-    public Transform tm;
+    public RectTransform tm;
     public Rigidbody2D rb;
-    public SpriteRenderer sr;
+    public Image ir;
     public Sprite initialSprite;
     public Sprite infoSprite;
     public int endingNum;
@@ -27,7 +27,8 @@ public class CutsceneMouseScr : MonoBehaviour
 
     public void Start()
     {
-        tm.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+        tm.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+        tm.SetAsLastSibling();
     }
 
     public void FixedUpdate()
@@ -43,15 +44,15 @@ public class CutsceneMouseScr : MonoBehaviour
                         //go to infosqueak
 
                         goToPosition = true;
-                        infosqueakImage.GetComponent<SpriteRenderer>().enabled = true;
 
                         if (currTarget == null)
                         {
-                            currTarget = Instantiate(target, new Vector3(6.14f, -3.29f, 0), Quaternion.identity);
-                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            currTarget = Instantiate(target, new Vector3(753, -337, 0), Quaternion.identity);
+                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
                             direction = new Vector2(currTarget.transform.position.x - tm.position.x, currTarget.transform.position.y - tm.position.y);
-                            currInfoImage = Instantiate(infosqueakImage, new Vector3(6, -3, 0), Quaternion.identity);
-                            currInfoImage.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            currInfoImage = Instantiate(infosqueakImage, new Vector3(750, -310, 0), Quaternion.identity);
+                            currInfoImage.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                            currInfoImage.transform.SetAsFirstSibling();
                         }
 
                         rb.velocity = direction * speed * Time.deltaTime;
@@ -70,15 +71,17 @@ public class CutsceneMouseScr : MonoBehaviour
                     case 2:
                         //drag infosqueak to drag box
 
-                        sr.sprite = infoSprite;
+                        ir.sprite = infoSprite;
                         Destroy(currInfoImage);
+
+                        tm.sizeDelta = new Vector2(280, 280);
 
                         goToPosition = true;
 
                         if (currTarget == null)
                         {
-                            currTarget = Instantiate(target, new Vector3(-5f, 0, 0), Quaternion.identity);
-                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            currTarget = Instantiate(target, new Vector3(-480, -1, 0), Quaternion.identity);
+                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
                             direction = new Vector2(currTarget.transform.position.x - tm.position.x, currTarget.transform.position.y - tm.position.y);
                         }
 
@@ -98,15 +101,17 @@ public class CutsceneMouseScr : MonoBehaviour
                     case 4:
                         //go to upload button
 
-                        sr.sprite = initialSprite;
+                        ir.sprite = initialSprite;
                         GameObject.FindGameObjectWithTag("FileContainer").GetComponent<Text>().text = "Infosqueak.exe";
+
+                        tm.sizeDelta = new Vector2(70, 70);
 
                         goToPosition = true;
 
                         if (currTarget == null)
                         {
-                            currTarget = Instantiate(target, new Vector3(-5, -3.5f, 0), Quaternion.identity);
-                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                            currTarget = Instantiate(target, new Vector3(-480, -390, 0), Quaternion.identity);
+                            currTarget.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
                             direction = new Vector2(currTarget.transform.position.x - tm.position.x, currTarget.transform.position.y - tm.position.y);
                         }
 
@@ -146,14 +151,26 @@ public class CutsceneMouseScr : MonoBehaviour
                 counter = 0;
             }
         }
+
+        if (goToPosition)
+        {
+            Vector3 dist = (tm.position - currTarget.transform.position);
+
+            if ((int)dist.x == 0 && (int)dist.y == 0)
+            {
+                cutsceneNum++;
+                goToPosition = false;
+                Destroy(currTarget);
+            }
+        }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    /*public void OnTriggerEnter2D(Collider2D collision)
     {
         if (goToPosition)
         {
             cutsceneNum++;
             Destroy(currTarget);
         }
-    }
+    }*/
 }
