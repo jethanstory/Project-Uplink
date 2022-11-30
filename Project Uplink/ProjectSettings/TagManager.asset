@@ -28,6 +28,7 @@ TagManager:
   - Percentage
   - UninstallScreen
   - UninstallTarget
+  - DragBox
   layers:
   - Default
   - TransparentFX
