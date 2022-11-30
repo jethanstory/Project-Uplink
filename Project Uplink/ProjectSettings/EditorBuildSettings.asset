@@ -83,4 +83,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Endings/Dropbox_Ending.unity
     guid: 76e93ef47e597fc4391630d13328a1e9
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_MainUpdate.unity
+    guid: ab54c4c1f30df4e45ac2ac8727a62de2
+  - enabled: 1
+    path: Assets/Scenes/HTML_Scenes/HTML_Win.unity
+    guid: e9a4bb9188341b04da80fdf471efbbfc
   m_configObjects: {}

@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1036696354}
         m_TargetAssemblyTypeName: GameOEvents, Assembly-CSharp
-        m_MethodName: mainBroswerLevel
+        m_MethodName: mainBrowserUpdateLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1131,6 +1131,10 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+  userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &1036696355
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,7 +1206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c5ccd316162fb24b845717b645275a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3293869b39d01d47a2d01e0d3ce5ba5, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1779,7 +1783,7 @@ GameObject:
   - component: {fileID: 1880409833}
   m_Layer: 5
   m_Name: BusinessPanel
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

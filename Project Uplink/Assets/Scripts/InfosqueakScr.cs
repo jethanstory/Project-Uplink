@@ -35,6 +35,10 @@ public class InfosqueakScr : MonoBehaviour
     private float infoTimer;
     private float infoCounter = 0;
 
+    public GameObject restartScreen;
+    private GameObject currRestartScreen;
+    
+
     public float delayTimer; //= 3;
     public float delayTimerEnd;
     public int idleNum = 1;
@@ -106,7 +110,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    string myString = "Hello, " + FindObjectOfType<NameManagerScr>().userName + "! Thank you for downloading Uplink ‘97. My name is InfoSqueak, your Personal Computer’s Personal Assistant! \r\n[Press Space to Continue]";
+                    string myString = "Hello, " + FindObjectOfType<NameManagerScr>().userName + "! Thank you for downloading Uplink ï¿½97. My name is InfoSqueak, your Personal Computerï¿½s Personal Assistant! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -125,7 +129,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "I’m going to help you get familiar with your computer, so sit tight and follow my lead! \r\n[Press Space to Continue]";
+                    myString = "Iï¿½m going to help you get familiar with your computer, so sit tight and follow my lead! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -141,7 +145,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Assuming you’ve got all the necessary tools, you should have a keyboard and a mouse in front of you. \r\n[Press Space to Continue]";
+                    myString = "Assuming youï¿½ve got all the necessary tools, you should have a keyboard and a mouse in front of you. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -173,7 +177,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "A mouse is like, well… Like me! This tool allows you to interact with your computer by moving a cursor and selecting items on your screen. Keep in mind that this isn’t a real mouse, so don’t feel bad about manhandling it! \r\n[Press Space to Continue]";
+                    myString = "A mouse is like, wellï¿½ Like me! This tool allows you to interact with your computer by moving a cursor and selecting items on your screen. Keep in mind that this isnï¿½t a real mouse, so donï¿½t feel bad about manhandling it! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -189,7 +193,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Let’s get started with the mouse (the fake one)! \r\n[Press Space to Continue]";
+                    myString = "Letï¿½s get started with the mouse (the fake one)! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -277,7 +281,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Very good! You’ve manipulated a mouse before, haven’t you? All jokes aside, we are halfway done with the mouse calibration! \r\n[Press Space to Continue]";
+                    myString = "Very good! Youï¿½ve manipulated a mouse before, havenï¿½t you? All jokes aside, we are halfway done with the mouse calibration! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -293,7 +297,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "We here at Uplink want to get you completely up to snuff before browsing the world wide web, so crack those knuckles, do some desk stretches, and let’s keep going! \r\n[Press Space to Continue]";
+                    myString = "We here at Uplink want to get you completely up to snuff before browsing the world wide web, so crack those knuckles, do some desk stretches, and letï¿½s keep going! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -348,7 +352,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Impressive work! The guys who put this together couldn’t even do that one! Now, for this next test, try clicking on the squares before they touch the black shapes! \r\n[Press Space to Continue]";
+                    myString = "Impressive work! The guys who put this together couldnï¿½t even do that one! Now, for this next test, try clicking on the squares before they touch the black shapes! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -482,7 +486,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "All this instruction is hard work, so I’m feeling mighty peckish! Left-click and hold the cheese and drag it to me (pretty please)! \r\n[Press Space to Continue]";
+                    myString = "All this instruction is hard work, so Iï¿½m feeling mighty peckish! Left-click and hold the cheese and drag it to me (pretty please)! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -556,7 +560,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Amazing! As you navigate your personal computer, you may come across situations that require a bit more finesse in your dragging skills. Let’s get that wrist working! \r\n[Press Space to Continue]";
+                    myString = "Amazing! As you navigate your personal computer, you may come across situations that require a bit more finesse in your dragging skills. Letï¿½s get that wrist working! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -572,7 +576,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Left-click and drag the cheese to me but don’t let the cheese touch the black borders, or it’ll get moldy! \r\n[Press Space to Continue]";
+                    myString = "Left-click and drag the cheese to me but donï¿½t let the cheese touch the black borders, or itï¿½ll get moldy! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -883,7 +887,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "This may be an outdated version of the program. I’m going to check for an update. Keep calm and carry on. \r\n[Press Space to Continue]";
+                    myString = "This may be an outdated version of the program. Iï¿½m going to check for an update. Keep calm and carry on. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -943,7 +947,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Can you whistle? I’ve tried it, but all I can do is squeak. … … So… how are you enjoying the tutorial so far? Having fun? Yeah, me too… You know, " + FindObjectOfType<NameManagerScr>().userName + ", you’re my favorite person I’ve instructed. Yeah… So… Anyway… What are you doing Tuesday? Got any plans? \r\n[Press Space to Continue]";
+                    myString = "Can you whistle? Iï¿½ve tried it, but all I can do is squeak. ï¿½ ï¿½ Soï¿½ how are you enjoying the tutorial so far? Having fun? Yeah, me tooï¿½ You know, " + FindObjectOfType<NameManagerScr>().userName + ", youï¿½re my favorite person Iï¿½ve instructed. Yeahï¿½ Soï¿½ Anywayï¿½ What are you doing Tuesday? Got any plans? \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -960,7 +964,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Oh, great! Alright, so, to apply the update, I have to restart your computer. Don’t worry, I’ve saved your progress, so you won’t have to go through all that again! Would you like to restart?";
+                    myString = "Oh, great! Alright, so, to apply the update, I have to restart your computer. Donï¿½t worry, Iï¿½ve saved your progress, so you wonï¿½t have to go through all that again! Would you like to restart?";
 
                     //create the buttons
                     yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
@@ -993,8 +997,10 @@ public class InfosqueakScr : MonoBehaviour
                     sr.enabled = false;
 
                     //load the black screen
-                    currBlackScreen = Instantiate(blackScreen, Vector3.zero, Quaternion.identity);
-                    currBlackScreen.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                    // currBlackScreen = Instantiate(blackScreen, Vector3.zero, Quaternion.identity);
+                    // currBlackScreen.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                    currRestartScreen = Instantiate(restartScreen, Vector3.zero, Quaternion.identity);
+                    currRestartScreen.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
 
                     break;
                 case 29:
@@ -1004,7 +1010,8 @@ public class InfosqueakScr : MonoBehaviour
                     sr.enabled = true;
 
                     //remove black screen
-                    Destroy(currBlackScreen);
+                    //Destroy(currBlackScreen);
+                    Destroy(currRestartScreen);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -1012,7 +1019,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Welcome back, and sorry for the interruption! I thought those guys fixed this thing already. Anyways, let’s crack on! \r\n[Press Space to Continue]";
+                    myString = "Welcome back, and sorry for the interruption! I thought those guys fixed this thing already. Anyways, letï¿½s crack on! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1029,7 +1036,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "For this next tutorial, we’re going to work on your typing skills. The keyboard is an important tool for using a computer. As you continue to operate your personal computer, your keyboard is going to be your pathway to input… Well, what I’m saying is that you’ll need to be familiar with the keyboard to… \r\n[Press Space to Continue]";
+                    myString = "For this next tutorial, weï¿½re going to work on your typing skills. The keyboard is an important tool for using a computer. As you continue to operate your personal computer, your keyboard is going to be your pathway to inputï¿½ Well, what Iï¿½m saying is that youï¿½ll need to be familiar with the keyboard toï¿½ \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1046,7 +1053,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Uhm… \r\n[Press Space to Continue]";
+                    myString = "Uhmï¿½ \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1063,7 +1070,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Uhh… \r\n[Press Space to Continue]";
+                    myString = "Uhhï¿½ \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1080,7 +1087,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Well… I seem to have forgotten what I was saying. Something about, uhm… I don’t know… I guess it must not have been important. \r\n[Press Space to Continue]";
+                    myString = "Wellï¿½ I seem to have forgotten what I was saying. Something about, uhmï¿½ I donï¿½t knowï¿½ I guess it must not have been important. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1097,7 +1104,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Let’s just get you started on your next tutorial, then. For this one, you’ll have to type the example sentence as it appears on your screen into the text box. I’m going to sit this one out to try and collect my thoughts, but I’ll check back in once you’ve finished the first round. \r\n[Press Space to Continue]";
+                    myString = "Letï¿½s just get you started on your next tutorial, then. For this one, youï¿½ll have to type the example sentence as it appears on your screen into the text box. Iï¿½m going to sit this one out to try and collect my thoughts, but Iï¿½ll check back in once youï¿½ve finished the first round. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1178,7 +1185,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Fantastic. For this next round, you will be timed, so crack those knuckles, do some desk stretches, and let’s keep going! Oh, wait. I said that before, didn’t I? Just pretend I said something upbeat, have fun, so on and so forth. \r\n[Press Space to Continue]";
+                    myString = "Fantastic. For this next round, you will be timed, so crack those knuckles, do some desk stretches, and letï¿½s keep going! Oh, wait. I said that before, didnï¿½t I? Just pretend I said something upbeat, have fun, so on and so forth. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1272,7 +1279,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Good stuff, huh? Excellent work, by the way. Some pretty big words in there. For the final tutorial of this program, we’ll give you a short preview of various things you may expect to see while browsing the worldwide web. \r\n[Press Space to Continue]";
+                    myString = "Good stuff, huh? Excellent work, by the way. Some pretty big words in there. For the final tutorial of this program, weï¿½ll give you a short preview of various things you may expect to see while browsing the worldwide web. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1289,7 +1296,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "While using a web browser, you’ll come across interactive buttons or text that will take you to different web pages, and these are called hyperlinks (‘links’ for short). \r\n[Press Space to Continue]";
+                    myString = "While using a web browser, youï¿½ll come across interactive buttons or text that will take you to different web pages, and these are called hyperlinks (ï¿½linksï¿½ for short). \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1323,7 +1330,7 @@ public class InfosqueakScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "We had some fun though, didn’t we? I know I did. Remember that time you had to feed me cheese? Classic. I was kidding then when I said I was hungry. I can’t eat food because I’m just a collection of code and design elements. Just a lowly program mascot made to help you learn how to use a computer. \r\n[Press Space to Continue]";
+                    myString = "We had some fun though, didnï¿½t we? I know I did. Remember that time you had to feed me cheese? Classic. I was kidding then when I said I was hungry. I canï¿½t eat food because Iï¿½m just a collection of code and design elements. Just a lowly program mascot made to help you learn how to use a computer. \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -1453,8 +1460,14 @@ public class InfosqueakScr : MonoBehaviour
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
-        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //current working position
+        //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        //bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+        //test position
+        bubblePos = new Vector3(tm.position.x - 300f, tm.position.y + 300, 0f);
+        //bubblePos = Camera.main.ScreenToWorldPoint(currPos);
     }
     
     private void IdleCheck()

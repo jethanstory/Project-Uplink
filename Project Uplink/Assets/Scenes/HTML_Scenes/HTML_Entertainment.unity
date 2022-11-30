@@ -571,7 +571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fdba13bfaa019c742a0a644b4001cf68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 371ffd233dbd79c4ab356de2e190de88, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -674,7 +674,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1459250799}
         m_TargetAssemblyTypeName: GameOEvents, Assembly-CSharp
-        m_MethodName: mainBroswerLevel
+        m_MethodName: mainBrowserUpdateLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 1567548598}
   m_Layer: 5
   m_Name: EntertainmentPanel
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
