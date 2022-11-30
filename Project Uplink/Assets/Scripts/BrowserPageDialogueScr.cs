@@ -256,13 +256,17 @@ public class BrowserPageDialogueScr : MonoBehaviour
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
-        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        //bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        bubblePos = new Vector3(tm.position.x - 200f, tm.position.y + 300f, 0f);
     }
     private void ChangedPositionTextBox()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
-        infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
+        //infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
+        infoBoxPos = new Vector3(tm.position.x - 100f, tm.position.y + 400f, 0f);
     }
 }

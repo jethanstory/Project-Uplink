@@ -1146,7 +1146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &554818421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   square: {fileID: 8607786490719484797, guid: 56cb0bc912d4fd84380d8b8c4f523100, type: 3}
   movingSquare: {fileID: 1500846406151409014, guid: b697ecc5926b48f448051298807e6ac7, type: 3}
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}
-  cheese: {fileID: 4568602660048351396, guid: 94fac291ed216434ea7adeb5d53c3fea, type: 3}
+  cheese: {fileID: 5366041673856034156, guid: 6fc0ac36eba3b2b48ba98ca6a7ffd63a, type: 3}
   textBox: {fileID: 994008710116616345, guid: 7aff7d6e3d652cb4c9b71dfbc683935c, type: 3}
   paragraph: {fileID: 412730413570393873, guid: 84009635f23a82348b5a01675a966199, type: 3}
   timer: {fileID: 2689012827814169684, guid: 85ff92463f20ee943a2565684f0a2c16, type: 3}
@@ -3929,7 +3929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1965823524
 MonoBehaviour:
   m_ObjectHideFlags: 0

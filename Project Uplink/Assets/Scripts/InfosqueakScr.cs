@@ -505,6 +505,11 @@ public class InfosqueakScr : MonoBehaviour
                         //set the cheese position
                         cheesePos = new Vector3(0, 0, 0);
 
+                        //test canvas image
+                        //cheesePos = new Vector3(tm.position.x - 500, tm.position.y + 500, 0);
+
+                        
+
                         switch(progressNum)
                         {
                             case 0:
@@ -1462,11 +1467,12 @@ public class InfosqueakScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         
         //current working position
-        //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
-        //bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
         //test position
-        bubblePos = new Vector3(tm.position.x - 300f, tm.position.y + 300, 0f);
+        //bubblePos = new Vector3(tm.position.x - 300f, tm.position.y + 300, 0f);
+        
         //bubblePos = Camera.main.ScreenToWorldPoint(currPos);
     }
     
