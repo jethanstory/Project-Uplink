@@ -2317,6 +2317,10 @@ MonoBehaviour:
   mascotMenu: {fileID: 0}
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
+  userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!1 &1534908144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,7 +2864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Click Here for the latest events!
+  m_Text: Click Here for the latest events of ALL topics!
 --- !u!222 &2062462426
 CanvasRenderer:
   m_ObjectHideFlags: 0

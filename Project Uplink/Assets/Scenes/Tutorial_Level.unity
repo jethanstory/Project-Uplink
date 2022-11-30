@@ -2833,6 +2833,9 @@ MonoBehaviour:
   mascotDialogue: {fileID: 382668119}
   mascotQuestion: {fileID: 1859973229}
   userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &1492716827
 Transform:
   m_ObjectHideFlags: 0
@@ -3249,7 +3252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da497a286b5eb9c4fa8714625f59e03d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cba823ab1ef638489dd6215169f44dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
