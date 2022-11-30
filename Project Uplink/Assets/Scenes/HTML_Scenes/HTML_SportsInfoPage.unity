@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6025189daacbe2a47b976d44576ba084, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73bfae55c274126488c0e9fbf749ae82, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1828,6 +1828,9 @@ MonoBehaviour:
   mascotDialogue: {fileID: 0}
   mascotQuestion: {fileID: 0}
   userText: {fileID: 0}
+  setup1: {fileID: 0}
+  setup2: {fileID: 0}
+  setup3: {fileID: 0}
 --- !u!4 &996338510
 Transform:
   m_ObjectHideFlags: 0

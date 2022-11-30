@@ -3740,6 +3740,7 @@ MonoBehaviour:
   loadingSpeed: 1000
   blackScreen: {fileID: 5427799658053595767, guid: 943e707930abd7544ab2e53e54ecddf9, type: 3}
   isTimed: 0
+  restartScreen: {fileID: 7544092973353147594, guid: d3a8e3974e2c36e40b4e62c544a741b4, type: 3}
   delayTimer: 5
   delayTimerEnd: 7
   idleNum: 1
