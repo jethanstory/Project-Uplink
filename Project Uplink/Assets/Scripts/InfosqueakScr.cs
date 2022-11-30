@@ -1460,8 +1460,14 @@ public class InfosqueakScr : MonoBehaviour
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
-        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //current working position
+        //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        //bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+        //test position
+        bubblePos = new Vector3(tm.position.x - 300f, tm.position.y + 300, 0f);
+        //bubblePos = Camera.main.ScreenToWorldPoint(currPos);
     }
     
     private void IdleCheck()
