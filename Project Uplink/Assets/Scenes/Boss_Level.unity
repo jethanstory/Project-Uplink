@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingNum: -1
-  cutsceneMouse: {fileID: 4974138307427394014, guid: 9cf3d8c1d7951fe449d9a7efdde83b16, type: 3}
+  cutsceneMouse: {fileID: 353977244208024588, guid: 9cf3d8c1d7951fe449d9a7efdde83b16, type: 3}
 --- !u!4 &206600719
 Transform:
   m_ObjectHideFlags: 0
