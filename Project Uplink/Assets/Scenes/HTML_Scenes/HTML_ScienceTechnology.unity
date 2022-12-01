@@ -788,13 +788,14 @@ MonoBehaviour:
   m_Text: 'Latest World Updates:
 
 
+    Error 504: Cannot Refresh
 
 
-    Latest NetSqueak Updates:
+    Latest NetSqueak
+    Updates:
 
 
-    We''ve updated
-    our welcome page: www.netsqueakwelcome2000.com'
+    We''ve updated our welcome page: www.netsqueakwelcome2000.com'
 --- !u!222 &1179505714
 CanvasRenderer:
   m_ObjectHideFlags: 0
