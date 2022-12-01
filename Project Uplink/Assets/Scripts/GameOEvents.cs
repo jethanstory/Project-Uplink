@@ -16,6 +16,7 @@ public class GameOEvents : MonoBehaviour
     public GameObject setup1;
     public GameObject setup2;
     public GameObject setup3;
+    public GameObject soundWave;
 
     // Load Menu
     public void MenuGame()
@@ -206,6 +207,12 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void noSound()
+    {
+        soundWave.SetActive(false);
+        soundWave.SetActive(true);
+    }
+    
 
 
     
