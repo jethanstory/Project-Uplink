@@ -158,7 +158,7 @@ MonoBehaviour:
   canAttack: 0
   gameOver: 0
   isLoading: 0
-  loadTime: 150
+  loadTime: 50
   blackScreen: {fileID: 5427799658053595767, guid: 943e707930abd7544ab2e53e54ecddf9, type: 3}
   firstCheese: {fileID: 5352972394128897129, guid: 1463dc2c8a723354ca89c5198a504911, type: 3}
   badSquare: {fileID: 6736323836598779810, guid: ea815282a1dec3a4cb8e0fe5778e5a61, type: 3}
