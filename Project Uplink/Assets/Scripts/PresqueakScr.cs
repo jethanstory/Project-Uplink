@@ -25,6 +25,8 @@ public class PresqueakScr : MonoBehaviour
     public GameObject badSquare;
     private GameObject currBadSquare;
     private Vector3 badSquarePos;
+    public GameObject blackScreen;
+    private GameObject currScreen;
 
     public void Update()
     {
@@ -174,12 +176,21 @@ public class PresqueakScr : MonoBehaviour
                     inLoadingScene = true;
                     loadingSpeed = 3000;
 
+                    if (currScreen == null)
+                    {
+                        currScreen = Instantiate(blackScreen, Vector3.zero, Quaternion.identity);
+                        currScreen.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                    }
+
                     break;
                 case 8:
                     //create obsoletesqueak
                     obsoletePos = new Vector3(-967, -541, 0);
                     currObsoletesqueak = Instantiate(obsoletesqueak, obsoletePos, Quaternion.identity);
                     currObsoletesqueak.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
+                    //destroy black screen
+                    Destroy(currScreen);
 
                     //create bad squares
 
