@@ -174,7 +174,8 @@ public class PresqueakScr : MonoBehaviour
                     //summoning black squares
 
                     inLoadingScene = true;
-                    loadingSpeed = 3000;
+                    //loadingSpeed = 3000;
+                    loadingSpeed = 150;
 
                     if (currScreen == null)
                     {
