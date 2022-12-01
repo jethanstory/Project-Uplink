@@ -12,6 +12,8 @@ public class MiniGameTwoScr : MonoBehaviour
     private bool overCheese = false;
     public int failedNum;
     public GameObject badMouse;
+    public GameObject victorySound;
+    public GameObject failSound;
 
     //bad mouse vars
     public bool grabbed = false;
@@ -43,12 +45,16 @@ public class MiniGameTwoScr : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
             FindObjectOfType<InfosqueakScr>().progressNum++;
+            victorySound.SetActive(false);
+            victorySound.SetActive(true);
         }
         else if (collision.collider.tag == "BadSquare")
         {
             hitBlackSquare = true;
             //Invoke("AdjustPosition", 0.5f);
             AdjustPosition();
+            failSound.SetActive(false);
+            failSound.SetActive(true);
         }
     }
 
