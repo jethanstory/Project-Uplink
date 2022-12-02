@@ -38,6 +38,7 @@ public class InfosqueakScr : MonoBehaviour
     public GameObject restartScreen;
     private GameObject currRestartScreen;
     public Sprite[] spriteArray;
+    public GameObject victorySound;
     
 
     public float delayTimer; //= 3;
@@ -125,7 +126,7 @@ public class InfosqueakScr : MonoBehaviour
                 case 1:
                     //follow my lead
 
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -142,6 +143,7 @@ public class InfosqueakScr : MonoBehaviour
                 case 2:
                     //you have these devices right?
 
+                    
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -288,6 +290,8 @@ public class InfosqueakScr : MonoBehaviour
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
@@ -461,6 +465,9 @@ public class InfosqueakScr : MonoBehaviour
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
+
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
@@ -571,6 +578,9 @@ public class InfosqueakScr : MonoBehaviour
                     myString = "Amazing! As you navigate your personal computer, you may come across situations that require a bit more finesse in your dragging skills. Let's get that wrist working! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
 
                     //allows player to skip/continue cutscene
                     canSkip = true;

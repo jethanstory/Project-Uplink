@@ -45,8 +45,8 @@ public class MiniGameTwoScr : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<BadSquareManagerScr>().RemoveBadSquares();
             FindObjectOfType<InfosqueakScr>().progressNum++;
-            victorySound.SetActive(false);
-            victorySound.SetActive(true);
+            // victorySound.SetActive(false);
+            // victorySound.SetActive(true);
         }
         else if (collision.collider.tag == "BadSquare")
         {
