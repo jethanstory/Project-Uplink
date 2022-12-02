@@ -261,7 +261,8 @@ public class PresqueakScr : MonoBehaviour
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x + 2f, tm.position.y + 3f, 0f);
+        //currPos = new Vector3(tm.position.x + 2f, tm.position.y + 3f, 0f);
+        currPos = new Vector3(tm.position.x + 3f, tm.position.y + 4f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
     }
 }
