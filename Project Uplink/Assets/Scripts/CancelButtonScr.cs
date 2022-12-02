@@ -63,12 +63,12 @@ public class CancelButtonScr : MonoBehaviour
             || collision.collider.tag == "BadCheese"
             || collision.collider.tag == "BadSquare")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("BlueScene");
         }
 
         if (collision.collider.tag == "MassAttack" && !isSafe)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("BlueScene");
         }
         else if (collision.collider.tag == "MassAttack")
         {
@@ -78,7 +78,7 @@ public class CancelButtonScr : MonoBehaviour
         if (collision.collider.tag == "LazerBeam")
         {
             FindObjectOfType<LazerBeamScr>().checkManager = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("BlueScene");
         }
     }
 

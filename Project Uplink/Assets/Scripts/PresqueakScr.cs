@@ -186,10 +186,10 @@ public class PresqueakScr : MonoBehaviour
                     break;
                 case 8:
                     //create obsoletesqueak
-                    obsoletePos = new Vector3(-967, -541, 0);
+                    obsoletePos = new Vector3(-5.5f, -1.5f, 0);
                     //obsoletePos = new Vector3(0, 0, 0);
                     currObsoletesqueak = Instantiate(obsoletesqueak, obsoletePos, Quaternion.identity);
-                    currObsoletesqueak.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+                    currObsoletesqueak.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //destroy black screen
                     Destroy(currScreen);

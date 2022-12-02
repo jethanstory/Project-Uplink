@@ -89,4 +89,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HTML_Scenes/HTML_Win.unity
     guid: e9a4bb9188341b04da80fdf471efbbfc
+  - enabled: 1
+    path: Assets/Scenes/Endings/DropBox_EndingSimple.unity
+    guid: f6461e8a3cb11174f86e8b06e7361eac
+  - enabled: 1
+    path: Assets/Scenes/BlueScene.unity
+    guid: 049c9bbcb2a072b4e947b93c3fca8937
   m_configObjects: {}
