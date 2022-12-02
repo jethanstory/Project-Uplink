@@ -37,6 +37,7 @@ public class InfosqueakScr : MonoBehaviour
 
     public GameObject restartScreen;
     private GameObject currRestartScreen;
+    public Sprite[] spriteArray;
     
 
     public float delayTimer; //= 3;
@@ -1469,7 +1470,7 @@ public class InfosqueakScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         
         //current working position
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        currPos = new Vector3(tm.position.x - 3f, tm.position.y + 4f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
         //test position
@@ -1542,6 +1543,11 @@ public class InfosqueakScr : MonoBehaviour
         }
         lastMouseCoordinate = Input.mousePosition;
         //StartCoroutine(DelayEnd(delayTimerEnd));
+    }
+
+    void ChangeSprite() 
+    { 
+        sr.sprite = spriteArray[0]; 
     }
 
     
