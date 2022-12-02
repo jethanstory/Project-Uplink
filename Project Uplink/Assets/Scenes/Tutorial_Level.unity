@@ -1280,6 +1280,8 @@ MonoBehaviour:
   blackScreen: {fileID: 5427799658053595767, guid: 943e707930abd7544ab2e53e54ecddf9, type: 3}
   isTimed: 0
   restartScreen: {fileID: 7544092973353147594, guid: d3a8e3974e2c36e40b4e62c544a741b4, type: 3}
+  spriteArray: []
+  victorySound: {fileID: 0}
   delayTimer: 0
   delayTimerEnd: 0
   idleNum: 1
@@ -4214,6 +4216,13 @@ MonoBehaviour:
   blackScreen: {fileID: 5427799658053595767, guid: 943e707930abd7544ab2e53e54ecddf9, type: 3}
   isTimed: 0
   restartScreen: {fileID: 7544092973353147594, guid: d3a8e3974e2c36e40b4e62c544a741b4, type: 3}
+  spriteArray:
+  - {fileID: 21300000, guid: c49d2e6b5c87efa4e84f88b8e7718810, type: 3}
+  - {fileID: 21300000, guid: c9277f918235bc44a9b4eebd92574345, type: 3}
+  - {fileID: 21300000, guid: 34d06d08144e5e94899fcb3eb989e55c, type: 3}
+  - {fileID: 21300000, guid: b1dbb5ddd6f6c334382671619253c975, type: 3}
+  - {fileID: 21300000, guid: 7de8b2c0a6cadd04182c97f8ea0d2a49, type: 3}
+  victorySound: {fileID: 1254026485}
   delayTimer: 5
   delayTimerEnd: 7
   idleNum: 1
@@ -4265,7 +4274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 89ada92346b6d654e80cb9da0059d276, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c49d2e6b5c87efa4e84f88b8e7718810, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4285,7 +4294,7 @@ Transform:
   m_GameObject: {fileID: 1965823523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -4307,7 +4316,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 2.4}
+    oldSize: {x: 6.9, y: 6.64}
     newSize: {x: 2.4, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

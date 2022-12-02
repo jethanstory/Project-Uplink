@@ -37,6 +37,8 @@ public class InfosqueakScr : MonoBehaviour
 
     public GameObject restartScreen;
     private GameObject currRestartScreen;
+    public Sprite[] spriteArray;
+    public GameObject victorySound;
     
 
     public float delayTimer; //= 3;
@@ -124,7 +126,7 @@ public class InfosqueakScr : MonoBehaviour
                 case 1:
                     //follow my lead
 
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -141,6 +143,7 @@ public class InfosqueakScr : MonoBehaviour
                 case 2:
                     //you have these devices right?
 
+                    
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -172,6 +175,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 4:
                     //what is a mouse?
+                    ChangeSprite(2);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -204,6 +208,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 6:
                     //discuss first mouse calibration test
+                    ChangeSprite(1);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -276,6 +281,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 8:
                     //congrats on completing first mini game
+                    ChangeSprite(0);
 
                     //sets the position of the speech bubble
                     ChangedPosition();
@@ -290,11 +296,14 @@ public class InfosqueakScr : MonoBehaviour
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
                 case 9:
                     //discuss why they are doing the advanced first mini game
+                    ChangeSprite(2);
 
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
@@ -350,10 +359,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 12:
                     //congrats beating the first part of the advanced minigame
-
-                    //sets the position of the speech bubble
-                    ChangedPosition();
-
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -363,6 +369,9 @@ public class InfosqueakScr : MonoBehaviour
                     myString = "Impressive work! The guys who put this together couldn't even do that one! Now, for this next test, try clicking on the squares before they touch the black shapes! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
 
                     //set max progress
                     maxProgressNum = 4;
@@ -463,10 +472,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 14:
                     //congrats on completing advanced first mini game
-
-                    //sets the position of the speech bubble
-                    ChangedPosition();
-
+                    ChangeSprite(2);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -476,6 +482,9 @@ public class InfosqueakScr : MonoBehaviour
                     myString = "Squeaktastic! \r\n[Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
 
                     //allows player to skip/continue cutscene
                     canSkip = true;
@@ -498,7 +507,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 16:
                     //talk about next minigame
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -573,7 +582,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 18:
                     //congrats on completing the drag mini game
-
+                    ChangeSprite(0);
                     //reset infosqueak position
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
                     sr.flipX = false;
@@ -591,12 +600,15 @@ public class InfosqueakScr : MonoBehaviour
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
+                    victorySound.SetActive(false);
+                    victorySound.SetActive(true);
+
                     //allows player to skip/continue cutscene
                     canSkip = true;
                     break;
                 case 19:
                     //tutorial for advanced mini game 2
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -926,10 +938,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 21:
                     //player stuck
-
-                    //sets the position of the speech bubble
-                    ChangedPosition();
-
+                    ChangeSprite(3);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -946,7 +955,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 22:
                     //Keep calm and carry on
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -970,7 +979,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 24:
                     //Infosqueak finds an update
-
+                    ChangeSprite(0);
                     sr.enabled = true;
 
                     //creates a speech bubble
@@ -989,7 +998,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 25:
                     //silence
-
+                    ChangeSprite(2);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1006,7 +1015,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 26:
                     //banter
-
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1023,7 +1032,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 27:
                     //Infosqueak asks if you want to reset
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1074,7 +1083,7 @@ public class InfosqueakScr : MonoBehaviour
 
                     //show infosqueak
                     sr.enabled = true;
-
+                    ChangeSprite(0);
                     //remove black screen
                     //Destroy(currBlackScreen);
                     Destroy(currRestartScreen);
@@ -1095,7 +1104,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 30:
                     //talk about keyboard calibration
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1112,7 +1121,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 31:
                     //confusion
-
+                    ChangeSprite(3);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1163,7 +1172,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 34:
                     //discuss minigame 3
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1241,10 +1250,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 36:
                     //discuss advanced minigame 3
-
-                    //sets the position of the speech bubble
-                    ChangedPosition();
-
+                    ChangeSprite(0);
                     //infosqueak reappears
                     sr.enabled = true;
 
@@ -1267,7 +1273,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 37:
                     //advanced minigame 3
-
+                    ChangeSprite(1);
                     //infosqueak disappears
                     sr.enabled = false;
 
@@ -1338,10 +1344,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 38:
                     //congrats beating advanced minigame 3
-
-                    //sets the position of the speech bubble
-                    ChangedPosition();
-
+                    ChangeSprite(0);
                     //infosqueak reappears
                     sr.enabled = true;
 
@@ -1361,7 +1364,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 39:
                     //explain what links are
-
+                    ChangeSprite(2);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1412,7 +1415,7 @@ public class InfosqueakScr : MonoBehaviour
                     break;
                 case 42:
                     //What is my purpose?
-
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -1534,7 +1537,7 @@ public class InfosqueakScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         
         //current working position
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        currPos = new Vector3(tm.position.x - 3f, tm.position.y + 4f, 0f);
         bubblePos = Camera.main.WorldToScreenPoint(currPos);
 
         //test position
@@ -1607,6 +1610,11 @@ public class InfosqueakScr : MonoBehaviour
         }
         lastMouseCoordinate = Input.mousePosition;
         //StartCoroutine(DelayEnd(delayTimerEnd));
+    }
+
+    void ChangeSprite(int n) 
+    { 
+        sr.sprite = spriteArray[n]; 
     }
 
     
