@@ -1839,7 +1839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -405.9702, y: 0}
+  m_AnchoredPosition: {x: -405.9702, y: 11}
   m_SizeDelta: {x: 388.0596, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499995115
@@ -1875,8 +1875,30 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Writing\n- Patrick McBroom Jr.\n\nProgramming\n- Joshua Yee\n- Jonathan
-    Story\n\nMusic and Sound\n- Julia Craft\n\nArt\n- Miles \n- Jonathan Story"
+  m_Text: 'Writing
+
+    - Patrick McBroom Jr.
+
+
+    Programming
+
+    - Joshua Yee
+
+    -
+    Jonathan Story
+
+
+    Music and Sound
+
+    - Julia Craft
+
+
+    Art
+
+    - Miles
+    (@deceased#2190)
+
+    - Jonathan Story'
 --- !u!222 &1499995116
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2585,7 +2607,7 @@ MonoBehaviour:
     - Django Stauffer
 
 
-    VDGC
+    VGDC
     Paid Members
 
     Irvin Rafael
