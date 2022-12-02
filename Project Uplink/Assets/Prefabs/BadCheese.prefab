@@ -137,4 +137,4 @@ MonoBehaviour:
   rb: {fileID: 7741041617855309444}
   tm: {fileID: 6124254939636671686}
   shootDirection: {x: 0, y: 0}
-  speed: 300
+  speed: 150

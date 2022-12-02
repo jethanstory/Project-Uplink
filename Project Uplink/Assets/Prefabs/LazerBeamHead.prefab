@@ -145,8 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7449574475338368993}
-  speed: 5000
+  speed: 625
   tm: {fileID: 6245524173818525950}
   cancelButtonPos: {fileID: 344904043619376771, guid: 6e760164e664b054e9a152804375b968, type: 3}
-  spawnTimer: 5
+  spawnTimer: 0.5
   lazerBeamBody: {fileID: 6000938260340207482, guid: d8ba723fb7f46b04f8a867222fb6dcfc, type: 3}
+  pos: {x: 0, y: 0, z: 0}
+  checkManager: 1

@@ -93,7 +93,7 @@ public class InfosqueakScr : MonoBehaviour
     public void Start()
     {
         //makes it so that infodsqueak never dies! (when loading another scene)
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     public void Update()
     {
@@ -283,6 +283,9 @@ public class InfosqueakScr : MonoBehaviour
                     //congrats on completing first mini game
                     ChangeSprite(0);
 
+                    //sets the position of the speech bubble
+                    ChangedPosition();
+
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -393,6 +396,7 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create moving square
                                 movingSquarePos = new Vector3(0, 0, 0);
@@ -405,11 +409,13 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create moving square
                                 movingSquarePos = new Vector3(0, 0, 0);
@@ -422,11 +428,13 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create moving square
                                 movingSquarePos = new Vector3(0, 0, 0);
@@ -439,16 +447,19 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(25, 1, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
                                 currBadSquare.transform.localScale = new Vector3(1, 12, 1);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create moving square
                                 movingSquarePos = new Vector3(0, 0, 0);
@@ -576,6 +587,9 @@ public class InfosqueakScr : MonoBehaviour
                     tm.position = new Vector3(tm.position.x * -1, tm.position.y, tm.position.z);
                     sr.flipX = false;
 
+                    //sets the position of the speech bubble
+                    ChangedPosition();
+
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //res fix
@@ -629,14 +643,14 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare.transform.localScale = new Vector3(8, 24, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 69);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(2, 5.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(8, 24, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 69);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-                                
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create cheese
                                 cheesePos = new Vector3(-8, 4, 0);
@@ -652,17 +666,19 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(15, 7, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
-
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(0, -4.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(8.5f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create cheese
                                 cheesePos = new Vector3(-8, -3, 0);
@@ -679,51 +695,61 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(8.4f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(0, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(1, -2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(14, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-1, 1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(14, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(5.5f, 3.8f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(2.5f, 2.2f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-0.5f, 3.8f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 1.6f, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-3.5f, 2.2f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 2, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create cheese
                                 cheesePos = new Vector3(6.5f, -3.5f, 0);
@@ -739,31 +765,37 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-9, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(0, -5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(9, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 10, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(2, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(16, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-2, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(16, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //slanted
                                 badSquarePos = new Vector3(6.5f, 5, 0);
@@ -771,66 +803,77 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(4, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(1.5f, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-1, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-3.5f, 5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-6, 2, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-3.5f, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(1.5f, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(6, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 2, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(4, -5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(3, 3, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-1, -5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(3, 3, 1);
                                 currBadSquare.transform.eulerAngles = new Vector3(0, 0, 45);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create cheese
                                 cheesePos = new Vector3(8, 3.5f, 0);
@@ -847,36 +890,43 @@ public class InfosqueakScr : MonoBehaviour
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(8.5f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(1, 11, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(0, -5, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(18, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(-5.5f, 0, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(7, 9, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(5, 1.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(7, 9, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(1, -1, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(2, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 badSquarePos = new Vector3(0, 1.5f, 0);
                                 currBadSquare = Instantiate(badSquare, badSquarePos, Quaternion.identity);
                                 currBadSquare.transform.localScale = new Vector3(5, 1, 1);
                                 currBadSquare.transform.SetParent(GameObject.FindGameObjectWithTag("BadSquareManager").transform, true);
+                                currBadSquare.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
                                 //create the cheese
                                 cheesePos = new Vector3(-1, 3.5f, 0);
