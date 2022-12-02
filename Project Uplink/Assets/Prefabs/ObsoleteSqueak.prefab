@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &4209561249979808203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,11 +169,11 @@ MonoBehaviour:
   canShoot: 1
   redSquare: {fileID: 1382391854335647309, guid: 71f1950b95faa3441b5f295af82a3ca5, type: 3}
   startMassiveAttack: 0
-  massAttackTime: 1500
+  massAttackTime: 750
   massiveAttack: {fileID: 2370327926402644716, guid: 243e547316af56746b918d7d696de9d9, type: 3}
   textBox: {fileID: 994008710116616345, guid: 7aff7d6e3d652cb4c9b71dfbc683935c, type: 3}
   paragraph: {fileID: 412730413570393873, guid: 84009635f23a82348b5a01675a966199, type: 3}
-  lazerBeamTime: 2500
+  lazerBeamTime: 1250
   lazerBeam: {fileID: 9187984158926461246, guid: d155ed527491cec45b11b87c9ca90c96, type: 3}
   lr: {fileID: 4209561249979808199}
 --- !u!120 &4209561249979808199

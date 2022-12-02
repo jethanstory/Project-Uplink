@@ -94,5 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myText: {fileID: 2589672544393565007}
   timeNum: 99
-  timeSpeed: 100
+  timeSpeed: 25
   startCounting: 0

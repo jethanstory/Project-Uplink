@@ -151,5 +151,6 @@ MonoBehaviour:
   inBattle: 0
   safeSquare: {fileID: 1743282773689837478, guid: 9a300f39093af8c4ea820aa036cff5f5, type: 3}
   canMove: 0
-  speed: 5000
+  speed: 250
   stopPos: 0
+  victorySound: {fileID: 0}
