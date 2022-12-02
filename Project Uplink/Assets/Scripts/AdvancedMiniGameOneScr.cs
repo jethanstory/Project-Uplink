@@ -11,6 +11,8 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
     public Transform tm;
     public bool isCaught = false;
     private Vector3 initialPos;
+    public GameObject victorySound;
+    public GameObject failSound;
 
     public void Start()
     {
@@ -76,6 +78,8 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
             sr.color = Color.green;
             isCaught = true;
             Invoke("DestroySquare", 1f);
+            victorySound.SetActive(false);
+            victorySound.SetActive(true);
         }
     }
 
@@ -85,6 +89,8 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
         {
             //move the square back its original position
             tm.position = initialPos;
+            failSound.SetActive(false);
+            failSound.SetActive(true);
         }
     }
 

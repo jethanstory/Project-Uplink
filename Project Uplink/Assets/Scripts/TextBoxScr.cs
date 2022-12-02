@@ -15,6 +15,8 @@ public class TextBoxScr : MonoBehaviour
     public InputField myInputField;
     public bool isTimed;
     public bool inBossBattle = false;
+    public GameObject victorySound;
+    public GameObject failSound;
 
     public void Start()
     {
@@ -104,6 +106,8 @@ public class TextBoxScr : MonoBehaviour
                 }
                 //sets the textbox to red to indicate that it is wrong
                 myInputField.image.color = Color.red;
+                // failSound.SetActive(false);
+                // failSound.SetActive(true);
                 //exits out of the method
                 return;
             }

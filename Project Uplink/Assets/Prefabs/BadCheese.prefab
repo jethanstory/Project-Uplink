@@ -137,8 +137,4 @@ MonoBehaviour:
   rb: {fileID: 7741041617855309444}
   tm: {fileID: 6124254939636671686}
   shootDirection: {x: 0, y: 0}
-  speed: 3000
-  uninstallScreen: {fileID: 3288096667327470635, guid: d0b418fa51bc9e84694c36a8b8f60f37, type: 3}
-  percent: {fileID: 3820202704344669857, guid: 4d0a942c18495d24a816763d8df030ea, type: 3}
-  cancelButton: {fileID: 5150183220063046299, guid: 6e760164e664b054e9a152804375b968, type: 3}
-  errorMessage: {fileID: 650397299943510815, guid: c76c622953b635a4f93e500c07fabedb, type: 3}
+  speed: 300

@@ -13,6 +13,7 @@ public class MiniGameOneScr : MonoBehaviour
     public bool canMove = false;
     public float speed;
     public float stopPos;
+    public GameObject victorySound;
 
     public void Start()
     {
@@ -27,6 +28,8 @@ public class MiniGameOneScr : MonoBehaviour
         {
             sr.color = Color.green;
             Invoke("DestroySquare", 1f);
+            victorySound.SetActive(false);
+            victorySound.SetActive(true);
         }
     }
 

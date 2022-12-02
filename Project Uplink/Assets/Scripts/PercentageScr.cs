@@ -15,7 +15,8 @@ public class PercentageScr : MonoBehaviour
     {
         if (startCount)
         {
-            counter += Time.deltaTime;
+            //counter += Time.deltaTime+1;
+            counter += Time.deltaTime+1;
 
             if (counter >= (maxTime * Time.deltaTime))
             {

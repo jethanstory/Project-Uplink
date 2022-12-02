@@ -152,4 +152,4 @@ MonoBehaviour:
   isHeld: 0
   hasStopped: 1
   canBeDragged: 0
-  speed: 3000
+  speed: 500

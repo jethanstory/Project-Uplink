@@ -174,7 +174,8 @@ public class PresqueakScr : MonoBehaviour
                     //summoning black squares
 
                     inLoadingScene = true;
-                    loadingSpeed = 3000;
+                    //loadingSpeed = 3000;
+                    loadingSpeed = 150;
 
                     if (currScreen == null)
                     {
@@ -186,6 +187,7 @@ public class PresqueakScr : MonoBehaviour
                 case 8:
                     //create obsoletesqueak
                     obsoletePos = new Vector3(-967, -541, 0);
+                    //obsoletePos = new Vector3(0, 0, 0);
                     currObsoletesqueak = Instantiate(obsoletesqueak, obsoletePos, Quaternion.identity);
                     currObsoletesqueak.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
 

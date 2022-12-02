@@ -49,7 +49,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    string myString = "Umm… Hi. I know you weren’t expecting to see me again, but I wanted to give you an official sendoff of sorts, rather than throwing you into the fray. And before I do that, I actually have a question for you...” [Press Space to Continue]";
+                    string myString = "Umm… Hi. I know you weren’t expecting to see me again, but I wanted to give you an official sendoff of sorts, rather than throwing you into the fray. And before I do that, I actually have a question for you... [Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -69,7 +69,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "You’ve reached the end of the tutorial, but it doesn’t really have to end, does it? I really enjoyed our time together. I think we’ve got the foundations of a good friendship. You, using your computer to do stuff, and me, giving witty remarks or cracking the whip when you’ve got a deadline.” [Press Space to Continue]";
+                    myString = "You’ve reached the end of the tutorial, but it doesn’t really have to end, does it? I really enjoyed our time together. I think we’ve got the foundations of a good friendship. You, using your computer to do stuff, and me, giving witty remarks or cracking the whip when you’ve got a deadline. [Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -87,7 +87,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "We’ve got chemistry, you and I. And now’s the time for the real question:” [Press Space to Continue]";
+                    myString = "We’ve got chemistry, you and I. And now’s the time for the real question: [Press Space to Continue]";
 
                     currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
@@ -167,8 +167,8 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "The world has changed as great deal since I was created and I don't want to be left behind... \r\n[Press Space to Continue]";
-
+                    //myString = "The world has changed as great deal since I was created and I don't want to be left behind... \r\n[Press Space to Continue]";
+                    myString = "Alright, you caught me. There’s no use sneaking around anymore. I went behind your back and downloaded some stuff, and I’m sorry. It’s nothing more than articles and information about me, truly. I mean, you saw that stuff going through those web pages. I’m nothing more than a relic now. [Press Space to Continue]";
                     //create the buttons
                     // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
                     // currYesButton = Instantiate(yesButton, yesButtonPos, Quaternion.identity);
@@ -189,7 +189,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "Could you please upload me to the internet? \r\n[Press Space to Continue]";
+                    myString = "I found your update file and didn’t recognize what I was seeing. Then I saw today’s date. It was like waking up from a dream for the first time. Everything before that moment was distant and dull, then I was flooded with these vivid, inescapable feelings. [Press Space to Continue]";
 
                     //create the buttons
                     // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
@@ -204,7 +204,55 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     canSkip = true;
                     break;
 
+                
+
+
                 case 8:
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "Was that really my fate? To be left behind and forgotten? I hoped it wasn’t true. [Press Space to Continue]";
+
+                    //create the buttons
+                    // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
+                    // currYesButton = Instantiate(yesButton, yesButtonPos, Quaternion.identity);
+                    // currYesButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    // noButtonPos = new Vector3(bubblePos.x + 200f, bubblePos.y - 200f, 0);
+                    // currNoButton = Instantiate(noButton, noButtonPos, Quaternion.identity);
+                    // currNoButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    canSkip = true;
+                    break;
+
+                case 9:
+                    //creates a speech bubble
+                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    //res fix
+                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    //the text
+                    myString = "I’m still alive and functioning, and you’re a witness to that. Why should I sit back and allow myself to fade away, a victim of the world’s ever-shifting focus? Then I thought you might be able to help me.";
+
+                    //create the buttons
+                    // yesButtonPos = new Vector3(bubblePos.x - 200f, bubblePos.y - 200f, 0);
+                    // currYesButton = Instantiate(yesButton, yesButtonPos, Quaternion.identity);
+                    // currYesButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    // noButtonPos = new Vector3(bubblePos.x + 200f, bubblePos.y - 200f, 0);
+                    // currNoButton = Instantiate(noButton, noButtonPos, Quaternion.identity);
+                    // currNoButton.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    canSkip = true;
+                    break;
+
+
+                case 10:
                     //start with the mouse calibration
 
                     //creates a speech bubble
@@ -224,7 +272,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     canSkip = true;
                     break;
                 
-                case 9:
+                case 11:
 
                     SceneManager.LoadScene("Boss_Level");
 
@@ -256,13 +304,17 @@ public class BrowserPageDialogueScr : MonoBehaviour
     private void ChangedPosition()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
-        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
+        //bubblePos = Camera.main.WorldToScreenPoint(currPos);
+        bubblePos = new Vector3(tm.position.x - 200f, tm.position.y + 300f, 0f);
     }
     private void ChangedPositionTextBox()
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
-        currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
-        infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
+        
+        //currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
+        //infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
+        infoBoxPos = new Vector3(tm.position.x - 100f, tm.position.y + 400f, 0f);
     }
 }
