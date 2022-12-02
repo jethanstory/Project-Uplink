@@ -1545,9 +1545,9 @@ public class InfosqueakScr : MonoBehaviour
         //StartCoroutine(DelayEnd(delayTimerEnd));
     }
 
-    void ChangeSprite() 
+    void ChangeSprite(int n) 
     { 
-        sr.sprite = spriteArray[0]; 
+        sr.sprite = spriteArray[n]; 
     }
 
     
