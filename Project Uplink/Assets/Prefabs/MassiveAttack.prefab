@@ -146,4 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tm: {fileID: 3594967215732893660}
   rb: {fileID: 8827017696652997207}
-  speed: 7000
+  speed: 437

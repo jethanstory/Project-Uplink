@@ -146,4 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4325172592134387609}
   canMove: 0
-  speed: 500
+  speed: 250
