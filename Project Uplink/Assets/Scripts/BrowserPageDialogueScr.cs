@@ -255,15 +255,23 @@ public class BrowserPageDialogueScr : MonoBehaviour
                 case 10:
                     //start with the mouse calibration
 
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //adjusts text to the resolution size
-                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                    //res fix
+                    currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "INTERNAL UPDATE ERROR 9898: Please Standby for program relaunch \r\n[Press Space to Continue]";
+                    myString = "FATAL UPDATE ERROR: Please Reinstall Program";
+                    currInfoBox.GetComponent<BubbleScr>().SetText(myString);
 
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    // //creates a speech bubble
+                    // currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    // //adjusts text to the resolution size
+                    // currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    // //the text
+                    // myString = "FATAL UPDATE ERROR: ";
+
+                    // currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //sets the max progress num before minigame
                     maxProgressNum = 9;
@@ -307,7 +315,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
         
         //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         //bubblePos = Camera.main.WorldToScreenPoint(currPos);
-        bubblePos = new Vector3(tm.position.x - 200f, tm.position.y + 300f, 0f);
+        bubblePos = new Vector3(tm.position.x - 350f, tm.position.y + 375f, 0f);
     }
     private void ChangedPositionTextBox()
     {
