@@ -43,7 +43,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
 
                     //sets the position of the speech bubble
                     ChangedPosition();
-                    ChangeSprite(0);
+                    //ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -81,7 +81,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                 case 2:
                     //let's start calibration
 
-                    ChangeSprite(1);
+                    //ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -131,7 +131,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                     
                     Destroy(currInfoBox);
 
-                    ChangeSprite(0);
+                    //ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -329,8 +329,8 @@ public class BrowserPageDialogueScr : MonoBehaviour
         infoBoxPos = new Vector3(tm.position.x - 100f, tm.position.y + 400f, 0f);
     }
 
-    void ChangeSprite(int n) 
-    { 
-        sr.sprite = spriteArray[n]; 
-    }
+    // void ChangeSprite(int n) 
+    // { 
+    //     sr.sprite = spriteArray[n]; 
+    // }
 }
