@@ -262,7 +262,12 @@ public class PresqueakScr : MonoBehaviour
     {
         //currPos = new Vector3(tm.position.x - 5f, tm.position.y + 2f, 0f);
         //currPos = new Vector3(tm.position.x + 2f, tm.position.y + 3f, 0f);
-        currPos = new Vector3(tm.position.x + 3f, tm.position.y + 4f, 0f);
-        bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+        // Current Working
+        // currPos = new Vector3(tm.position.x + 3f, tm.position.y + 4f, 0f);
+        // bubblePos = Camera.main.WorldToScreenPoint(currPos);
+
+        //Test
+        bubblePos = new Vector3(tm.position.x + 350f, tm.position.y + 450f, 0f);
     }
 }
