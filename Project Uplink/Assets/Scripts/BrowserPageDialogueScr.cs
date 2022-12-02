@@ -18,6 +18,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
     public bool miniGameInProgress = false;
     private Vector3 currPos;
     private Vector3 bubblePos;
+    public Sprite[] spriteArray;
 
 
     public GameObject infoBox;
@@ -42,7 +43,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
 
                     //sets the position of the speech bubble
                     ChangedPosition();
-
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -80,7 +81,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                 case 2:
                     //let's start calibration
 
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -127,8 +128,10 @@ public class BrowserPageDialogueScr : MonoBehaviour
 
                 case 4:
                     //start with the mouse calibration
-
+                    
                     Destroy(currInfoBox);
+
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -324,5 +327,10 @@ public class BrowserPageDialogueScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
         //infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
         infoBoxPos = new Vector3(tm.position.x - 100f, tm.position.y + 400f, 0f);
+    }
+
+    void ChangeSprite(int n) 
+    { 
+        sr.sprite = spriteArray[n]; 
     }
 }
