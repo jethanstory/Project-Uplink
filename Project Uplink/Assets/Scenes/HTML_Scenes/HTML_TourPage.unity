@@ -888,6 +888,7 @@ MonoBehaviour:
   setup1: {fileID: 0}
   setup2: {fileID: 0}
   setup3: {fileID: 0}
+  soundWave: {fileID: 0}
 --- !u!4 &983924171
 Transform:
   m_ObjectHideFlags: 0
@@ -1605,13 +1606,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Webmaster NOTICE:
+  m_Text: 'Navigate through all the topic pages to complete the tutorial!
 
 
-    Due to the recent URL migration, the main hyperlinks
-    to several old Netsqueak landing pages are missing or broken, however I''ve ensured
-    that it''s still possible to access most of those pages from related links and
-    pages. Follow the topics. '
+
+    Webmaster
+    NOTICE:
+
+
+    Due to the recent URL migration, the main hyperlinks to several
+    old Netsqueak topic pages are missing or broken, however I''ve ensured that it''s
+    still possible to access most of those pages from related links and pages. Follow
+    the topics. Look for URLs.'
 --- !u!222 &1960183292
 CanvasRenderer:
   m_ObjectHideFlags: 0

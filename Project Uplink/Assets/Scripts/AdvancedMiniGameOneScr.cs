@@ -78,8 +78,8 @@ public class AdvancedMiniGameOneScr : MonoBehaviour
             sr.color = Color.green;
             isCaught = true;
             Invoke("DestroySquare", 1f);
-            victorySound.SetActive(false);
-            victorySound.SetActive(true);
+            // victorySound.SetActive(false);
+            // victorySound.SetActive(true);
         }
     }
 

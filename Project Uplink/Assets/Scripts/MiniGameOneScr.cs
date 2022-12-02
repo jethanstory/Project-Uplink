@@ -28,8 +28,7 @@ public class MiniGameOneScr : MonoBehaviour
         {
             sr.color = Color.green;
             Invoke("DestroySquare", 1f);
-            victorySound.SetActive(false);
-            victorySound.SetActive(true);
+            
         }
     }
 

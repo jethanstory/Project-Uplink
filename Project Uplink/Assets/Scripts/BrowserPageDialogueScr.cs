@@ -18,6 +18,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
     public bool miniGameInProgress = false;
     private Vector3 currPos;
     private Vector3 bubblePos;
+    public Sprite[] spriteArray;
 
 
     public GameObject infoBox;
@@ -42,7 +43,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
 
                     //sets the position of the speech bubble
                     ChangedPosition();
-
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -80,7 +81,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
                 case 2:
                     //let's start calibration
 
-
+                    ChangeSprite(1);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -127,8 +128,10 @@ public class BrowserPageDialogueScr : MonoBehaviour
 
                 case 4:
                     //start with the mouse calibration
-
+                    
                     Destroy(currInfoBox);
+
+                    ChangeSprite(0);
                     //creates a speech bubble
                     currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
                     //adjusts text to the resolution size
@@ -255,15 +258,23 @@ public class BrowserPageDialogueScr : MonoBehaviour
                 case 10:
                     //start with the mouse calibration
 
-                    //creates a speech bubble
-                    currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
-                    //adjusts text to the resolution size
-                    currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+                    currInfoBox = Instantiate(infoBox, infoBoxPos, Quaternion.identity);
+                    //res fix
+                    currInfoBox.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
 
                     //the text
-                    myString = "INTERNAL UPDATE ERROR 9898: Please Standby for program relaunch \r\n[Press Space to Continue]";
+                    myString = "FATAL UPDATE ERROR: Please Reinstall Program";
+                    currInfoBox.GetComponent<BubbleScr>().SetText(myString);
 
-                    currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
+                    // //creates a speech bubble
+                    // currSpeechBubble = Instantiate(speechBubble, bubblePos, Quaternion.identity);
+                    // //adjusts text to the resolution size
+                    // currSpeechBubble.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, true);
+
+                    // //the text
+                    // myString = "FATAL UPDATE ERROR: ";
+
+                    // currSpeechBubble.GetComponent<BubbleScr>().SetText(myString);
 
                     //sets the max progress num before minigame
                     maxProgressNum = 9;
@@ -307,7 +318,7 @@ public class BrowserPageDialogueScr : MonoBehaviour
         
         //currPos = new Vector3(tm.position.x - 2f, tm.position.y + 3f, 0f);
         //bubblePos = Camera.main.WorldToScreenPoint(currPos);
-        bubblePos = new Vector3(tm.position.x - 200f, tm.position.y + 300f, 0f);
+        bubblePos = new Vector3(tm.position.x - 350f, tm.position.y + 375f, 0f);
     }
     private void ChangedPositionTextBox()
     {
@@ -316,5 +327,10 @@ public class BrowserPageDialogueScr : MonoBehaviour
         //currPos = new Vector3(tm.position.x - 1f, tm.position.y + 4f, 0f);
         //infoBoxPos = Camera.main.WorldToScreenPoint(currPos);
         infoBoxPos = new Vector3(tm.position.x - 100f, tm.position.y + 400f, 0f);
+    }
+
+    void ChangeSprite(int n) 
+    { 
+        sr.sprite = spriteArray[n]; 
     }
 }

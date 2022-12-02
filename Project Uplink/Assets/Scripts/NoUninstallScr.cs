@@ -23,6 +23,7 @@ public class NoUninstallScr : MonoBehaviour
 
     public void GoToEnding()
     {
-        SceneManager.LoadScene("Dropbox_Ending");
+        //SceneManager.LoadScene("Dropbox_Ending");
+        SceneManager.LoadScene("Dropbox_EndingSimple");
     }
 }

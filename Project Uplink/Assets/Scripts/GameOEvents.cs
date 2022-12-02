@@ -207,6 +207,10 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene("HTML_404");
         
     }
+    public void blankScene()
+    {
+        SceneManager.LoadScene("BlankScene");
+    }
     public void noSound()
     {
         soundWave.SetActive(false);
