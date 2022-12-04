@@ -840,6 +840,7 @@ MonoBehaviour:
   setup1: {fileID: 0}
   setup2: {fileID: 0}
   setup3: {fileID: 0}
+  soundWave: {fileID: 0}
 --- !u!4 &818111547
 Transform:
   m_ObjectHideFlags: 0
@@ -1323,9 +1324,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 818111546}
         m_TargetAssemblyTypeName: GameOEvents, Assembly-CSharp
-        m_MethodName: sportsInfoLevel
+        m_MethodName: artEventsLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
